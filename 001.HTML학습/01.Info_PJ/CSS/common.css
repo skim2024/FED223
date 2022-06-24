@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* 외부CSS파일은 상단에 반드시 인코딩 형식 utf-8 지정필수/* 공통 클래스 */
+.bxc {
+    /* 기본 박스모델 속성 5가지 */
+    /* 가로크기 */
+    width: 750px;
+    /* w750 */
+    /* 세로크기 */
+    /* height: 200px;  */
+    /* 안쪽여백 */
+    padding: 10px;
+    /* 경계선: 두께 종류 색상 */
+    border: 2px solid #057c8c;
+    /* 바깥여백 */
+    margin: 20px auto;
+    /* 
+                    블록박스 중앙정렬
+                    margin: 0 auto; ->마영오
+                    양쪽마진 auto의 의미는? 양쪽 마진 등분할
+
+                    마진 값 주기 = 패딩값도 동일
+                    margin: 하나 -> 4방향마진
+                    margin: 하나 둘 -> 위아래 양쪽
+                    margin: 하나 둘 셋 -> 위 양쪽 아래
+                    margin: 하나 둘 셋 넷 -> 위부터 시계방향
+                     */
+
+    /* 박스크기유지 속성!: 패딩과 보더크기 포함! */
+    box-sizing: border-box;
+
+}
+
+/* 상단과 하단만 배경색
+            콤마(,)는 그룹선택자 */
+#top,
+#info {
+    background-color: rgb(214, 214, 214);
+    /* 블록박스 인라인내용 중앙정렬 */
+    text-align: center;
+    /* 
+                text-align: 텍스트 정렬
+                left
+                right
+                center
+                justify: 양옆으로 */
+}
+
+/* 1. 상단영역 */
+/* 타이틀 */
+h1 {
+    /* 글자크기 fz */
+    font-size: 30px;
+    /* 글자두께 */
+    font-weight: lighter;
+    /* 글자체 */
+    font-family: sans-serif, "궁서";
+    /* 글자색 */
+    color: rgb(23, 23, 213);
+    /* 글자자간 */
+    letter-spacing: -2px;
+    /* 글자줄간격 */
+    line-height: 1.5;
+    /* 글자단어간격 */
+    word-spacing: 10px;
+    /* 글자스타일 */
+}
+
+.nav>a {
+    /* a링크는 2가지 기본설정이 있음 */
+    /* 글자색, 글자밑줄 ->여기서 수정 */
+    color: rgb(109, 128, 5);
+    text-decoration: none;
+    /* font: 스두크/줄체;
+                font: 스타일 두께 크기/줄간격 글씨체; */
+    font: bold 20px/40px "굴림";
+}
+
+/* 마우스오버시 */
+/* :hover 가상클래스 */
+.nav>a+a:hover {
+    /* a+a:hover -> 앞에 a요소가 있는 a요소 모두선택, 결과적으로 첫번째 a만 제외됨!*/
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+/* 메뉴 중 로고이미지 */
+.nav a img {
+    vertical-align: -3px;
+    /* 
+                    vertical-align
+                    -> 인라인요소간 세로정렬
+                    :top, bottom, baseline, middle, 수치
+                    -> 인라인요소 진행방향인 오른쪽에 영향을 준다! (보통 이미지와 글자의 세로위치를 조정할때 사용함!) */
+}
+
+.nav a img {
+    border: none;
+}
+
+/* 2. 메인영역 */
+#cont img {
+    width: 100%;
+}
+
+/* 3. 하단영역 */
+#info address {
+    font-style: normal;
+    /* address 기본 이탈릭 해제 */
+    font: normal bold 13px/22px "굴림";
+    color: #666565;
+    padding: 11px 0;
+    /* font: 스두크/줄체 */
+}
