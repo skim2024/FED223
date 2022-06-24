@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>네이버 요약뉴스</title>
+        <!--title: 브라우저 탭메뉴 타이틀-->
+        <meta charset="utf-8">
+        <!--meta태그 초기정보 셋업: charset 문자 인코딩 형식 지정-->
+        <!-- 스타일시트 코딩구역: 인터널방식 -->
+        <style>
+            /* 스타일시트 사용하는 영역 */
+            /* CSS문법만 쓸 수 있음! */
+            /* 
+            기본 사용법:
+            
+            글자 관련 속성
+            1. 글자 크기 -> font-size
+                값 -> 절대단위: px, pt
+                    상대단위: em, rem, %, vw, vh...
+            2. 글자 두께 -> font-weight
+                값 ->lighter, bold, bolder, 100~900
+                    보통 글자체에 따라 지원여부에 달림
+            3. 글자체 -> font-family
+                값 -> 기본적으로 로컬체를 적용함
+                    순서대로 콤마로 구분함]
+                    예) font-family: 궁서체, 굴림체, verdana...
+                    -> 최근에 웹폰트가 대세
+                    브라우저에서 다운로드 지원하는 글씨체
+            4. 글자색 -> color
+                값 -> 색상명, 해시코드, rgb, hsl 등
+            5. 글자자간 -> letter-spacing
+                -> 일반 단위 사용
+            6. 글자줄간격 -> line-height
+                -> 단위없이 숫자만쓰면 글자크기의 배수
+            7. 글자 단어간격 -> word-spacing
+                -> 일반단위사용
+            8. 글자 스타일 ->font-style
+                -> italic
+                -> normal
+            9.글자 데코레이션 -> text-decoration
+                -> 글자에 줄긋기
+                underline 밑줄
+                overline 윗줄
+                linethrough 중간줄
+                none 줄없앰
+
+
+            */
+            /* 공통 클래스 */
+            .bxc{
+                /* 기본 박스모델 속성 5가지 */
+                /* 가로크기 */
+                width: 750px;/* w750 */
+                /* 세로크기 */
+                /* height: 200px;  */
+                /* 안쪽여백 */
+                padding: 10px;
+                /* 경계선: 두께 종류 색상 */
+                border: 2px solid #057c8c;
+                /* 바깥여백 */
+                margin: 20px auto;  
+                /* 
+                    블록박스 중앙정렬
+                    margin: 0 auto; ->마영오
+                    양쪽마진 auto의 의미는? 양쪽 마진 등분할
+
+                    마진 값 주기 = 패딩값도 동일
+                    margin: 하나 -> 4방향마진
+                    margin: 하나 둘 -> 위아래 양쪽
+                    margin: 하나 둘 셋 -> 위 양쪽 아래
+                    margin: 하나 둘 셋 넷 -> 위부터 시계방향
+                     */
+
+                /* 박스크기유지 속성!: 패딩과 보더크기 포함! */
+                box-sizing: border-box;
+
+            } 
+            
+            /* 상단과 하단만 배경색
+            콤마(,)는 그룹선택자 */
+            #top, #info{
+                background-color: rgb(214, 214, 214);
+                /* 블록박스 인라인내용 중앙정렬 */
+                text-align: center;
+                /* 
+                text-align: 텍스트 정렬
+                left
+                right
+                center
+                justify: 양옆으로 */
+            }
+
+            /* 1. 상단영역 */
+            /* 타이틀 */
+            h1{
+                /* 글자크기 fz */
+                font-size: 30px;
+                /* 글자두께 */
+                font-weight: lighter;
+                /* 글자체 */
+                font-family: sans-serif, "궁서";
+                /* 글자색 */
+                color: rgb(23, 23, 213);
+                /* 글자자간 */
+                letter-spacing: -2px;
+                /* 글자줄간격 */
+                line-height: 1.5;
+                /* 글자단어간격 */
+                word-spacing: 10px;
+                /* 글자스타일 */
+            }
+
+            .nav > a{
+                /* a링크는 2가지 기본설정이 있음 */
+                /* 글자색, 글자밑줄 ->여기서 수정 */
+                color: rgb(109, 128, 5);
+                text-decoration: none;
+                /* font: 스두크/줄체;
+                font: 스타일 두께 크기/줄간격 글씨체; */
+                font: bold 20px/40px "굴림";
+            }
+            /* 마우스오버시 */
+            /* :hover 가상클래스 */
+            .nav > a+a:hover{
+                /* a+a:hover -> 앞에 a요소가 있는 a요소 모두선택, 결과적으로 첫번째 a만 제외됨!*/
+                color: blueviolet;
+                text-decoration: underline;
+            }
+            /* 메뉴 중 로고이미지 */
+            .nav a img{
+                vertical-align: -3px;
+                /* 
+                    vertical-align
+                    -> 인라인요소간 세로정렬
+                    :top, bottom, baseline, middle, 수치
+                    -> 인라인요소 진행방향인 오른쪽에 영향을 준다! (보통 이미지와 글자의 세로위치를 조정할때 사용함!) */
+            }
+            .nav a img{
+                border: none;
+            }
+
+            /* 2. 메인영역 */
+            #cont img{
+                width: 100%;
+            }
+
+            /* 3. 하단영역 */
+            #info address{
+                font-style: normal;
+                /* address 기본 이탈릭 해제 */
+                font: normal bold 13px/22px "굴림";
+                color: #666565;
+                padding: 11px 0;
+                    /* font: 스두크/줄체 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 1. 상단영역 -->
+        <div id="top" class="bxc">
+            <!-- 1-1. 타이틀 -->
+            <h1>네이버 요약뉴스</h1>
+            <!-- 1-2. 메뉴 (GNB: Global Navigation Bar) -->
+            <div class="nav">
+                <a href="#">
+                    <img src="./images/logo.png" alt="네이버로고" style="width: 20px;">
+                </a>
+                <!-- 
+                    img 요소: image
+                    - 이미지를 경로에서 불러와서 화면에 보여주는 요소
+                    (필수속성 2가지!)
+                    -> src: source
+                        이미지 경로 속성
+                    -> 
+                 -->
+                <a href="#">정치</a> | 
+                <a href="#">경제</a> |
+                <a href="#">사회</a> |
+                <a href="#">IT/과학</a> |
+                <a href="#">TV/연예</a>
+            </div>
+        </div>
+        <!-- 2. 메인영역 -->
+        <div id="cont" class="bxc">
+            <!-- 메인이미지 -->
+            <img src="./images/main.png" alt="메인 뉴스 일러스트 이미지">
+        </div>
+        <!-- 3. 하단영역 -->
+        <div id="info" class="bxc">
+            <!-- 회사 주소 및 정보 -->
+            <address>
+                서울시 강남구 역삼동 119 대호B 8F <br>
+                대표: Sue Kim <br>
+                전화: 010-2020-2022
+            </address>
+        </div>
+
+
+
+        <!-- 
+            [div 형제 요소들]
+            
+            -> div에 어떤 내용영역인지 알 수 있도록 의미를 부여한 새로움 레이아웃용 태그들
+
+            1. header: 상단영역
+            2. footer: 하단영역
+            3. main: 메인영역(한페이지에 한번만!)
+            4. nav: 네비게이션 영역
+
+         -->
+    </body>
+</html>

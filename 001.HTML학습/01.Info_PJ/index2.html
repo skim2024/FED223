@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>네이버 요약뉴스</title>
+        <!-- title : 브라우저 탭메뉴 타이틀 -->
+        <meta charset="utf-8">
+        <!-- meta태그 초기정보 셋업 : 
+            charset 문자인코딩형식 지정 -->
+        <!-- 구글웹폰트 -->
+        <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet">
+        <!-- 스타일시트 코딩구역 : 인터널방식 -->
+        <style>
+            /* 스타일시트를 사용하는 영역 */
+            /* CSS문법만 쓸 수 있음! */
+            /* 
+                기본 사용법:
+
+                선택자 {
+                    속성명:값;
+                }
+
+                - 선택자: 태그명, 아이디명, 클래스명 등
+                - 속성명: 각 요소를 구성하는 상세속성들
+                - 값: 각 속성에서 사용할 수 있는 값들
+
+                속성명 다음에 콜론(:)
+                값 다음이 세미콜론(;)
+
+                [ CSS 선택자(Selector) ]
+                1. 타입선택자 : 요소명 (예:h1/a/p/div)
+                2. 자손선택자 : 띄어쓰기 (예: h1 a)
+                3. 아이디선택자 : # (예: #my)
+                4. 클래스선택자 : . (예: .you)
+                5. 직계자식선택자 : > (예: div>a)
+                6. 그룹선택자 : , (예: p,div)
+                7. 종속선택자: 태그명+아이디/클래스명
+                    (예: div#top / a.my)
+                8. 형제선택자: + (예: a+a)
+                    -> 해석: 앞에 지정요소가 있는 형제요소
+                9. 다중형제선택자: ~ (틸드)
+                    -> 해석: 선택된 형제요소 뒤의 모든형제요소들
+                    (예: li:nth-child(2)~li)
+                10. 속성선택자: [] (예: a[href=#])
+                    -> 특정속성을 가진요소를 선택
+
+
+                [ CSS 요소 박스모델 필수속성! ]
+                1. width - 가로크기
+                    -> 기본값 auto 
+                    (블록박스는 끝까지 차지, 인라인박스는 내용만큼)
+                2. height - 세로크기
+                    -> 기본값 auto
+                    (내용만큼 늘어남!)
+                3. padding - 안쪽여백
+                4. border - 경계선
+                5. margin - 바깥여백
+                ____________________________
+
+                -> 박스모델에서 width, height크기 지정시
+                내부 컨텐츠 영역의 크기를 지정한 것임
+                따라서 패딩, 보더의 크기는 바깥쪽으로 확장됨!
+                이런박스를 이름하여 "content-box"
+                box-sizing 속성값으로 "border-box"라고 설정하면
+                설정된 크기 안쪽으로 패딩과 보더가 설정됨!
+                필요한 경우 사용함!
+
+                참고)
+                https://www.w3schools.com/css/css_boxmodel.asp
+
+
+                [ 글자 관련 속성 ]
+                1. 글자크기 -> font-size
+                    값 -> 절대단위: px, pt
+                        상대단위: em,rem,%,vw,vh...
+                2. 글자두께 -> font-weight
+                    값 -> lighter(얇게), bold(두껍게),
+                     bolder(더 두껍게) , 100~900(9단계)
+                        보통 글자체에 따라 지원여부에 달림
+                3. 글자체 -> font-family
+                    값 -> 기본적으로 로컬체를 적용함
+                        순서대로 콤마로 구분함
+                예) font-family: 궁서체, 굴림체, Verdana
+                    -> 최근에 웹폰트가 대세!!!
+                    브라우저에서 다운로드 지원하는 글씨체
+                4. 글자색 -> color
+                    값 -> 색상명, 해시코드, rgb, hsl 등
+                5. 글자자간 -> letter-spacing
+                    -> 일반단위사용
+                6. 글자줄간격 -> line-height
+                    -> 단위없이 숫자만쓰면 글자크기의 배수
+                7. 글자단어간격 -> word-spacing
+                    -> 일반단위사용
+                8. 글자스타일 -> font-style
+                    -> 이탤릭일때 사용 : italic
+                    -> 이탤릭해제시 : normal
+                9. 글자데코레이션 -> text-decoration
+                    -> 글자에 줄긋기
+                    underline 밑줄
+                    overline 윗줄
+                    linethrough 중간줄
+                    none 줄없앰
+
+                참고)
+                https://www.w3schools.com/css/css_font.asp
+
+
+                [ 웹 색상표기법 ]
+
+                1. 해시코드 : #6자리숫자
+                    (두자리가 같을 경우 3자리로 축약표현가능)
+                    - 16진수로 표기함(0~f)
+                    - 해시코드로 투명도를 주려면 뒤에 2자리 추가하여
+                    8자리 숫자로 투명도를 표현함
+
+                2. RGB 코드 : rgba(red,green,blue,알파값)
+                - 0~255 까지 숫자중 사용
+                - red, green, blue
+                - 마지막 a는 alpha값 즉, 투명도 -> 없으면 생략!
+                (0~1사이의 소숫점값들 사용)
+
+                [ rgba 2가지 표기법 ]
+                1. rgba(red색,green색,blue색,alpha값)
+                - alpha값은 투명도 (0~1)
+                2. rgb(red색 green색 blue색 / alpha값%)
+                - alpha값은 투명도 (0%~100%)
+
+                3. HSL 코드 : hsla(hue,saturation,lightness,알파값)
+                - hue(색상), saturation(채도), lightness(명도)
+                - hue는 색상번호, 채도와 명도는 0~100%값 범위로 사용
+                - 마지막은 alpha값 -> 역시 없으면 생략!
+
+                4. 웹색상명: 지정된 컬러명으로 색생을 셋팅
+                예) red, green, blue, pink, navy, 등
+                - 모든 색상은 w3schools.com의 색상참조로 가서확인!
+                https://www.w3schools.com/cssref/css_colors.asp
+
+            */
+
+            /* 공통 클래스 */
+            /* box center의 의미로 bxc */
+            .bxc{
+                /* 기본 박스모델 속성 5가지! */
+                /* 1. 가로크기 */
+                width: 750px;/* w750 */
+                /* 2. 세로크기 */
+                /* height: 200px; *//* h200 */
+                /* 3. 안쪽여백 */
+                padding: 10px;/* p10 */
+                /* 4. 경계선 : 두께 종류 색상(두종색)*/
+                border: 2px solid silver;/* bd */
+                /* 5. 바깥여백 */
+                margin: 20px auto;/* m20 */
+                /* 
+                    [블록박스 가로중앙정렬]
+                    margin: 0 auto; -> 마영오!
+                    양쪽마진 auto의 의미는? 양쪽마진 등분할!
+
+                    [마진 값 주기 === 패딩값도 동일함!]
+                    margin: 하나; -> 4방향마진
+                    margin: 하나 둘 -> 위아래 양쪽
+                    margin: 하나 둘 셋 -> 위 양쪽 아래
+                    margin: 하나 둘 셋 넷 -> 위부터 시계방향 
+                */
+
+                /* 박스크기유지 속성! : 패딩과 보더크기 포함! */
+                box-sizing: border-box;
+
+            }
+            
+            /* 상단과 하단만 배경색 
+            콤마(,)는 그룹선택자 */
+            #top, #info {
+                /* 배경색 */
+                background-color: #d7ffd5;/* bgc */
+                /* 블록박스 인라인내용 중앙정렬 */
+                text-align: center;/* tac */
+                /* 
+                    text-align 텍스트 정렬
+                    (값)
+                    left - 왼쪽정렬
+                    right - 오른쪽정렬
+                    center - 중앙정렬
+                    justify - 양쪽정렬
+                */
+            }
+
+            /* 1. 상단영역 */
+            /* 타이틀 */
+            h1{
+                /* 글자크기 fz */
+                font-size: 34px;
+                /* 글자두께 */
+                font-weight: lighter;
+                /* 글자체 */
+                font-family: 'Black And White Picture', sans-serif;
+                /* font-family: san-serif,"긍서","글림","돋음"; */
+                /* 글자색 */
+                color:hotpink;
+                /* 글자자간 */
+                letter-spacing:2px;
+                /* 글자줄간격 */
+                line-height: 1;
+                /* 글자단어간격 */
+                word-spacing: 10px;
+                /* 글자스타일 */
+            }
+            /* 메뉴GNB */
+            .nav > a{
+                /* a링크는 2가지 기본설정이 있음 */
+                /* 글자색, 글자밑줄 -> 여기서 수정함! */
+                color: navy;
+                text-decoration: none;
+
+                /* font: 스두크/줄체;
+                font: 스타일 두께 크기/줄간격 글씨체; */
+                font: bold 20px/40px "굴림";
+                /* font: italic bold 24px/30px "궁서"; */
+            }
+            /* 마우스오버시 */
+            /* :hover 가상클래스 */
+            .nav > a+a:hover{
+                /* a+a:hover 
+                -> 앞에 a요소가 있는 a요소 모두선택 
+                결과적으로 첫번째 a만 제외됨! */
+                color: red;
+                text-decoration: overline;
+                /* text-decoration: line-through; */
+            }
+            /* 메뉴 중 로고이미지 */
+            .nav a img{
+                vertical-align: -3px;
+                /* 
+                    vertical-align 
+                    -> 인라인요소간 세로정렬
+                    : top, bottom, baseline, middle, 수치
+                    -> 인라인요소 진행방향인 오른쪽에
+                    영향을 준다! (보통 이미지와 글자의
+                    세로위치를 조정할때 사용함!)
+                */
+            }
+
+            /* 2. 메인영역 */
+            #cont img{
+                width: 100%;
+                /* 이미지는 가로크기를 주면
+                세로크기는 비율유지함! */
+            }
+
+            /* 3. 하단영역 */
+            #info address{
+                /* font-style: normal; */
+                /* address 기본 이탤릭해제! */
+                font: normal bold 17px/28px "굴림";
+                color: #333;
+                padding: 13px 0;
+                /* font: 스두크/줄체 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 1. 상단영역 -->
+        <div id="top" class="bxc">
+            <!-- 1-1. 타이틀 -->
+            <h1>네이버 요약뉴스</h1>
+            <!-- 1-2. 메뉴(GNB: Global Navigation Bar) -->
+            <div class="nav">
+                <a href="#">
+                    <img src="./images/logo.png" alt="네이버로고" style="width: 20px;">
+                    <!-- 
+                        style 속성
+                        (인라인방식)
+                        - 어느요소나 사용가능
+                        - css를 각 요소에 직접
+                        코딩하는 방식
+                        - JS에서 이방식을 사용!
+                        - 우선순위 가장높음!
+                     -->
+                </a>
+                <!-- 
+                    img 요소 : image
+                    - 이미지를 경로에서 불러와서
+                    화면에 보여주는 요소
+                    (필수속성 2가지!)
+                    -> src : source
+                        이미지 경로 속성
+                    -> alt : alternative text
+                        대체 텍스트
+                        (웹접근성 필수!)
+
+                    [ 경로에 관하여... ]
+                    1) 상대경로
+                        -> 현재 파일 위치로 경로를 잡음
+                        ./ 현재위치로부터
+                        (안써도 현재위치로부터임)
+                        ../ 한단계 위로
+                        ../../../ 계속 위로...
+                    2) 절대경로
+                        -> http://... 이런식의
+                        웹주소가 절대경로임!
+                    3) 절대상대경로
+                        프로젝트 파일 최상위부터 잡는 경로
+                        / 루트부터출발
+                        예) /aaa/bbb 
+                 -->
+                <a href="#">정치</a> | 
+                <a href="#">경제</a> | 
+                <a href="#">사회</a> | 
+                <a href="#">IT/과학</a> | 
+                <a href="#">TV/연예</a>
+            </div>
+        </div>
+        <!-- 
+            div : divide / division
+            -> 영역을 구분하는 블록요소
+            블록요소는 옆에 다른요소가 못오며
+            내용을 구분하는 역할을 함!
+
+            [요소에 이름넣기!]
+            - 요소를 구분하기 위한 아이디/클래스로 이름짓는다
+            - 아이디(id) : 유일한 요소구분
+            - 클래스(class) : 공통디자인 요소구분
+         -->
+        <!-- 2. 메인영역 -->
+        <div id="cont" class="bxc">
+            <!-- 메인이미지 -->
+            <img src="./images/main.jpg" alt="메인 뉴스 일러스트 이미지">
+        </div>
+        <!-- 3. 하단영역 -->
+        <div id="info" class="bxc">
+            <!-- 회사주소 및 정보 -->
+            <address>
+                서울시 강남구 역삼동 119 대호B 8F <br>
+                대표: Tom Brace Parker <br>
+                전화: 010-2222-3333
+            </address>
+        </div>
+    </body>
+</html>
