@@ -130,4 +130,96 @@
         font-family: "돋움","궁서";
         /* 줄간격 */
         line-height: 2.5;
+        /* 자간 */
+        letter-spacing: -1px;
+    }
+    /* a요소 마우스 오버시
+    :hover 가상클래스 */
+    #cont a:hover{
+        /* 글자데코:밑줄 */
+        text-decoration: underline;
+        /* 글자색 */
+        color: orangered;
+    }
+    /* ul bullet point변경 */
+    #cont ul{
+        list-style-type: circle;
+    }
+    #cont ol{
+        list-style-type: decimal;
+    }
+
+    /* 분야별뉴스 dt */
+    /* 
+    => 종류가 섞여있을때 of type 씀
+        :first-of-type
+        같은 종류중 첫번째요소
+        :nth-of-type(n)
+        같은 종류중 n번째 요소
+        :last-of-type
+        같은 종류중 마지막째 요소
+
+-------------------------------
+     => 태그종류가 한가지일때 child 씀
+        :first-child
+        형제 요소중 첫번째요소
+        :nth-child(n)
+        형제 요소중 n번째 요소
+        :last-child
+        형제 요소중 마지막째 요소
+
+    */
+
+    /* 오늘의 작품&느낌 박스 */
+    article.work {
+        text-align: center;
+        background-color: lightgoldenrodyellow;
+    }
+    
+    .work figcaption {
+        padding-top: 12px;
+        font-size: 14px;
+    }
+    
+    .work cite {
+        color: red;
+        font-family: 궁서;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+    /* 사진뉴스 박스 */
+    .pnews table{
+        /* 마진: 양쪽 auto-> 가로중앙정렬 */
+        margin: 0 auto;
+        /* 블록요소와 같이 table도 마영오! 적용 */
+    }
+    /* 첫번째 td - 숫자td*/
+    .pnews td:first-child {
+        color: black;
+        width: 50px;
+        height: 70px;
+        background-color: #ccc;
+        text-align: center;
+    }
+
+    /* 두번째 td - 뉴스제목링크 */
+    .pnews td:nth-child(2) {
+        /* background: #ff000026; */
+        padding-right: 116px;
+        padding-left: 20px;
+    }
+    
+    /* 사진뉴스 이미지 */
+    .pnews img {
+        height: 90px;
+        vertical-align: middle;
+    }
+    
+    /* 사진뉴스 테이블 설정 */
+    .pnews table {
+        /* 기본 사이간극: collapse 주면 행들 사이 간극 없어짐 (seperate이 원래 기본값)*/
+        border-collapse: separate;
+        /* 사이간격 설정: 주의-seperate 상태에서만 설정됨! */
+        border-spacing: 7px;
     }
