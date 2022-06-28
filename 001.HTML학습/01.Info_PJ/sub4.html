@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <!--meta태그 초기정보 셋업: charset 문자 인코딩 형식 지정-->
     <!-- 스타일시트 코딩구역: 인터널방식 -->
-  <link rel="stylesheet" href="./css/common.css">  
   <link rel="stylesheet" href="./CSS/sub.css">
 </head>
 
@@ -36,10 +35,16 @@
             <a href="https://www.seoul.co.kr/" target="_blank">
                 <img src="./images/pr4.png" alt="서울신문사로고">
             </a>
+
         <!-- 2-2. 기사제목 -->
         <h2 class="atit">
-            [우주를 보다] 태양계 ‘8개 행성’ 모두 담긴 희귀 사진 공개
+            [우주를 보다] 태양계 <span>‘8개 행성’</span> 모두 담긴 희귀 사진 공개
         </h2>
+            <!-- span요소: 인라인컨텐츠 범위를 잡는요소
+                span은 '범위'의 뜻
+                -인라인요소로 아무런 특징이 없음! 단지 범위만 잡아줌.
+            -->
+
         <!-- 2-3. 기사사진(사진설명)) -->
         <figure class="afig">
             <img src="./images/arti4.jpg" alt="IT/과학기사이미지">
@@ -49,6 +54,7 @@
             </figcaption>
              <!-- 이미지 설명 하단에 다른 태그 못씀! -->
         </figure>
+
         <!-- 2-4. 기사내용 -->
         <section class="arti">
             <p><b>태양계<sup>①</sup> 행성<sup>②</sup> 8개</b>가 모두 담긴 사진이 공개돼 관심을 모으고 있다.<strong> ‘오늘의 천체사진’</strong>(APOD) 25일자에 따르면, 낭만적인 분위기의 새벽 하늘 풍경을 담은 이 사진은 <i>카메라 4대가 동시 촬영한 이미지를 합쳐 만들었다.</i></p>
@@ -75,20 +81,20 @@
             - 문단을 나눌때 사용하는 요소
             - 주의사항: p요소 내부에 대른 블록태그를 못씀.-->
 
-            <hr>
+            <!-- <hr> -->
             <!-- 블록인용구 박스 -->
-            <div class="bquote">
+            <article class="bquote">
                 <h3>태양계의 발견과 탐험</h3>
                 <blockquote cite="https://ko.wikipedia.org/wiki/%ED%83%9C%EC%96%91%EA%B3%84">
                     오랜 시간 동안 인류는 (몇몇 주목할 만한 예외가 있지만) 태양계의 존재를 인식하지 못하였다. 그들은 지구가 우주의 중심에 있고 움직이지 않으며, 하늘에서 움직이는 다른 천체와는 절대적으로 다른 존재라고 믿었다. 인도의 수학자이자 천문학자인 아리아바타와 고대 그리스의 철학자 사모스의 아리스타르코스가 태양 중심의 우주론을 추측하기도 했지만[1], 태양중심설을 최초로 수학적으로 예측한 사람은 니콜라우스 코페르니쿠스다. 17세기에는 그 계승자 요하네스 케플러, 갈릴레오 갈릴레이, 아이작 뉴턴이 물리학에 대한 이해로 지구가 태양 주위를 움직이고, 행성은 지구를 제어하는 힘과 같은 힘으로 제어된다는 생각을 수용하였다. 좀 더 최근에는, 망원경 기술이 발달하고 무인 우주선을 사용할 수 있게 됨으로써, 다른 행성의 산맥이나 크레이터 등과 같은 지질학적 현상과 구름, 모래폭풍, 만년설 같은 기상학적 현상을 조사할 수 있게 되었다.
                 </blockquote>
-            </div>
+            </article>
             
-            <hr>
+            <!-- <hr> -->
             <!-- 가로구분선 = horizontal line -->
             
             <!-- 주해표시박스 -->
-            <div class="desc">
+            <article class="desc">
                 <h3>▣주해:</h3>
                 <small>
                     ①태양계는 나선 은하인 우리 은하의 나선의 팔 부분에 위치하고 있다.
@@ -96,20 +102,20 @@
                     ②행성은 항성이나 항성 잔유물을 공전하는 천체로 아래 조건을 만족하는 천체를 이르는 말이다.
                     <br><br>
                 </small>
-            </div>
-            <hr>
+            </article>
+            <!-- <hr> -->
 
         <!-- 2-5. 기자정보 -->
-        <div class="rinfo">
+        <article class="rinfo">
             이광식 과학 칼럼니스트 joand999@naver.com
-        </div>
+        </article>
         <h5>
             <a href="https://n.news.naver.com/mnews/article/081/0003282618?sid=105" target="_blank">기사원문</a>
         </h5>
 
-        <hr>
+        <!-- <hr> -->
         <!-- 오늘의 작품&느낌-->
-        <div class="work">
+        <article class="work">
             <h3>오늘의 작품 &amp; 느낌</h3>
             <figure>
                 <img src="./images/img_the_scream.jpg" alt="뭉크의 절규">
@@ -117,16 +123,16 @@
                     뭉크의 <cite>&lt;절규&gt;</cite>
                 </figcaption>
             </figure>
-        </div>
+        </article>
 
     <!-- html 특수문자 처리:
         & 앤퍼센드 &amp;
         < 여는 꺽쇠 &lt;
         > 닫는 꺽쇠 &gt;
     -->
-    <hr>
+    <!-- <hr> -->
     <!-- IT 돋보기 기사모음 (순서없는 리스트 ul) -->
-    <div class="itmag">
+    <article class="itmag">
         <h3>랜선인싸</h3>
         <ul>
             <li>
@@ -145,11 +151,11 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </article>
 
-    <hr>
+    <!-- <hr> -->
     <!-- 랭킹뉴스 -->
-    <div class="class">
+    <article class="class">
         <h3>랭킹뉴스</h3>
         <ol>
             <li>
@@ -168,7 +174,7 @@
                 </a>
             </li>
         </ol>
-    </div>
+    </article>
 
     <!-- 
         [그룹요소]
@@ -195,9 +201,9 @@
 
      -->
 
-     <hr>
+     <!-- <hr> -->
      <!-- 분야별 뉴스 -->
-     <div class="secnews">
+     <article class="secnews">
         <h3>분야별 뉴스</h3>
         <dl>
             <dt>경제</dt>
@@ -237,7 +243,7 @@
             </dd>
 
         </dl>
-     </div>
+     </article>
      <!-- 
         [그룹요소-용어 정의 리스트 dl]
         dl > dt + dd
@@ -252,8 +258,8 @@
         *주의사항 - dl은 반드시 자식요소로 dt, dd를 한번이상 사용해야함!
       -->
 
-      <hr>
-      <div class="pnews">
+      <!-- <hr> -->
+      <article class="pnews">
         <h3>사진뉴스</h3>
         <table>
         <!-- 첫째줄 -->
@@ -302,7 +308,7 @@
                 </td>
             </tr>
         </table>
-      </div>
+      </article>
 
       <!-- 
         [그룹요소: 테이블 table]
@@ -389,7 +395,6 @@
             <bdo> 오른쪽부터 출력이 필요한 경우 속성으로 셋팅
                 dir="rtl" -> right to left 표시
             -->
-         -->
 </body>
 
 </html>
