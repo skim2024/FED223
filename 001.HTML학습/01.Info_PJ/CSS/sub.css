@@ -223,3 +223,9 @@
         /* 사이간격 설정: 주의-seperate 상태에서만 설정됨! */
         border-spacing: 7px;
     }
+
+    /* 기자정보, 기사원문 박스 */
+    #cont h5 a, .rinfo {
+        padding-left: 20px;
+        font-size: 14px;
+    }
