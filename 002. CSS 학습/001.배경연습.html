@@ -54,8 +54,25 @@
             */
             background-repeat: no-repeat;
 
-            /* 4. 배경고정: fixed는 고정할 경우 스크롤이 생기면 확인됨! */
+            /* 4. 배경고정: fixed는 고정할 경우 스크롤이 생기면 확인됨! 
+            고정의 기준은 보이는 화면(window)임!*/
             background-attachment: fixed;
+
+            /* 5. 배경위치:  가로 세로
+                값 - px, % 수치단위
+                가로 - left, center, right
+                세로 - top, center, bottom*/
+                background-position: right bottom;
+
+            /* 6. 배경크기: 가로 세로 */
+            background-size: 150px auto;
+            /* background-size: auto 500px (auto 한쪽만 주면 이미지의 비율 유지됨)
+            auto 값 -> 세로값만 변경, 가로는 자동
+            값 auto -> 가로값만 변경, 세로는 자동
+            
+            특정값:
+            - contain 모두 보이게 박스에 채움 (비율유지함)
+            - cover박스를 모두 채우고 비율도 유지하는데 이미지가 잘릴수있음!*/
 
 
         }
@@ -69,6 +86,29 @@
         .wrap{
             height: 100%;
             /* 높이값 100%의 기준은?  */
+
+            /* 
+                [배경을 여러개 셋팅하려면?]
+                -> 한번에 배경셋팅법으로 콤마로 연결하여 여러개 셋팅 가능!
+
+                background: 색이반고윙/크
+
+                여러배경 셋팅시 처음것이 '위', 다음것이 '아래'에 옴!
+
+                위치값에서 세로값을 생략하면 center가 기본임! (ex. 하단 dc4)
+                -> center 하나만 쓰면 정중앙이됨!
+
+                만약 위치값을 안쓰고 크기만 잡고 싶어도
+                위치값을 0을 쓰고 슬래쉬를 써야 크기가 적용됨!
+                */
+            background: 
+            url(./imgs/dc1.png) no-repeat center/400px,
+            url(./imgs/dc2.png) no-repeat right top/auto 150px,
+            url(./imgs/dc3.png) no-repeat left bottom/300px,
+            url(./imgs/dc4.png) no-repeat right/250px,
+            url(./imgs/bg_mainvisual.jpg) no-repeat 0/50%;
+
+
         }
     </style>
 
