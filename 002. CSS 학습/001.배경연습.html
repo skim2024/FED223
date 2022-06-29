@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>001.배경연습</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /* 하위 요소의 높이값 %의 기준임! */
+
+        }
+/*  html과 body는 기본적으로 block 요소다.
+     body의 부모는? html
+     html의 부모는? window 객채임.
+
+     블록요소는 어떤 속성인가? display 속성
+     -> 브라우저 화면에 요소를 어떻게 보이게 할지를 결정해주는 속성.
+     블록요소의 역할은 "내용구분!"
+
+    [블록요소의 일반적인 특징]
+
+    1. width: auto -> 셋팅이 없을 경우 기본값
+    -> 싸고있는 부모요소 끝까지 차지함 (단, 마진, 패딩 고려!)
+    -> width크기를 설정하여 작아져도 옆에 다른요소 못옴!
+
+    2. height: auto-> 내용만큼 늘어남
+    -> 내용이 없으면 높이값이 0이 나옴.
+
+    3. 자식요소에서 블록요소 마진인
+        margin-top, margin-bottom
+        값을 주면 부모요소 바깥으로 마진설정이 나감!
+        내부로 포함시키려면
+        overflow:hidden 을 사용하면 됨!
+
+        내부공간을 확보하려면 패딩으로 설정하도록 한다! */
+
+        body{
+            /* 전체 배경이미지는 body에 코딩함!
+            html(위)에 코딩하면 안됨. */
+            
+            /* 1. 배경색 */
+            background-color: pink;
+
+            /* 2. 배경이미지: url(경로) */
+            background-image: url(./imgs/bg_logo_a_01.png);
+
+            /* 3. 배경 반복 여부
+            - no repeat: 반복 안함
+            - repeat-x: x축 반복
+            - repeat-y: y축 반복
+            - repeat: 전체 반복 (기본값)
+            */
+            background-repeat: no-repeat;
+
+            /* 4. 배경고정: fixed는 고정할 경우 스크롤이 생기면 확인됨! */
+            background-attachment: fixed;
+
+
+        }
+
+        h1{
+            margin: 0;
+            padding: 40px 0;
+            /* 마진이 부모 바깥으로 나가는 경우 패딩으로 셋팅!*/
+            text-align: center;
+        }
+        .wrap{
+            height: 100%;
+            /* 높이값 100%의 기준은?  */
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <h1>001.배경넣기 연습</h1>
+    </div>
+</body>
+</html>
