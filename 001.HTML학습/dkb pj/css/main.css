@@ -60,7 +60,33 @@ body{
 
     
 }
-/* 캐릭터 이미지 */
-.cat img{
+/* 캐릭터 이미지:
+ .ci의 직계자식 img만 선택! */
+.ci>img{
     width: 100%;
+}
+
+/* 캐릭터 이름이미지 박스 span */
+.ci span{
+    display: block;
+    /* 원래 inline이지만 출신변경! */
+    text-align: center;
+    /* 블록요소 내부의 인라인 컨텐츠를 중앙에 오게함! */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img{
+    width: 50%;
+}
+/* 캐릭터 이름 이미지 첫번째 숨기기*/
+.ci span img:first-child{
+    display: none;
+}
+/* 캐릭터 이름 이미지 첫번째 .cat에 오버시 보이기 */
+.cat:hover .ci span img:first-child{
+    display: inline;
+}
+/* 캐릭터 이름 이미지 두번째 .cat에 오버시 숨기기 */
+.cat:hover .ci span img:last-child{
+    display: none;
 }
