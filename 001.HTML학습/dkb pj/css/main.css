@@ -68,6 +68,14 @@ body{
 
 /* 캐릭터 이름이미지 박스 span */
 .ci span{
+    margin-top: -20%;
+    /* 마진값을 마이너스로 주면 위의 요소와 겹칠 수 있다.
+    포지션을 쓰지 않고 겹치게 하는 방법이다.
+    일반적인 위치이동은 마진으로 함.
+    단위로 %를 사용하면 마진에 있어서
+    margin-top은 기존 부모박스가 높이값에 대한 %이고,
+    margin-left는 기존 부모박스가 가로폭값에 대한 %이다.
+     */
     display: block;
     /* 원래 inline이지만 출신변경! */
     text-align: center;
@@ -76,7 +84,7 @@ body{
 
 /* 캐릭터 이름 이미지 */
 .ci span img{
-    width: 50%;
+    width: 40%;
 }
 /* 캐릭터 이름 이미지 첫번째 숨기기*/
 .ci span img:first-child{
