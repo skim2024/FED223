@@ -134,8 +134,8 @@
 
         /* 1024px 이하 */
 
+
         /*************** 800px 이하 ***************/
-        /* 800px 이하 */
         @media screen and (max-width:800px) {
 
             /* 메인영역변경 - 2개 (50%) */
@@ -151,8 +151,19 @@
             }
         }
 
+        /* 800px 이하 */
+
 
         /**************** 500px 이하 ****************/
+        /* 마지막엔 모두 width:100%, height:400px */
+        /* 더 이하는 없으므로 강제적용 !important 사용한다 */
+        @media screen and (max-width:500px) {
+            .pbx {
+                width: 100% !important;
+                height: 400px !important;
+            }
+        }
+
         /* 500px 이하 */
     </style>
 </head>
