@@ -103,6 +103,7 @@
                 width: 50%;
                 height: 180px;
             }
+
             /* 마지막박스 */
             .top>.pbx:last-child {
                 width: 100%;
@@ -115,13 +116,19 @@
                 height: 300px;
 
             }
+
+            /* 마지막 박스 */
             .cont>.pbx:last-child {
                 width: 100%;
-                height: 300px;
+                height: 600px;
 
             }
 
-            /* 하단영역변경 */
+            /* 하단영역변경 - 높이값 변경(400px) */
+            .info>.pbx {
+                width: 50%;
+                height: 200px;
+            }
 
         }
 
@@ -129,6 +136,20 @@
 
         /*************** 800px 이하 ***************/
         /* 800px 이하 */
+        @media screen and (max-width:800px) {
+
+            /* 메인영역변경 - 2개 (50%) */
+            .cont>.pbx {
+                width: 50%;
+            }
+
+            /* 마지막 박스 */
+            .cont>.pbx:last-child {
+                width: 50%;
+                height: 300px;
+
+            }
+        }
 
 
         /**************** 500px 이하 ****************/
