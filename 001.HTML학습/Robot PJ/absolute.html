@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Position - absolute</title>
     <style>
-        .bx{
+        .bx {
             width: 100px;
             height: 100px;
             border: 2px solid blue;
@@ -17,7 +18,7 @@
             line-height: 100px;
         }
 
-        #a1{
+        #a1 {
             position: absolute;
             /*********************************************** 
                 [3. Absolute 포지션]
@@ -32,6 +33,7 @@
                     (=> 젠틀앱솔루트!)
 
                     - 자기보다 아래쪽에 있는 static한 요소는 앱솔루트를 인식하지 못하여 같은 자리에 위치함(즉, 위로 올라옴!)
+
 
                     (2) 위치이동값을 사용한 경우
                     - 위치 이동값을 사용한 부분에 대해서만!!
@@ -51,6 +53,62 @@
                     
                     ->>>또한!
                     >>>>>>>width나 height 값을 %로 줄 경우 부모자격이 있는 요소를 기준하여 크기를 잡는다!
+
+
+                    (3) 앱솔루트 가로, 세로 크기를 주지 않은 경우, 일반적으로 block 요소 이므로
+                    width:auto 로써 부모끝까지 차지하지만 앱솔루트는
+                    -> 내용만큼 그 크기가 자동으로 설정됨!
+                    [-> 앱솔루트 판타롱스타킹!]
+
+
+                    (4) 인라인요소에 앱솔루트를 준 경우
+                     자동으로 display:block 으로 설정됨!
+                     이유는 자동크기를 설정할경우 블록이 아니면 크기설정이 안되므로 자동전환된다!
+                     -> 일반적으로 모든 앱솔루트는 block이다!
+
+
+                     (5) 앱솔루트 마진을 설정할 경우
+                     설정이 반영되는 경우는 위치설정과 같은 방향의 마진만 적용된다!
+                     예)
+                     top을 적용했으면 margin-top
+                     left를 적용했으면 margin-left
+                     bottom을 적용했으면 margin-bottom
+                     right을 적용했으면 margin-right
+
+                     -> 앱솔루트 마진은 위치 이동후 미세조정을 개별적으로 할 경우
+                     또는 젠틀앱솔루트인 경우 위치이동값을 사용하면 곤란할때
+                     사용할수있다!
+
+                     ->앱솔루트에 위치이동값이 설정되지 않은경우
+                     기본위치 기준값이 top, left이므로
+                     마진도 margin-top, margin-left만 적용된다!
+
+
+                     (6) 위치 이동값의 초기화!
+                     - 값으로 auto를 쓰면된다!
+                     예) top: auto
+                     -> 언제 초기화 하나?
+                     기존에 이미 설정된 하나의 위치값을 반대방향의 위치값으로 변경할때 초기화를 사용한다. 
+                     예) 기존- top:50px
+                         변경- bottom: 50px; top: auto;
+
+                    
+                    (7) 위치이동값을 전부 다 쓰는경우도 있다!
+                    언제일까?
+                    부모박스에 가득 채우거나 일정위치를 잡고 크기가 유동적일때 사용함!
+                    예) 부모박스- width:300px; height:200px;
+                    -> 이 부모박스를 채우는 앱솔루트는?
+                    position: absolute; 
+                    top:0;
+                    left:0;
+                    right:0;
+                    bottom:0;
+
+
+                    (8) 앱솔루트끼리는 서로 겹친다!
+
+
+
             ***********************************************/
 
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
@@ -58,11 +116,11 @@
         }
 
 
-        #s1{
+        #s1 {
             background-color: lightgreen;
         }
 
-        #r1{
+        #r1 {
             position: relative;
             /* top: 50px;
             left: 50px;
@@ -72,7 +130,7 @@
             color: fff;
         }
 
-        #r2{
+        #r2 {
             position: relative;
             /* bottom: 75px;
             right: -86px;
@@ -84,31 +142,36 @@
         }
 
         /* 부모를 찾는 앱솔루트 */
-        .bx2{
+        .bx2 {
             border: 2px dotted orange;
             padding: 50px;
             font-size: 24px;
             text-align: center;
         }
+
         /* 각 부모박스 */
-        .s5{
+        .s5 {
             position: relative;
             background-color: lightblue;
         }
-        .s6{
+
+        .s6 {
             position: relative;
             background-color: lightcoral;
         }
-        .s7{
+
+        .s7 {
             position: relative;
             background-color: lightgreen;
         }
-        .s8{
+
+        .s8 {
             position: relative;
             background-color: lightsalmon;
         }
+
         /* 부모찾는 앱솔루트 박스 */
-        .abs{
+        .abs {
             position: absolute;
             width: 50px;
             height: 50px;
@@ -116,7 +179,8 @@
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
-        .a4{
+
+        .a4 {
             top: 0;
             left: 0;
             /* 나의 부모는?*/
@@ -125,8 +189,62 @@
             /* 앱솔루트인데 %로 가로,세로크기를 설정할 경우 부모자격요소를 기준한다. */
         }
 
+        /* 앱솔루트 : 판타롱스타킹 */
+        .a5 {
+            position: absolute;
+            /* 크기를 안주면 내용만큼 늘어남! */
+            top: 20%;
+            right: 10%;
+            /* 부모는? 보이는 화면! */
+
+            z-index: 999;
+
+        }
+
+        .a5 img {
+            vertical-align: top;
+            /* 하단간극 없앰 */
+        }
+
+        /* span을 앱솔루트로! */
+        .spabs {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 4px dotted red;
+        }
+
+
+        /* 앱솔루트끼리는 서로 겹친다! */
+        .absimg {
+            width: 92px;
+            height: 115px;
+            border: 4px ridge purple;
+            /* ridge: 액자틀모양 */
+        }
+
+        /* 이미지가 앱솔루트! */
+        .absimg img {
+            position: absolute;
+            /* 위치값을 안잡으면 그 박스에 그대로 있는 젠틀앱솔루트 상태를 유지한다!
+            -> 앱솔루트끼리의 형제요소는 서로 겹친다!
+            나중에 그려진 요소가 위에온다! (z-index 조절가능) */
+        }
+
+        /* 두번째 (위에 있는것) 닥스를 투명하게 변경 */
+        .absimg img:last-child {
+            opacity: 0;
+            /* opacity: 0은 투명, 1은 불투명, 반투명은 0.소수점값 */
+            transition: 1s;
+        }
+
+        /* 박스에 오버시 닥스 보이기! */
+        .absimg:hover img:last-child {
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body>
     <div class="bx" id="r1">r1</div>
     <div class="bx" id="s1">s1</div>
@@ -140,6 +258,14 @@
         <img src="./ab_img/ab2.jpg" alt="타노스">
     </div>
 
+
+    <!-- 앱솔루트끼리는 서로 겹친다! -->
+    <div class="absimg">
+        <img src="./ab_img/ab3.jpg" alt="토르">
+        <img src="./ab_img/ab4.jpg" alt="닥스">
+    </div>
+
+
     <!-- 부모를 찾는 앱솔루트! -->
     <!-- .bx2.s5{s5}>.bx2.s6{s6}>.bx2.s7{s7}>.bx2.s8{s8} -->
     <div class="bx2 s5">s5
@@ -148,9 +274,13 @@
                 <div class="bx2 s8">s8
                     <div class="abs a3">a3</div>
                     <div class="abs a4">a4</div>
+                    <span class="spabs">
+                        나는 span앱솔루트다!
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
