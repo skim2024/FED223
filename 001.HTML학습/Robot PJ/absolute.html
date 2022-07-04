@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position - absolute</title>
+    <style>
+        .bx{
+            width: 100px;
+            height: 100px;
+            border: 2px solid blue;
+            /* 글자가로중앙 */
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            /* 글자세로중앙 */
+            line-height: 100px;
+        }
+
+        #a1{
+            position: absolute;
+            /*********************************************** 
+                [3. Absolute 포지션]
+
+                1) absolute 포지션은 위치이동값을 쓰기전과 후로 나눠볼수있다!
+
+                    (1) 위치이동값을 쓰지 않은 경우
+
+                    - 자기보다 위에있는 static한 요소를 존중하여 그 아래에 위치함
+                    (=> 젠틀앱솔루트!)
+                    + 어떤 요소의 자식요소로 앱솔루트를 주는 경우 위치값을 안쓸때 그 부모박스 안에 가만히 있는다!
+                    (=> 젠틀앱솔루트!)
+
+                    - 자기보다 아래쪽에 있는 static한 요소는 앱솔루트를 인식하지 못하여 같은 자리에 위치함(즉, 위로 올라옴!)
+
+                    (2) 위치이동값을 사용한 경우
+                    - 위치 이동값을 사용한 부분에 대해서만!!
+                    앱솔루트가 위치를 잡을때 기준이 되는 부모요소를 찾는다!
+                    일반적으로 부모요소란 싸고있는 요소지만 앱솔루트가 위치를 잡기위한 기준이되는 부모는 static이 아닌 요소가 부모다!
+
+                    -> static이 아닌 포지션이란?
+                    relative / absolute / fixed / sticky
+
+                    -> 위치이동값을 쓰지 않는 부분에 대해서는 부모를 찾지 않고 젠틀하다!
+
+                    -> 부모자격이 있는 부모요소들 중 가장 가까운것이 부모가 된다!
+
+                    -> 만약 부모자격이 모두 없으면 보이는 화면(window)을 기준한다!
+                    ->>> 보이는 화면은 body가 아니다!
+                    스크롤이 생겨도 스크롤 위쪽에 보이는 화면만을 지칭한다.
+                    
+                    ->>>또한!
+                    >>>>>>>width나 height 값을 %로 줄 경우 부모자격이 있는 요소를 기준하여 크기를 잡는다!
+            ***********************************************/
+
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+            color: #fff;
+        }
+
+
+        #s1{
+            background-color: lightgreen;
+        }
+
+        #r1{
+            position: relative;
+            /* top: 50px;
+            left: 50px;
+            z-index: 1; */
+
+            background: url(./ab_img/ab5.jpg) no-repeat center/cover;
+            color: fff;
+        }
+
+        #r2{
+            position: relative;
+            /* bottom: 75px;
+            right: -86px;
+            z-index: -1; */
+            /* z-index가 마이너스값이면 static보다도 아래로 내려감! */
+
+            background: url(./ab_img/ab4.jpg) no-repeat center/cover;
+            color: fff;
+        }
+
+        /* 부모를 찾는 앱솔루트 */
+        .bx2{
+            border: 2px dotted orange;
+            padding: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+        /* 각 부모박스 */
+        .s5{
+            position: relative;
+            background-color: lightblue;
+        }
+        .s6{
+            position: relative;
+            background-color: lightcoral;
+        }
+        .s7{
+            position: relative;
+            background-color: lightgreen;
+        }
+        .s8{
+            position: relative;
+            background-color: lightsalmon;
+        }
+        /* 부모찾는 앱솔루트 박스 */
+        .abs{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            color: #fff;
+            background: url(./ab_img/ab1.jpg) no-repeat center/cover;
+        }
+        .a4{
+            top: 0;
+            left: 0;
+            /* 나의 부모는?*/
+            width: 20%;
+            height: 40%;
+            /* 앱솔루트인데 %로 가로,세로크기를 설정할 경우 부모자격요소를 기준한다. */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s1">s1</div>
+    <div class="bx" id="a1">a1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s2">s2</div>
+
+
+    <!-- 앱솔루트: 판타롱스타킹! -->
+    <div class="a5">
+        <img src="./ab_img/ab2.jpg" alt="타노스">
+    </div>
+
+    <!-- 부모를 찾는 앱솔루트! -->
+    <!-- .bx2.s5{s5}>.bx2.s6{s6}>.bx2.s7{s7}>.bx2.s8{s8} -->
+    <div class="bx2 s5">s5
+        <div class="bx2 s6">s6
+            <div class="bx2 s7">s7
+                <div class="bx2 s8">s8
+                    <div class="abs a3">a3</div>
+                    <div class="abs a4">a4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
