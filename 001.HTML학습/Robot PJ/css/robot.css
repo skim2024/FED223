@@ -44,6 +44,7 @@ body {
 /********************** 2-1. 로봇박스 **********************/
 .robx{
     padding-top: 200px;
+    padding-bottom: 400px;
 
 }
 /* 하위요소 공통설정 */
@@ -143,15 +144,122 @@ body {
     width: 60px;
     height: 50px;
 }
+
 /* 팔공통 */
 /* !important없이 우선순위 높이는 방법은 부모를 써준다! */
 .robx .arm{
     width: 50px;
-    height: 200px;
+    height: 250px;
     background-size: 100%;
     background-repeat: repeat-y;
 }
+/* 가상요소로 손만들기 */
+.arm::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* CSS3 그라데이션:*/
+    /* background-image: linear-gradient(45deg, red 15%,blue, yellow); */
+    background-image: radial-gradient(farthest-side at 20px 20px, white, #333);
+    /* 
+
+        [그라데이션이 -> 배경이미지에 있다!]
+
+        선형 그라데이션: 
+        background-image: linear-gradient(45deg, red 15%,blue, yellow);
+        background-image: linear-gradient(방향/각도, 색1 비율, 색2 비율,...);
+        - 방향값은 to top, to bottom, to left, to right
+        - 각도는 숫자 deg
+        -> 방향 또는 각도를 사용, 안쓰면 to-bottom 기본값
+        -> 색상을 쓰고 뒤에 필요한 경우 비율을 사용
+        -> 색상 뒤 비율을 안쓰면 등분할됨
+
+        원형 그라데이션:
+            - 옵션: circle - 원형, 안쓰면 박스에 맞춤
+            - 세밀한 옵션주기: (특정위치를 중심으로 빛반사효과)
+                - 세부옵션 at 가로위치 세로위치
+                - 세부옵션 종류 4가지: 
+                    1) closest-side / 2) farthest-side
+                    3) closest-corner / 4) farthest-corner
+                    ex) radial-gradient (closest-corner at 30px 15px,white,blue)
+                    -> 가로, 세로 위치는 px, % 단위사용가능
+        background-image: radial-gradient(옵션, 색1 비율, 색2 비율);
+        background-image: radial-gradient(circle, red 30%, 색2 비율);
+    */
+    
+}
+/* 왼손 가상요소 */
+.arm.a1::before{
+    left: -15px;
+}
+/* 오른손 가상요소 */
+.arm.a2::before{
+    right: -15px;
+}
+/* 가상요소로 손그림자 주기 */
+.arm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -25px;
+    width: 20px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 0 0 5px 5px;
+}
+/* 왼손 그림자 가상요소 */
+.arm.a1::after{
+    left: 10px;
+}
+/* 오른손 그림자 가상요소 */
+.arm.a2::after{
+    right: 10px;
+}
 /* 왼팔 */
+.a1{
+    left: -60px;
+}
 /* 오른팔 */
+.a2{
+    right: -60px;
+}
+
+/* 다리 공통 */
+/* !important없이 우선순위 높이는 방법은 부모를 써준다! */
+.robx .leg{
+    top: 100%;
+    width: 70px;
+    height: 300px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼다리 */
+.l1{
+    left: 0px;
+}
+/* 오른다리 */
+.l2{
+    right: 0px;
+}
+/* 어깨공통 */
+.shd{
+    top: -20px;
+    width: 90px;
+    height: 80px;
+}
+/* 왼어깨 */
+.s1{
+    left: -80px;
+    border-radius: 50% 5px 5px 50%;
+}
+/* 오른어깨 */
+.s2{
+    right: -80px;
+    border-radius: 5px 50% 50% 5px;
+}
 /********************** 2-2. 로봇설명박스 **********************/
 /********************** 3. 하단영역 **********************/
