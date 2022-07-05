@@ -161,6 +161,7 @@ body {
     bottom: -25px;
     width: 70px;
     height: 70px;
+    border: 1px solid #222;
     border-radius: 50%;
     /* CSS3 그라데이션:*/
     /* background-image: linear-gradient(45deg, red 15%,blue, yellow); */
@@ -210,6 +211,14 @@ body {
     height: 40px;
     background-color: #000;
     border-radius: 0 0 5px 5px;
+    /* 클리핑 기법을 사용하여 그림자를 삼각형으로 만들자! 
+        -> 다각형 클리핑
+        clip-path: polygon(x1 y1,x2 y2,...)
+        -> 소괄호안은 비울 수 없다!
+        -> 각 좌표값은 px, %로 대상 내부영역임
+        예컨데 삼각형은 점을 세개 찍어준다!
+    */
+    clip-path: polygon(0% 100%,50% 0%,100% 100%);
 }
 /* 왼손 그림자 가상요소 */
 .arm.a1::after{
@@ -236,6 +245,20 @@ body {
     height: 300px;
     background-size: 100%;
     background-repeat: repeat-y;
+}
+/* 다리의 가상요소로 발 만들기 */
+.leg::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    width: 70px;
+    height: 40px;
+    border-radius: 30px 30px 0 0;
+    border: 1px solid #222;
+    border-bottom: 20px solid #000;
+    /* CSS3 그라데이션:*/
+    background-image: radial-gradient(farthest-side at 20px 20px, white, #333);
 }
 /* 왼다리 */
 .l1{
