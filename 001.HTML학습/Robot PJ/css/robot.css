@@ -46,6 +46,16 @@ body {
     padding-top: 200px;
 
 }
+/* 하위요소 공통설정 */
+.robx>div>div{
+    /* 앱솔루트 포지션 */
+    position: absolute ;
+    /* 배경공통 */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    
+}
 /********************** 2-1-1. 로봇머리 **********************/
 .head{
     position: relative;
@@ -59,14 +69,10 @@ body {
 }
 /* 눈공통 */
 .eye{
-    position: absolute;
     width: 50px;
     height: 50px;
-    /* 배경공통설정 */
     background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
     /* 둥근모서리-> 50% -> 원 */
     border-radius: 50%;
     /* 보더 이중선 */
@@ -84,13 +90,68 @@ body {
     right: 50px;
     background-image: url(../images/e2.jpg);
 }
+/* 코 */
+.nose {
+    top: 97px;
+    left: 101px;
+    width: 50px;
+    height: 56px;
+    background-image: url(../images/nose.jpg);
+    background-position-x: 0px !important;
+    background-position-y: -1px !important;
+    border-radius: 100px;
+    background-size: auto 96% !important;
+}
+/* 입 */
+.mouth {
+    bottom: 30px;
+    left: 75px;
+    width: 102px;
+    height: 47px;
+    background-image: url(../images/mouth.png);
+}
+/* 귀공통 */
+.ear{
+    top: 80px;
+    width: 60px;
+    height: 90px;
+}
+/* 왼귀 */
+.el{
+    left: -60px;
+    border-radius: 30px 0 0 50px;
+}
+/* 오른귀 */
+.er{
+    right: -60px;
+    border-radius: 0 30px 50px 0;
+}
 /********************** 2-1-2. 로봇몸 **********************/
 .body{
+    position: relative;
+    /* 부모자격! */
     width: 250px;
     height: 310px;
     /* 마영오! - 블록가로중앙 */
     margin: 0 auto;
     margin-top: 50px;
 }
+/* 목 */
+.neck{
+    top: -50px;
+    left: 95px;
+    width: 60px;
+    height: 50px;
+}
+/* 팔공통 */
+/* !important없이 우선순위 높이는 방법은 부모를 써준다! */
+.robx .arm{
+    width: 50px;
+    height: 200px;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+/* 왼팔 */
+/* 오른팔 */
 /********************** 2-2. 로봇설명박스 **********************/
 /********************** 3. 하단영역 **********************/
