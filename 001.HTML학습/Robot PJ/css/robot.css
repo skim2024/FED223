@@ -530,8 +530,33 @@ body {
 
 
 /********************** 3. 하단영역 **********************/
+.info{
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+    font: 30px 'Black Ops One';
+    text-shadow: 2px 2px 2px #000;
+    background-color: rgba(0, 0, 0, 0.496);
+}
+
+/* 가상요소로 아이콘 넣기 */
+.info span::before{
+    content: '';
+    display: inline-block;
+    vertical-align: -5px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    background: pink url(../images/robot_03.png) no-repeat;
+    background-size: 60px;
+    background-position: -11px -3px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    /* outline: 1px solid lime; */
+}
 
 
+/********************** 미디어쿼리 **********************/
 /* 미디어쿼리 */
 @media screen and (max-width:770px) {
     .dcbx p{
