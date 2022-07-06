@@ -52,6 +52,8 @@ body{
 
 /* 캐릭터 개별박스 공통 */
 .cat{
+    /* 부모자격 */
+    position: relative;
     /* 가로크기: 4등분(25%) - 양쪽마진(1%) = 24% */
     width: 24%;
     /* 양쪽마진 */
@@ -118,6 +120,7 @@ body{
 
 /* 캐릭터 설명박스 */
 .cd{
+    position: absolute;
     /* 높이값 설정: 
     0px-> 250px 오버시 변경 */
     height: 0px;
@@ -182,11 +185,12 @@ body{
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'East Sea Dokdo', cursive;
-    font-size: 34px;
+    /* 최대글자크기 30px, 이하는 유동적 */
+    font-size: min(2.1vw,30px);
     font-weight: normal;
     padding: 15px 10px 5px ;
-    /* 줄바꿈방지 */
-    /* white-space: nowrap; */
+    /* 줄바꿈방지(문장이 다음줄로 넘어가진 않음) */
+    white-space: nowrap;
     letter-spacing: -1px;
 }
 
@@ -204,7 +208,8 @@ body{
 /* 캐릭터 설명 문단 */
 .cd p{
     font-family: 'Hahmlet', serif, 'Ma Shan Zheng', cursive;
-    font-size: 13px;
+    /* 최대글자크기 16px, 이하는 유동적 */
+    font-size: min(0.5vw,12px);
     line-height: 1.7;
     padding: 10px;
     text-align: justify;
