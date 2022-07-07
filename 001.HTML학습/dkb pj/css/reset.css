@@ -14,7 +14,7 @@ ul,ol{
 
 /* a - 글자색, 밑줄없앰 */
 a{
-    color: #222;
+    color: #000;
     text-decoration: none;
 }
 
