@@ -26,7 +26,8 @@
 /* 속박스 */
 .top {
     /* 부모자격! 그 자리에서 위치이동 도와주고 등*/
-    position: relative;
+    /* position: relative; */
+    /* 위에서 부모자격 없앴음 -> 이유는 서브메뉴배경 li 가상요소가 끝까지 가야해서 */
     /* 주석 단 이유는 내용만큼 늘어나기때문 */
     /* height: 128px; */
 }
@@ -44,10 +45,19 @@
 
 /* 1-2. 탑메뉴 (우측상단) */
 .tmenu {
+    position: relative;
+    /* 부모자격!
+    상태는 로고박스와 GNB박스 사이에 있고 자식ul이 앱솔루트라서 높이값이 0임!
+    가로는 자동으로 .inbox의 크기인 1200px을 채움! */
+}
+
+/* 탑메뉴 ul */
+.tmenu>ul {
     position: absolute;
-    top: 30px;
+    top: -50px;
     right: 0;
-    /* 부모는? .top */
+    /* 부모는? .tmenu */
+
 }
 
 /* 탑메뉴 상위 li */
@@ -81,8 +91,73 @@
     line-height: 4.4rem;
 }
 
+/* 서브메뉴 */
+.smenu {
+    position: absolute;
+    z-index: 1;
+    /* li가상요소 after보다 위! */
+    background-color: #fff;
 
-/* sns 메뉴 */
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* 트랜지션: 속시이지 */
+    transition: height 0.4s ease-out;
+}
+
+/* 상위메뉴 li마우스 오버시 서브메뉴 보이기 */
+.gnb>ul>li:nth-child(1):hover .smenu {
+    height: 120px;
+}
+
+.gnb>ul>li:nth-child(3):hover .smenu {
+    height: 150px;
+}
+
+.gnb>ul>li:nth-child(4):hover .smenu {
+    height: 90px;
+}
+
+/* 서브메뉴 a */
+.smenu a {
+    display: block;
+    font-size: 1.4rem;
+    padding: 10px 0;
+
+}
+
+/* 서브메뉴 끝까지 차는 배경박스 가상요소로 만들기!
+-> .sm인 li만 생성됨! (메뉴에서 일부분만) */
+.gnb>ul>li.sm::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* left를 줬으므로 보이는 화면기준으로 꽉차게!
+    top은 안줘서 젠틀함!
+    a 요소 아래위치! */
+    /* 가로크기를 %로 주면 부모자격에 기준을 둔다!
+    -> 화면을 채워야하므로 싸고있는 요소중에는 부모가 없어야한다!
+    그래야 화면이 부모가 된다! */
+    height: 0;
+    /* height 오버시 각 수치로 바꿔주기 px */
+    background-color: red;
+
+    /* 트랜지션: 속시이지 */
+    transition: height 0.4s ease-out;
+}
+
+/* 상위메뉴 li마우스 오버시 서브메뉴 가상요소 배경 보이기 */
+.gnb>ul>li:hover::after{
+    height: 200px;
+}
+
+
+
+
+/************************** sns 메뉴 **************************/
 .sns {
     /* 마진탑으로 옆 메뉴글자와 줄맞춤 */
     margin-top: -5px;
