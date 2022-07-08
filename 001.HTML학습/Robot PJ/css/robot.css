@@ -131,7 +131,7 @@ body {
             -> 기본값 : backwards(뒤쪽으로, 즉 처음으로)
             -> 유의사항 : infinite(영원히)일때는 해당사항 없음!
 
-    *****************************/ 
+    *****************************/
 
 
 
@@ -181,56 +181,63 @@ body {
     border: 2px solid #ccc;
 
     /* 애니메이션:이시이지반방마 */
-    animation: 
-    logoAni 1.5s ease-in-out 2s forwards,
-    logoAni2 0.6s ease-in-out 3.5s infinite alternate;
+    animation:
+        logoAni 1.5s ease-in-out 2s forwards,
+        logoAni2 0.6s ease-in-out 3.5s infinite alternate;
 }
+
 /* 로고 애니 키프레임 */
 @keyframes logoAni {
+
     /* from{} - 최초값이 같으면 생략! */
-    80%{
+    80% {
         /* 왼쪽위에 위치, 원래크기 복원, 회전0 */
         top: 50px;
         left: 50px;
         transform: scale(1) rotate(0deg);
     }
-    100%{
+
+    100% {
         /* 기존값 유지 + 회전20도 */
         top: 50px;
         left: 50px;
         transform: scale(1) rotate(20deg);
     }
 }
+
 /* 키프레임 */
 
 /* 로고 흔들기 애니 키프레임 */
-@keyframes logoAni2{
-    0%{
+@keyframes logoAni2 {
+    0% {
         transform: rotate(20deg);
     }
-    100%{
+
+    100% {
         transform: rotate(-20deg);
     }
 }
 
 
 /* 내용링크, 위로가기버튼, TV를 위한 투명도 애니용 클래스만들기 */
-.opa-ani{
+.opa-ani {
     opacity: 0;
     /* 애니메이션: 이시이지반방마 */
     animation: opaAni 0.2s linear 5s 5 alternate forwards;
 }
+
 /* 지연시간 추가 */
-.opa-ani2{
+.opa-ani2 {
     animation-delay: 6s;
 }
-.opa-ani3{
+
+.opa-ani3 {
     animation-delay: 7s;
 }
 
 /* 투명도 애니 키프레임 */
 @keyframes opaAni {
-    to{
+    to {
         opacity: 1;
     }
 }
@@ -338,7 +345,7 @@ body {
 
 /* head 애니 키프레임 */
 @keyframes headAni {
-    to{
+    to {
         top: 0;
     }
 }
@@ -397,7 +404,7 @@ body {
 
 /* 입애니 키프레임 */
 @keyframes mouthAni {
-    to{
+    to {
         transform: scaleY(0.5);
     }
 }
@@ -441,7 +448,7 @@ body {
 
 /* 바디애니 키프레임 */
 @keyframes bodyAni {
-    to{
+    to {
         left: 0;
     }
 }
@@ -560,7 +567,33 @@ body {
 /* 왼팔 */
 .a1 {
     left: -60px;
+    transform: rotate(0deg);
+    /* 회전축변경: 가로중앙 세로20px 위치 */
+    transform-origin: center 20px;
+
+
+    /* 애니메이션: 이시이지반방마 */
+    animation:
+        /* 애니1 - 팔들기 (forwards: 멈추기, x반복) */
+        a2Ani3 .6s ease-in-out 8s forwards,
+        /* 애니2 - 팔흔들기 */
+        a2Ani4 0.3s ease-in-out 8.6s infinite alternate;
 }
+
+/* 왼팔 들기 키프레임 */
+@keyframes a2Ani3 {
+    to {
+        transform: rotate(158deg);
+    }
+}
+
+/* 왼팔 흔들기 키프레임 */
+@keyframes a2Ani4 {
+    to {
+        transform: rotate(128deg);
+    }
+}
+
 
 /* 오른팔 */
 .a2 {
@@ -570,26 +603,26 @@ body {
     /* 회전축변경: 가로중앙 세로20px 위치 */
     transform-origin: center 20px;
 
-    
+
     /* 애니메이션: 이시이지반방마 */
-    animation: 
-    /* 애니1 - 팔들기 */
-    a2Ani .6s ease-in-out 8s forwards,
-    /* 애니2 - 팔흔들기 */
-    a2Ani2 0.3s ease-in-out 8.6s infinite alternate;
-    
+    animation:
+        /* 애니1 - 팔들기 (forwards: 멈추기, x반복) */
+        a2Ani .6s ease-in-out 8s forwards,
+        /* 애니2 - 팔흔들기 */
+        a2Ani2 0.3s ease-in-out 8.6s infinite alternate;
+
 }
 
 /* 오른팔 들기 키프레임 */
 @keyframes a2Ani {
-    to{
+    to {
         transform: rotate(-158deg);
     }
 }
 
 /* 오른팔 흔들기 키프레임 */
 @keyframes a2Ani2 {
-    to{
+    to {
         transform: rotate(-128deg);
     }
 }
