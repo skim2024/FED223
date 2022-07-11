@@ -79,6 +79,13 @@
           3) flex-basis: 설정값(px,%,em,rem,vw 등)
             -> width 가로크기를 설정하는 속성
             -> 만약 0을쓰면 속성값 없음!
+------------------------------------------------
+    [자식요소 속성 중 order란?]
+    - 원하는 순서로 정해서 박스가 나열되게함!
+    단, 부모 flex 박스에 flex-direction을 주지말것! (order쓰기 때문!)
+
+    소스참고: 
+    https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_order_2
 
         */
     }
@@ -340,11 +347,11 @@
   <div id="wrap">
     <!-- 파티션박스 -->
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li style="order: 3;"></li>
+      <li style="order: 5;"></li>
+      <li style="order: 2;"></li>
+      <li style="order: 1;"></li>
+      <li style="order: 4;"></li>
     </ul>
 
     <!-- 타이틀박스1 -->
