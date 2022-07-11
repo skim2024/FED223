@@ -13,8 +13,8 @@ body{
     /* 한번에 배경주기
     background: 색이반고윙/크 */
     background: 
-    url(../imgs/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
-    url(../imgs/bg_mainvisual.jpg) no-repeat fixed center/cover;
+    url(../imgs/TH_P02.jpg) no-repeat fixed 10% 30%/10%,
+    url(../imgs/TH_P03.jpg) repeat fixed center;
     /* 로고이미지 가로위치 10%, 세로위치 30%, 가로크기 10% 세로크기 auto(생략) */
 }
 
