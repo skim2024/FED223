@@ -99,8 +99,22 @@
         }
 
         /* 컨텐츠박스에 마우스 오버시 */
-        .cbx:hover .c1{
+        .cbx:hover .c1 {
             stroke-dashoffset: 0;
+        }
+
+        /* 사각형 */
+        .rt1{
+            /* 채우기 색 */
+            fill: none;
+            /* 선 색 */
+            stroke: black;
+            /* 선 끝처리 */
+            stroke-linecap: square;
+            /* 선 두께 */
+            stroke-width: 10;
+            /* stroke 대쉬선 : 50% * 8 = 400% */
+            stroke-dasharray: 400%;
         }
     </style>
 </head>
@@ -155,8 +169,8 @@
             <!-- 2. 블랙위도우 박스 : 사각형 -->
             <div class="cbx avg2">
                 <svg>
-                    <rect width="290" height="290" x="5" y="5">
-                        
+                    <rect class="rt1" width="290" height="290" x="5" y="5">
+
                     </rect>
                 </svg>
 
