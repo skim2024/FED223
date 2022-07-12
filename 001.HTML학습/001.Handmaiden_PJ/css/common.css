@@ -42,7 +42,7 @@
 }
 
 /* 메인로고 이미지 크기 조절 */
-절logo img {
+.logo img {
     width: 100px;
 }
 
@@ -172,7 +172,7 @@
 
 /* 상위li에 오버시 가상요소 하단 보더 공통생성 */
 .gnb>ul>li:hover::after{
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid rgb(255, 148, 25);
 }
 
 
@@ -181,7 +181,8 @@
 /************************** sns 메뉴 **************************/
 .sns {
     /* 마진탑으로 옆 메뉴글자와 줄맞춤 */
-    margin-top: -5px;
+    margin-top: 100px;
+    left: 550px;
 }
 
 /* sns a요소 확장 */
@@ -193,7 +194,7 @@
 
 /* SNS 메뉴 li*/
 .sns li {
-    width: 30px;
+    width: 23px;
     height: 30px;
     /* 배경이미지로 sns 아이콘 넣기 */
     background: url(../imgs/icons.png) no-repeat;
@@ -201,22 +202,22 @@
 
 /* 트위터 */
 .sns li:nth-child(1) {
-    background-position: 0 0;
+    background-position: 3px 0;
 }
 
 /* 트위터 오버시*/
 .sns li:nth-child(1):hover {
-    background-position: 0 -30px;
+    background-position: 3px -30px;
 }
 
 /* 인스타그램 */
 .sns li:nth-child(2) {
-    background-position: -30px 0;
+    background-position: -29px 0;
 }
 
 /* 인스타그램 오버시*/
 .sns li:nth-child(2):hover {
-    background-position: -30px -30px;
+    background-position: -29px -30px;
 }
 
 /* 페이스북 */
@@ -278,7 +279,7 @@
 
 /* 마우스 오버시 a요소 */
 .blink a:hover{
-    color: red;
+    color: rgb(229, 126, 1);
     text-decoration: underline; 
 }
 
