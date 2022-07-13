@@ -257,3 +257,40 @@ body {
         1px 0 #000, -1px 0 #000,
         0 1px #000, 0 -1px #000;
 }
+
+
+/* quote1 애니메이션 */
+    .quote1 {
+        text-align: center;
+        position: absolute;
+        top: 100px;
+        right: 655px;
+    }
+
+    .quote1 a {
+        /* a요소에서 글자색, 밑줄 처리함! */
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        /* 글자: 스두크/줄체 */
+        font: 40px 'Black Ops One';
+        /* 글자그림자 */
+        text-shadow: 2px 2px 2px #000;
+    }
+
+/* quote2 애니메이션 */
+    .quote2 {
+        text-align: center;
+        position: absolute;
+        top: 100px;
+        right: -655px;
+    }
+
+    .quote2 a {
+        /* a요소에서 글자색, 밑줄 처리함! */
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        /* 글자: 스두크/줄체 */
+        font: 40px 'Black Ops One';
+        /* 글자그림자 */
+        text-shadow: 2px 2px 2px #000;
+    }
