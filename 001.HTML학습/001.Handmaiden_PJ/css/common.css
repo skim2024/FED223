@@ -101,7 +101,7 @@
 /* 상위메뉴 마우스 오버시 상위a에 하단보더 */
 .gnb>ul>li:hover>a{
     /* 오버시엔 보더 색만 변경함! */
-    border-bottom-color: red;
+    border-bottom-color: rgb(0, 0, 0);
 }
 
 /* 서브메뉴 */
@@ -172,7 +172,7 @@
 
 /* 상위li에 오버시 가상요소 하단 보더 공통생성 */
 .gnb>ul>li:hover::after{
-    border-bottom: 2px solid rgb(255, 148, 25);
+    border-bottom: 2px solid rgb(79, 43, 2);
 }
 
 
