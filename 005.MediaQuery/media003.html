@@ -174,7 +174,13 @@
         @media screen and (max-width:500px) {
             /* 1. 모두 한줄에 하나씩 */
             .pbx{
-                flex-basis: 100%;
+                flex-basis: 100% !important;
+                /* ! 해서 우선순위 최고로 올림 */
+            }
+            /* 1:1 비율 일괄변경! */
+            .rbx::before{
+                padding-top: 100%;
+                /* 기존 비율 모두 덮어쓰기 -> 1:1로 */
             }
         }
 
