@@ -141,7 +141,49 @@
                 
                 - document 객체: 
                     html문서 전체를 담고 있는 DOM객체
-                - DOM()
+                - DOM (Document Object Model)
+                    : 웹문서에 있는 각 요소로 접근할 수 있는 방법을 제공하는 인터페이스다!
+
+            [JS 기본요소 선택법]
+
+                1. 아이디요소 선택법:
+                getElementById() 메서드
+
+                document.getElementById(아이디명)
+                -> html 요소 중 아이디요소는 유일하므로
+                한번에 선택가능!
+
+                - 메서드 이름 분석
+                get -> 가져와라
+                Element -> 요소 하나를
+                By Id -> 아이디에 의한 것으로!
+
+
+                _____________________________________
+
+                2. 클래스요소 선택법:
+                getElementsByClassName() 메서드
+
+                document.getElementsByClassName(클래스명)
+                -> html요소 중 클래스요소는 여러개 올 수 있으므로 컬렉션집합을 만들어서 관리하기 때문에 선택시 순번을 써야함!
+                -> .item(순번) 또는 [순번]
+                -> 순번은 0부터!
+                -> 컬렉션 집합의 개수 : length
+                (컬렉션은 html요소를 모아놓은 메모리공간이다!)
+
+                -> DOM 컬렉션 참고:
+                https://www.w3schools.com/js/js_htmldom_collections.asp
+
+                - 메서드 이름 분석
+                get -> 가져와라
+                Elements -> 요소들을
+                By Class Name -> 클래스 이름에 의한 것으로!
+
+                예)
+                해당클래스 중 세번째 것 선택
+                document.getElementsByClassName(클래스명).item(2)
+                또는
+                document.getElementsByClassName(클래스명)[2]
 
 
         *************************************************************/
