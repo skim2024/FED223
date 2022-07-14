@@ -9,6 +9,7 @@
         /* 웹폰트 CDN */
         @import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
 
+
         html,
         body {
             margin: 0;
@@ -183,7 +184,7 @@
         }
 
         /* 숨김 네이게이션 박스 */
-        .gbx {
+        .gbx{
             position: fixed;
             top: 5vh;
             right: 5vh;
@@ -194,6 +195,7 @@
             background-color: #ccc;
         }
 
+       
         /* 햄버거버튼 */
         .ham {
             position: absolute;
@@ -202,7 +204,7 @@
             width: 70px;
             height: 100%;
             border: none;
-            /* 버튼요소는 기본 보더가 있음! 없애기. */
+            /* button요소는 기본 보더가 있음! */
             border-radius: 7px;
             background-color: #fff;
             font-size: 50px;
@@ -211,62 +213,59 @@
             margin: 0;
             cursor: pointer;
             /* 오버시 손가락모양 */
-
+            
             /* 트랜지션: 속시이지 */
-            transition: 0.2s;
+            transition: .2s;
         }
-
-        /* 버튼 오버시 스케일변경*/
-        .ham:hover {
-            transform: scale(0.9, 0.98);
+        /* 버튼 오버시 스케일변경 */
+        .ham:hover{
+            transform: scale(0.9,0.98);
         }
 
         /* 햄버거 막대 */
-        .ham span {
+        .ham span{
             position: absolute;
             left: 30%;
             display: block;
             width: 40%;
             height: 4px;
-            background-color: #000;
-            border-radius: 2px;
-            /* 트랜지션 */
-            transition: 0.2s;
+            background-color: #000;  
+            border-radius: 2px;   
+            /* 트랜지션 */ 
+            transition: .2s;      
         }
-
         /* 막대1 */
         .ham span:first-child{
-            transform: translateY(-4px);
+            transform: translate(1px,-4px);
         }
-
         /* 막대2 */
         .ham span:last-child{
-            transform: translateY(4px);
+            transform: translate(1px,4px);
         }
 
         /* 액션상태일때 x버튼으로 변경! */
         /* 막대1 */
         .gbx.on .ham span:first-child{
-            transform: translateY(0) rotate(45deg) scaleX(0.8);
+            transform: translate(1px,0) rotate(45deg) scaleX(.8);
         }
         /* 막대2 */
         .gbx.on .ham span:last-child{
-            transform: translateY(0) rotate(-45deg) scaleX(0.8);
+            transform: translate(1px,0) rotate(-45deg) scaleX(.8);
         }
 
 
 
-        /* 메뉴확장 액션 상태 클래스 */
+
+        /* 메뉴 확장 액션 상태 클래스 */
         /* 클래스 이름명명법: 기존이름.on */
-        .gbx.on .ham {
+        .gbx.on .ham{
             top: 50%;
-            transform: translateY(-50%) scale(0.9);
+            transform: translateY(-50%) scale(.9);
             height: 70px;
             border-radius: 50%;
         }
-
         /* 액션상태에서 햄버거 오버시 */
-        .gbx.on .ham:hover {
+        .gbx.on .ham:hover{            
             transform: translateY(-50%) scale(1);
         }
     </style>
@@ -319,9 +318,7 @@
             </li>
         </ul>
 
-
     </nav>
-
 
     <!-- 숨김 네비게이션 박스 -->
     <section class="gbx">
@@ -339,6 +336,7 @@
         2. remove(클래스명) - 클래스빼기
         3. toggle(클래스명) - 클래스넣기/빼기
     -->
+    
 
     <!-- 글자출력 -->
     <h2 class="tit">Show Me The Menu!!!</h2>
