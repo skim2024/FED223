@@ -107,6 +107,8 @@
         height: 100vh;
         background-color: #0000009c;
         z-index: 999;
+        /* 처음에 안보임! */
+        display: none;
     }
 
     .gnb ul {
@@ -128,10 +130,19 @@
     .smenu,.gnb>ul>li.sm::after{
         display: none;
     }
-    
+
     /* 상위메뉴 오버시 밑줄없앰! */
     .gnb>ul>li:hover>a{
         border-bottom-color: transparent;
+    }
+
+    /* 10. 햄버거버튼 보이기 */
+    .ham{
+        display: block;
+    }
+    /* 11. GNB메뉴 보이기 */
+    .top.on .gnb{
+        display: block;
     }
 }
 
