@@ -13,7 +13,7 @@ body {
     /* 한번에 배경주기
     background: 색이반고윙/크 */
     background:
-        url(../imgs/TH_P02.jpg) repeat fixed 10% 30%,
+        url(../imgs/TH_P05.jpg) no-repeat fixed center/cover,
         url(../imgs/TH_P02.jpg) repeat fixed center;
     /* 로고이미지 가로위치 10%, 세로위치 30%, 가로크기 10% 세로크기 auto(생략) */
 }
@@ -149,7 +149,8 @@ body {
     높이값이 0이면 모두 숨겨짐! */
     overflow: auto;
     /* 배경: 색이반고윙/크 */
-    /* background: url(../imgs/TH_P04.webp) no-repeat center/cover; */
+    background: url(../imgs/TH_P06.jpg) no-repeat center/cover;
+    opacity: 0.8;
 
     /* 트랜지션: 속성 시간 이징 지연 */
     transition: 0.4s ease-out;
