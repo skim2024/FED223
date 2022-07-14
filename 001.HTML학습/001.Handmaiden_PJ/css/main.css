@@ -20,7 +20,7 @@ body {
 
 /* 메인 영역 */
 .cont {
-    padding-top: 200px;
+    /* padding-top: 200px; */
     /* 상단패딩: 첫번째 요소 위치밀기의 기본!
     첫번째요소에 마진탑으로 위치를 이동할 경우
     부모요소 바깥으로 마진이 나감 (원래 디자인 속성임!)
@@ -74,10 +74,27 @@ body {
     /* 튀어나온부분 오류 영역보정값 (자식요소 바진변동에 의한 불일치 부분을 값으로 보정함) */
     padding-bottom: 37px;
 }
+.cat::before{
+    content: '';
+    display: block;
+    padding-top: 150%;
+}
+
+.cat{
+    margin: 20px 20px;
+    /* margin-bottom: 100px; */
+}
+
+.cat:nth-child(3),:nth-child(4){
+    margin-bottom: 100px;
+}
 
 /* 캐릭터 이미지박스 */
 .ci {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
     z-index: 1;
     /*  트랜지션:속시이지 */
     transition: .4s ease-in-out;
@@ -92,6 +109,8 @@ body {
  .ci의 직계자식 img만 선택! */
 .ci>img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 캐릭터 이름이미지 박스 span */
@@ -143,7 +162,7 @@ body {
     /* 높이값 설정: 
     0px-> 250px 오버시 변경 */
     width: 100%;
-    height: 296px;
+    height: 100%;
     /* 내용이 넘칠경우에 자동스크롤 auto
     높이값에 따라 스크롤이 자동변경됨!
     높이값이 0이면 모두 숨겨짐! */

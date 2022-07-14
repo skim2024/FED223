@@ -21,7 +21,7 @@
 /* 겉박스 */
 #top {
     /* 하단구분선 */
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     /* 배경흰색 */
     background-color: #fff;
 }
