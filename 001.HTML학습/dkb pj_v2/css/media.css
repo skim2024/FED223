@@ -87,17 +87,52 @@
     }
 
     /* 7. 사라질 요소들 : .tmenu, .gnb, .blink */
-    .tmenu, .gnb, .blink{
+    .tmenu,
+    .blink {
         display: none;
     }
 
     /* 8. 하단영역 */
-    .info{
+    .info {
         min-height: auto;
         padding-bottom: 10px;
     }
 
+    /* 9. GNB메뉴 변경 */
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #0000009c;
+        z-index: 999;
+    }
 
+    .gnb ul {
+        /* 세로방향 */
+        flex-direction: column;
+        margin-top: 20vh;
+        /* 위에서 20% 보이는 위치로 이동! */
+    }
+
+    .gnb>ul>li>a{
+        font-size: 5vh;
+        line-height: 10vh;
+        /* 메뉴6개 - 보이는 화면 높이값의 60% 차지 */
+        text-align: center;
+        color: #fff;
+    }
+
+    /* 서브메뉴, 서브배경 모두 없앰! */
+    .smenu,.gnb>ul>li.sm::after{
+        display: none;
+    }
+    
+    /* 상위메뉴 오버시 밑줄없앰! */
+    .gnb>ul>li:hover>a{
+        border-bottom-color: transparent;
+    }
 }
 
 /************************ 870px 이하 끝 ************************/
