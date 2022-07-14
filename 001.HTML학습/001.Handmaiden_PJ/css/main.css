@@ -270,7 +270,7 @@ body {
 
     .quote1 a {
         /* a요소에서 글자색, 밑줄 처리함! */
-        color: rgb(0, 0, 0);
+        color: #fff;
         text-decoration: none;
         /* 글자: 스두크/줄체 */
         font: 40px 'Black Ops One';
@@ -288,7 +288,7 @@ body {
 
     .quote2 a {
         /* a요소에서 글자색, 밑줄 처리함! */
-        color: rgb(0, 0, 0);
+        color: #fff;
         text-decoration: none;
         /* 글자: 스두크/줄체 */
         font: 40px 'Black Ops One';

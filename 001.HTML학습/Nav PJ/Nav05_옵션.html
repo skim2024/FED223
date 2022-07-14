@@ -153,29 +153,28 @@
       width: 200px;
       /* 서브메뉴 박스 숨기기 */
       /* 숨기기 1) */
-      height: 0;
-      /* 숨기기 2) */
-      overflow: hidden;
-      /* 주의사항: 높이값 0으로 숨기는 박스는 위아래 패딩, 보더는 숨겨지지 않으므로 쓰지 않는다!
-      디자인은 하위요소에서 할것! */
+
+      display: none;
+      /******************** 
+      서브메뉴를 display none으로 숨기고 보일때는 height:0, 숨기기코드가 필요없다! ********************/
+      /* height: 0; */
+      /* overflow: hidden; */
+
+      /* 트랜지션또한 불필요! */
+      /* transition: 0.4s; */
+      
 
       background-color: navy;
       border-radius: 0 0 5px 5px;
 
-      /* 트랜지션 */
-      transition: 0.4s;
     }
 
-    /* 상위메뉴 li 오버시 서브메뉴 보이기 - 2번 li */
-    /*: .smenu보다 위에 해야함, .smenu 사라진 상태이기 때문 */
-    .gnb>ul>li:nth-child(2):hover .smenu {
-      height: 170px;
+    /* 상위메뉴 li 오버시 서브메뉴 보이기 */
+    .gnb>ul>li:hover .smenu {
+      display: block;
+      /* 한번에 바로 보이기! */
     }
 
-    /* 상위메뉴 li 오버시 서브메뉴 보이기 - 3번 li */
-    .gnb>ul>li:nth-child(3):hover .smenu {
-      height: 100px;
-    }
 
 
     /* 서브메뉴 ol */
