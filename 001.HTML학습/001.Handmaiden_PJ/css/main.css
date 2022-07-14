@@ -282,9 +282,9 @@ body {
 /* quote1 애니메이션 */
     .quote1 {
         text-align: center;
-        position: absolute;
-        top: 100px;
-        right: 655px;
+        top: 30vh;
+        position: fixed;
+        left: 50px;
     }
 
     .quote1 a {
@@ -292,7 +292,7 @@ body {
         color: #fff;
         text-decoration: none;
         /* 글자: 스두크/줄체 */
-        font: 40px 'Black Ops One';
+        font: 30px 'Black Ops One';
         /* 글자그림자 */
         text-shadow: 2px 2px 2px #000;
     }
@@ -300,9 +300,9 @@ body {
 /* quote2 애니메이션 */
     .quote2 {
         text-align: center;
-        position: absolute;
-        top: 100px;
-        right: -655px;
+        position: fixed;
+        top: 30vh;
+        right: 50px;
     }
 
     .quote2 a {
@@ -310,7 +310,7 @@ body {
         color: #fff;
         text-decoration: none;
         /* 글자: 스두크/줄체 */
-        font: 40px 'Black Ops One';
+        font: 30px 'Black Ops One';
         /* 글자그림자 */
         text-shadow: 2px 2px 2px #000;
     }

@@ -36,8 +36,12 @@
 /* } */
 
 /* 1-1. 메인로고 */
+
 .logo {
+    /* position: fixed; */
     padding: 25px;
+    top: 50px;
+    left: 50px;
     /* text-align: center; */
 }
 
@@ -48,8 +52,12 @@
 
 /* 1-1-1. 타이틀 */
 .title {
+    position: absolute;
     text-align: center;
+    /* margin: 0 auto; */
     float: left;
+    left: 42.5vw;
+    top: 2vw;
 }
 
 /* 1-2. 탑메뉴 (우측상단) */
