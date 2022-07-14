@@ -14,10 +14,12 @@ ul,ol{
 
 /* a - 글자색, 밑줄없앰 */
 a{
-    color: #000;
+color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 30px;
+    font: 35px "Black Ops One";
 }
+
+
 
 /* 이미지 관련 */
 img{

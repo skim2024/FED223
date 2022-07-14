@@ -20,6 +20,14 @@ font-family: 'Nanum Gothic', sans-serif;
  a{
     font-family: 'Hahmlet', serif;
  }
+ 
+ a.title{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font: 30px "Black Ops One";
+    text-shadow: rgb(0 0 0) 2px 2px 2px;
+}
+
  /* 전체 웹폰트 일반적용! */
  body{
     font-family: 'Nanum Gothic', sans-serif;
