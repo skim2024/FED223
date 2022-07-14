@@ -158,8 +158,15 @@
     /* 서브메뉴 */
     .smenu {
       position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      /* 가로중앙이동 */
       z-index: 1;
       /* li가상요소 앱솔루트 보다 위! */
+      width: 800px;
+      box-sizing: border-box;
+      padding-left: 80px;
+      /* outline: 1px dotted lime; */
 
       /* 플렉스박스 */
       display: flex;
@@ -182,6 +189,16 @@
 
       /* 트랜지션 */
       transition: 0.4s;
+    }
+
+    /* 두번째 li의 .smenu 배경이미지 넣기 */
+    .gnb>ul>li:nth-child(2) .smenu{
+      background: url(./img/bgi001.jpg) no-repeat right 10px/auto 180px;
+    }
+
+    /* 세번째 li의 .smenu 배경이미지 넣기 */
+    .gnb>ul>li:nth-child(3) .smenu{
+      background: url(./img/bgi002.jpg) no-repeat right 10px/auto 180px;
     }
 
     /* 상위메뉴 li 오버시 서브메뉴 보이기 */
@@ -214,7 +231,7 @@
       text-decoration: none;
       line-height: 35px;
 
-      padding: 0 5px;
+      /* padding: 0 5px; */
 
       /* 트랜지션 */
       transition: 0.2s;
@@ -229,6 +246,7 @@
     /* 서브메뉴 하위 디자인 */
     .smenu dl{
       margin-left: 20px;
+      width: 120px;
     }
     .smenu dt{
       border-bottom: 1px solid lightskyblue;
@@ -309,16 +327,38 @@
         <a href="#"><span>게시판</span></a>
         <!-- 서브메뉴 -->
         <div class="smenu">
-          <ol>
-            <li>
+        <h2>게시판</h2>
+          <!-- 1번서브 -->
+          <dl>
+            <dt>
+              <a href="#">일반게시판</a>
+            </dt>
+            <dd>
               <a href="#">Q&amp;A</a>
-            </li>
-            <li>
+            </dd>
+            <dd>
               <a href="#">방명록</a>
-            </li>
-          </ol>
+            </dd>
+          </dl>
+
+          <!-- 2번서브 -->
+          <dl>
+            <dt>
+              <a href="#">아이디어 나누기</a>
+            </dt>
+            <dd>
+              <a href="#">우리들의 세계</a>
+            </dd>
+            <dd>
+              <a href="#">자유게시판</a>
+            </dd>
+            <dd>
+              <a href="#">직거래장터</a>
+            </dd>
+          </dl>
         </div>
       </li>
+
       <li>
         <a href="#"><span>프로필</span></a>
       </li>
