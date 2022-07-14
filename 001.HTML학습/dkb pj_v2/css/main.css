@@ -63,15 +63,17 @@ body{
     /* 가로, 세로 크기나 마진값으로 %를 쓰면 기준은 싸고있는 부모박스다! */
 
     /* 블록요소 옆으로 흐르게! */
-    float: left;
+    /* float: left; -> flex박스로 전환! */
     /* 나는 왼쪽, 너는 오른쪽에 와 */
 
     /* 튀어나온부분 오류 영역보정값 (자식요소 바진변동에 의한 불일치 부분을 값으로 보정함) */
-    padding-bottom: 7px;
+    padding-bottom: 10px;
 }
 
 /* 캐릭터 이미지박스 */
 .ci{
+    position: relative;
+    /* 부모자격: .ci span */
     /*  트랜지션:속시이지 */
     transition: .4s ease-in-out;
 }
@@ -141,6 +143,7 @@ body{
 
     /* 트랜지션: 속성 시간 이징 지연 */
     transition: height 0.4s ease-out;
+    border-radius: 20px 5px 5px 20px;
 }
 
 /* .cat 개별박스에 오버시 .cd 보이기 */

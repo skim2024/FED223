@@ -21,7 +21,7 @@
 /* 겉박스 */
 #top {
     /* 하단구분선 */
-    border-bottom: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
     /* 배경흰색 */
     background-color: #fff;
 }
@@ -36,14 +36,28 @@
 /* } */
 
 /* 1-1. 메인로고 */
+
 .logo {
-    padding: 20px;
-    text-align: center;
+    /* position: fixed; */
+    padding: 25px;
+    top: 50px;
+    left: 50px;
+    /* text-align: center; */
 }
 
 /* 메인로고 이미지 크기 조절 */
 .logo img {
     width: 100px;
+}
+
+/* 1-1-1. 타이틀 */
+.title {
+    position: absolute;
+    text-align: center;
+    /* margin: 0 auto; */
+    float: left;
+    left: 42.5vw;
+    top: 2vw;
 }
 
 /* 1-2. 탑메뉴 (우측상단) */

@@ -13,14 +13,14 @@ body {
     /* 한번에 배경주기
     background: 색이반고윙/크 */
     background:
-        url(../imgs/TH_P02.jpg) repeat fixed 10% 30%,
+        url(../imgs/TH_P05.jpg) no-repeat fixed center/cover,
         url(../imgs/TH_P02.jpg) repeat fixed center;
     /* 로고이미지 가로위치 10%, 세로위치 30%, 가로크기 10% 세로크기 auto(생략) */
 }
 
 /* 메인 영역 */
 .cont {
-    padding-top: 200px;
+    /* padding-top: 200px; */
     /* 상단패딩: 첫번째 요소 위치밀기의 기본!
     첫번째요소에 마진탑으로 위치를 이동할 경우
     부모요소 바깥으로 마진이 나감 (원래 디자인 속성임!)
@@ -74,10 +74,27 @@ body {
     /* 튀어나온부분 오류 영역보정값 (자식요소 바진변동에 의한 불일치 부분을 값으로 보정함) */
     padding-bottom: 37px;
 }
+.cat::before{
+    content: '';
+    display: block;
+    padding-top: 150%;
+}
+
+.cat{
+    margin: 20px 20px;
+    /* margin-bottom: 100px; */
+}
+
+.cat:nth-child(3),:nth-child(4){
+    margin-bottom: 100px;
+}
 
 /* 캐릭터 이미지박스 */
 .ci {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
     z-index: 1;
     /*  트랜지션:속시이지 */
     transition: .4s ease-in-out;
@@ -92,6 +109,8 @@ body {
  .ci의 직계자식 img만 선택! */
 .ci>img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 캐릭터 이름이미지 박스 span */
@@ -149,7 +168,8 @@ body {
     높이값이 0이면 모두 숨겨짐! */
     overflow: auto;
     /* 배경: 색이반고윙/크 */
-    /* background: url(../imgs/TH_P04.webp) no-repeat center/cover; */
+    background: url(../imgs/TH_P06.jpg) no-repeat center/cover;
+    opacity: 0.8;
 
     /* 트랜지션: 속성 시간 이징 지연 */
     transition: 0.4s ease-out;
@@ -262,17 +282,17 @@ body {
 /* quote1 애니메이션 */
     .quote1 {
         text-align: center;
-        position: absolute;
-        top: 100px;
-        right: 655px;
+        top: 30vh;
+        position: fixed;
+        left: 50px;
     }
 
     .quote1 a {
         /* a요소에서 글자색, 밑줄 처리함! */
-        color: rgb(0, 0, 0);
+        color: #fff;
         text-decoration: none;
         /* 글자: 스두크/줄체 */
-        font: 40px 'Black Ops One';
+        font: 30px 'Black Ops One';
         /* 글자그림자 */
         text-shadow: 2px 2px 2px #000;
     }
@@ -280,17 +300,17 @@ body {
 /* quote2 애니메이션 */
     .quote2 {
         text-align: center;
-        position: absolute;
-        top: 100px;
-        right: -655px;
+        position: fixed;
+        top: 30vh;
+        right: 50px;
     }
 
     .quote2 a {
         /* a요소에서 글자색, 밑줄 처리함! */
-        color: rgb(0, 0, 0);
+        color: #fff;
         text-decoration: none;
         /* 글자: 스두크/줄체 */
-        font: 40px 'Black Ops One';
+        font: 30px 'Black Ops One';
         /* 글자그림자 */
         text-shadow: 2px 2px 2px #000;
     }
