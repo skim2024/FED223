@@ -250,11 +250,47 @@
     min-height: 400px;
     /* 최소높이 800px 유지- 내용 넘치면 늘어남! */
 }
-
-.ani {
+.quote1 span{
+    display: block;
+}
+.ani span {
     opacity: 0;
     /* 애니메이션: 이시이지반방마 */
-    animation: Ani 0.2s linear 2s forwards;
+    animation: Ani 0.2s linear 1s forwards;
+}
+
+.ani span:nth-child(2) {
+    animation-delay: 2.3s;
+
+}
+
+.ani span:nth-child(4) {
+    animation-delay: 2.6s;
+
+}
+
+.ani span:nth-child(5) {
+    animation-delay: 2.9s;
+
+}
+.ani span:nth-child(6) {
+    animation-delay: 3.2s;
+
+}
+
+.ani span:nth-child(7) {
+    animation-delay: 3.5s;
+
+}
+
+.ani span:nth-child(8) {
+    animation-delay: 3.8s;
+
+}
+
+.ani span:last-child {
+    animation-delay: 4.1s;
+
 }
 
 .ani2 {
@@ -319,6 +355,7 @@ ______________________________________
 /* 겉박스 */
 #info{
     background-color: rgba(255, 255, 255, 0.7);
+    height: 320px;
 }
 
 /* 속박스 */

@@ -83,10 +83,11 @@ body {
 .cat{
     margin: 20px 20px;
     /* margin-bottom: 100px; */
+    word-spacing: -0.2px;
 }
 
 .cat:nth-child(3),:nth-child(4){
-    margin-bottom: 85px;
+    /* margin-bottom: 25px; */
 }
 
 /* 캐릭터 이미지박스 */
@@ -248,7 +249,7 @@ body {
     /* 최대글자크기 30px, 이하는 유동적 */
     font-size: min(3.1vw, 48px);
     font-weight: normal;
-    padding: 15px 10px 5px;
+    padding: 42px 10px 5px;
     /* 줄바꿈방지(문장이 다음줄로 넘어가진 않음) */
     white-space: nowrap;
     letter-spacing: -1px;
@@ -270,9 +271,9 @@ body {
 .cd p {
     font-family: 'Hahmlet', serif, 'Ma Shan Zheng', cursive;
     /* 최대글자크기 16px, 이하는 유동적 */
-    font-size: min(0.9vw, 20px);
+    font-size: min(0.8vw, 15px);
     line-height: 1.7;
-    padding: 10px 10px;
+    padding: 6px 28px;
     text-align: justify;
     border-radius: 50%;
     /* height: 70%; */
