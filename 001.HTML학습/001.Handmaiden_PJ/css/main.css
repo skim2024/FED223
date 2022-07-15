@@ -98,6 +98,9 @@ body {
     z-index: 1;
     /*  트랜지션:속시이지 */
     transition: .4s ease-in-out;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 999999;
 }
 
 /* .cat에 오버시 .ci변경 */
