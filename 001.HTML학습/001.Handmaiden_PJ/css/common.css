@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 도깨비 PJ 공통디자인 CSS - common.css */
+/* The Handmaiden PJ 공통디자인 CSS - common.css */
 /* 상단영역, 하단영역 반복디자인 */
 
 
@@ -97,6 +97,8 @@
 
 /* GNB 상위li */
 .gnb>ul>li {
+    z-index: 999;
+    /* 맥북기준 GNB가 캐릭터 사진보다 뒤로 가서 z-index 줌  */
     padding: 0 15px;
 }
 
@@ -253,10 +255,14 @@
 .quote1 span{
     display: block;
 }
+
+.quote2 span{
+    display: block;
+}
 .ani span {
     opacity: 0;
     /* 애니메이션: 이시이지반방마 */
-    animation: Ani 0.2s linear 1s forwards;
+    animation: Ani 0.2s linear 2s forwards;
 }
 
 .ani span:nth-child(2) {
@@ -293,10 +299,57 @@
 
 }
 
-.ani2 {
+.ani2 span{
     opacity: 0;
     /* 애니메이션: 이시이지반방마 */
     animation: Ani 0.2s linear 2s forwards;
+}
+
+.ani2 span:first-child {
+    animation-delay: 4.4s;
+
+}
+.ani2 span:nth-child(2) {
+    animation-delay: 4.7s;
+
+}
+.ani2 span:nth-child(3) {
+    animation-delay: 5.0s;
+
+}
+.ani2 span:nth-child(4) {
+    animation-delay: 5.3s;
+
+}
+.ani2 span:nth-child(5) {
+    animation-delay: 5.6s;
+
+}
+
+.ani2 span:nth-child(7) {
+    animation-delay: 5.9s;
+
+}
+.ani2 span:nth-child(8) {
+    animation-delay: 6.2s;
+
+}
+
+.ani2 span:nth-child(10) {
+    animation-delay: 6.5s;
+
+}
+.ani2 span:nth-child(11) {
+    animation-delay: 6.8s;
+
+}
+.ani2 span:nth-child(12) {
+    animation-delay: 7.1s;
+
+}
+.ani2 span:nth-child(13) {
+    animation-delay: 7.4s;
+
 }
 
 /* 지연시간 추가 */
@@ -315,40 +368,6 @@
     }
 }
 
-______________________________________
-
-.ani-cascade li:nth-of-type(1) {
-
-    animation-delay:75ms;
-}
-
-.ani-cascade li:nth-of-type(2) {
-
-    animation-delay:150ms;
-
-  }
-  @keyframes cascadeInSimple {
-
-    0% {
-
-      opacity:0;
-      transform:scale(0.7);
-
-    }
-
-    100% {
-
-      opacity:1;
-      transform:scale(1);
-
-    }
-  }
-  .d-cascade-simple li {
-
-    animation: cascadeInSimple 1s 1s ease-in-out forwards alternate infinite;
-
-
-  }
 
 /************************* 3. 하단영역 *************************/
 

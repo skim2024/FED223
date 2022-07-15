@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 도깨비 PJ 핵심공통모듈 CSS - core.css */
+/* The Handmaiden PJ 핵심공통모듈 CSS - core.css */
 /* 공통 class/웹폰트 */
 
 /* 웹폰트 CDN */
@@ -20,7 +20,7 @@ font-family: 'Nanum Gothic', sans-serif;
  a{
     font-family: 'Hahmlet', serif;
  }
- 
+
  a.title{
     color: rgb(255, 255, 255);
     text-decoration: none;
