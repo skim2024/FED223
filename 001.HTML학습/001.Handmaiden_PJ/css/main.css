@@ -100,7 +100,7 @@ body {
     transition: .4s ease-in-out;
     border: 3px solid #fff;
     border-radius: 50%;
-    z-index: 999999;
+    overflow: hidden;
 }
 
 /* .cat에 오버시 .ci변경 */
@@ -176,17 +176,20 @@ body {
 
     /* 트랜지션: 속성 시간 이징 지연 */
     transition: 0.4s ease-out;
+
+    /* border: 3px solid #fff; */
+    overflow: hidden;
 }
 
 /* .cat 개별박스에 오버시 .cd 보이기 */
 .cat:nth-child(odd) .cd {
     right: 0;
-    border-radius: 10px 0 0 10px;
+    border-radius: 50%;
 }
 
 .cat:nth-child(even) .cd {
     left: 0;
-    border-radius:  0 10px 10px 0 ;
+    border-radius: 50%;
 }
 
 .cat:nth-child(odd):hover .cd {

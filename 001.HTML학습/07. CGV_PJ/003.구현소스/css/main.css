@@ -71,8 +71,20 @@ body * {
 /****************************** 2. 메인영역 ******************************/
 /* 속박스 */
 .cont {
-    height: 788px;
+    position: relative;
+    /* 부모자격 */
+    /* height: 788px; -> 비율유지는 높이값이 불필요! */
     background: url(../images/bg.jpg) no-repeat top/100%;
+}
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 12.1%;
+    left: 21.4%;
+    width: 58.3%;
+    height: 35.4%;
+    /* 부모에 대한 %, 부모는? .cont */
+    background-color: #f00;
 }
 
 /****************************** 3. 하단영역 ******************************/
