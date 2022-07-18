@@ -63,7 +63,7 @@ body * {
 .glist{
     position: relative;
     z-index: 1;
-    /* 영사기보다 위!, 마우스 호버해도 사라지지 않음 */
+    /* 영사기보다 위!, 마우스 오버해도 사라지지 않음 */
     display: flex;
 }
 /* GNB li 리스트 */
