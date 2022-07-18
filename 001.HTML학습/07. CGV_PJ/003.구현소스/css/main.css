@@ -52,7 +52,7 @@ body * {
 /* 1-2. GNB메뉴 */
 .gnb {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 15px;
     /* 부모는? .top (속한 박스) */
     z-index: 1;
@@ -61,15 +61,20 @@ body * {
 
 /* GNB ul */
 .glist{
+    position: relative;
+    z-index: 1;
+    /* 영사기보다 위!, 마우스 호버해도 사라지지 않음 */
     display: flex;
 }
 /* GNB li 리스트 */
 .glist>li{
+    position: relative;
+    /* .smenu의 부모자격 */
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
-    position: relative;
-    /* .smenu의 부모자격 */
+    padding-bottom: 5px;
+    /* 서브메뉴와 이어지게 하단공간 확장하기 */
 }
 /* GNB smenu */
 .smenu{
@@ -83,7 +88,16 @@ body * {
     /* 부모는? 싸고있는 li한테 주기 */
     transform: translate(-50%,5px);
     /* 가로방향 중앙으로 이동, 세로 5px이동 */
+
+    /* 처음에 안보이게 */
+    display: none;
 }
+
+/* smenu 오버시에 보이게 */
+.glist>li:hover .smenu{
+    display: block;
+}
+
 /* 가상요소로 서브메뉴 삼각형 만들기 */
 .smenu::before{
     content: '';
@@ -120,12 +134,86 @@ body * {
     color: red;
 }
 /* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+
 /* 이모지는 윈도우키+세미콜론(;) 단축키임 */
+
 /* "영화" 하위메뉴 이모지 */
 .glist>li:nth-child(1) .smenu li a:hover::after{
     content: '😍';
     float: right;
+}
+/* "예매" 하위메뉴 이모지 */
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '🎬';
+    float: right;
+}
+/* "극장" 하위메뉴 이모지 */
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '🎥';
+    float: right;
+}
+/* "이벤트" 하위메뉴 이모지 */
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '🔔';
+    float: right;
+}
 
+/* 서브메뉴 중 li 보더탑 구분선 class */
+.bdt{
+    border-top: 1px solid #ccc;
+}
+
+/* 영사기박스 */
+#cam{
+    position: absolute;
+    bottom: -9px;
+    right: -61px;
+}
+
+/* 영사기 이미지 줄이기 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 빔박스 보다 위!
+    포지션이 static이 아니여야 적용됨! */
+    width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 트랜지션: 속시이지, 돌아올때 0.3초 지연 */
+    transition: 0.5s ease-out 0.3s;
+}
+
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    /* 오버시엔 트랜지션 지연시간 없음! */
+    transition-delay: 0s;
+}
+
+/* 영사기 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 9px;
+    width: 0px;
+    /* 오버시 width: 200px; */
+    height: 70px;
+    /* outline: 1px dotted yellow; */
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    /* 트랜지션: 속시이지 */
+    transition: width 0.3s linear;
+    /* linear 등속도 */
+}
+
+/* GNB에 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    /* 트랜지션 지연시간 셋팅 */
+    transition-delay: 0.5s;
 }
 /****************************** 2. 메인영역 ******************************/
 /* 속박스 */
