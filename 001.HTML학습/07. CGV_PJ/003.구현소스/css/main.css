@@ -284,6 +284,8 @@ body * {
 /* 예고편 ul */
 .mlist ul{
     display: flex;
+    /* 원근설정 */
+    perspective: 480px;
 }
 /* 예고편 li */
 .mlist>ul>li{
@@ -294,11 +296,22 @@ body * {
     중간에 자격이 없으면 숨기기줘도 소용없음! */
     flex: 1;
     /* flex박스 자식요소 플렉스 설정으로 자동 등분할됨! */
+
+    /* x축 회전 */
+    transform: rotateX(30deg);
+    /* 회전축변경 */
+    transform-origin: bottom;
+    /* 트랜지션:속시이지 */
+    transition: transform 0.4s ease-out;
 }
+
 
 /* 오버시 아웃라인 보이기 */
 .mlist>ul>li:hover{
     outline: 1px solid aqua;
+    /* 일어나게 */
+    transform: rotateX(0deg);
+    z-index: 1;
 }
 
 /* 두번째 li부터 끝까지만 왼쪽마진! */
