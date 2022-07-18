@@ -55,6 +55,8 @@ body * {
     bottom: 5px;
     right: 15px;
     /* 부모는? .top (속한 박스) */
+    z-index: 1;
+    /* 메인영역보다 위에 자리함! 메뉴 보임 */
 }
 
 /* GNB ul */
@@ -66,6 +68,10 @@ body * {
     font-family: 'Jua', sans-serif;
     font-size: 20px;
     padding: 0 10px;
+}
+/* GNB smenu */
+.smenu{
+    position: absolute;
 }
 
 /****************************** 2. 메인영역 ******************************/
