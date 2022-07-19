@@ -33,6 +33,46 @@
 
             console.log("입력된값:", score);
 
+            /*/////////////////////////////////////////////////////// 
+            ///////////////// 2-5-1. 숫자여부 판별하기 //////////////
+            ///////////////////////////////////////////////////////*/ 
+
+            // 숫자여부 판별 JS내장함수 : isNaN(값)
+            // is Not a Number? 숫자가 아니니?
+            // 만약 숫자가 아니면 true
+            // 결과를 true / false 로 리턴해준다!
+
+            console.log("숫자가 아니니?", isNaN(score));
+
+            if(isNaN(score)){
+                // 1. 숫자가 아닐경우 메시지 출력
+                jexp.innerText = "숫자를 입력하세요!";
+
+                // 2. 글자색 초기화
+                jexp.style.color = "#000";
+
+                // 3. 칭찬스티커 초기화
+                jshow.style.backgroundPosition = "322px 0";
+
+                // 4. 입력창에 내용지우기
+                jumsu.value = ""; 
+                    // 빈 문자값을 넣으면 지워짐!
+
+                // 5. 입력창에 포커스 주기(버튼클릭한 경우)
+                jumsu.focus();
+                // focus() JS내장함수는 입력창에 커서가 감!
+
+                // 만약 숫자가 아니면 더이상
+                // 아래쪽 코드가 실행되지 않도록
+                // 여기서 함수를 빠져나가게 함!!!
+                return;
+                // 리턴 키워드를 만나는 순간
+                // 함수를 빠져나간다!
+                // 참고) 리턴뒤에 어떤값을 가지고 나갈수 있음!
+            } //////// if ///////
+
+
+
             // 평가변수
             var msg;
             // 색상변수
@@ -158,7 +198,19 @@
     <h2>if문 연습</h2>
     <h3 id="jexp">평가출력</h3>
     <label for="jumsu">점수입력:</label>
-    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3">
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode===13)jumsu()">
+    <!-- 13번이 엔터키임 -->
+    <!-- onkeypress : 이벤트 속성 
+        -> 키보드를 치면 발생하는 이벤트연결 속성
+        if 조건문
+        조건식: event.keyCode === 13
+        -> 키보드의 키코드가 13이냐? 엔터키 눌렀냐?
+        -> 엔터키의 키코드는 13번이다!
+        -> true이면 jumsu() 라는 함수를 호출해라!
+
+        참고) 키코드 참조: 아스키코드
+        https://www.w3schools.com/charsets/ref_html_ascii.asp
+    -->
     <button class="sbtn" onclick="jumsu()">평가하기</button>
 
 
