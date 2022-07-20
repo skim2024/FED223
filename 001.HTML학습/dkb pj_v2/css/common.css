@@ -25,6 +25,19 @@
     border-bottom: 1px solid #ccc;
     /* 배경흰색 */
     background-color: #fff;
+
+    /* 처음에 위로 올라가서 안보임
+    - 자신의 높이값만큼 위쪽방향으로 이동! */
+    transform: translateY(-100%);
+
+    /* 애니메이션: 이시이지반방마 (forwards: 상태 유지하기)*/
+    animation: topAni 1s ease-out 4.5s forwards;
+}
+/* 상단영역 키프레임 */
+@keyframes topAni {
+    to{
+        transform: translateY(0%);
+    }
 }
 
 /* 속박스 */
@@ -104,6 +117,8 @@
     /* 오버시엔 보더 색만 변경함! */
     border-bottom-color: red;
 }
+
+
 
 /* 서브메뉴 */
 .smenu {
@@ -241,7 +256,12 @@
     font-size: 10vw;
     padding: 0;
     margin: 0;
+    color: #000;
+
+    /* 처음에 안보임 */
+    display: none;
 }
+
 
 /*  햄버거 가상요소 */
 .ham::before{
@@ -249,14 +269,14 @@
 }
 
 /* GNB메뉴 보이는 상태일때 햄버거버튼 */
-.top.on .ham{
+body.on .top .ham{
    transform: translateY(-50%) scaleX(1.2);
     color: #fff;
     /* 메뉴 클릭시 햄버거 버튼 위에 올라오게 */
     z-index: 9999;
 }
 
-.top.on .ham::before{
+body.on .top .ham::before{
     content: '×';
 }
 
