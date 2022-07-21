@@ -256,12 +256,229 @@
             // 손가락 표시
             tg[3].style.cursor = "pointer";
 
+            /*************************************************** 
+                [ new 키워드 없이 바로 객체 생성하기 ]
+
+                - 방법: 변수 선언 후 이퀄 뒤에 바로 중괄호 사용!
+                예) let obj = {속성명:값,속성명:값,...};
+
+                [ 객체의 속성 셋팅시 문자형 또는 변수형 사용하기 ]
+
+                1. 문자형 속성 - 따옴표로 싸는 방법
+                ex) let obj = {"나는나":"호호호","너는너":"하하하"}
+                -> 문자형 속성의 객체 호출시 
+                객체명[문자형속성명]
+                ex) obj["나는나"]
+
+                2. 변수형 속성 - 따옴표로 안싸는 방법
+                ex) let obj = {name:"김수현",tall:"186cm"};
+                -> 변수형 속성의 객체 호출시
+                객체명.속성명
+                ex) obj.name
+
+                또는 
+
+                객체명["속성명"]
+                ex) obj["name"]
+                -> 반드시 변수형 속성명을 따옴표로 싸서 문자형으로 표시해야함!
+                obj[name] -> 에러남!
+
+            ***************************************************/
+
+            // 객체 생성하기
+            const GU = {
+                name: "공유",
+                tall: "184cm",
+                weight: "74kg",
+                com: "매니지먼트숲",
+                work: "도깨비,부산행",
+                msg: (txt) => {
+                    // txt 전달변수
+                    // 1. 메세지 띄우기
+                    alert("팬레터:" + txt);
+                    // 2. 배경이미지 넣기
+                    tg[4].style.background =
+                        "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%";
+                    // 3. 글자색
+                    tg[4].style.color = "#fff";
+                    // 4. 글자그림자
+                    tg[4].style.textShadow = "0 0 5px #000";
+                    // 5. 줄간격
+                    tg[4].style.lineHeight = "30px";
+                    // 6. 높이값 변경
+                    tg[4].style.height = "100px";
+                    // 7. 상단패딩 변경
+                    tg[4].style.paddingTop = "100px";
+                    // 8. 트랜지션
+                    tg[4].style.transition = "2s ease-in-out 0.5s";
+                }
+
+            }; //////////// GU객체 ////////////////////
+
+            // GU객체 출력하기
+            // 출력대상: tg[4]
+
+            // 줄간격 조정
+            tg[4].style.lineHeight = "24px";
+
+            // 내용출력
+            tg[4].innerHTML = `
+                    저는 ${GU.name}입니다.
+                    몸무게는 비밀인데요 그래도 말씀드리자면 ${GU.weight}입니다.ㅎㅎㅎ <br>
+                    제 대표작은 ${GU.work}입니다. <br>
+                    제 소속사는 모르시는 분들이 많은데 ${GU.com}입니다. 빠이빠이!
+                `;
+
+            // 툴팁 띄우기
+            // setAttribute(속성명,값)
+            tg[4].setAttribute("title", GU.name + "의 팬레터를 확인하세요! 바로클릭!");
+
+            // 손가락모양
+            tg[4].style.cursor = "pointer";
+
+            // 공유박스 클릭시 GU객체 메서드 호출하기
+            tg[4].onclick = () => {
+                GU.msg("\n공유오빠, 오징어게임 싸다구 멋졌어요! \n차기작도 기대해요! ");
+                // \n은 alert창에서 줄바꿈해줌!
+            }; //////// click ////////////
+
+
+            // 미션: tg[5]에 자신이 만든 객체의 정보를 출력하시오
+            // 주제는 영화정보
+            // 변수명도 자신이 지어본다!
+            // 객체의 속성명도 변수형으로 자신이 지어본다!
+
+            const SUE = {
+                제목: "Top Gun: Maverick",
+                감독: "Joseph Kosinski",
+                배우: "Tom Cruise",
+                장르: "Action/Adventure",
+                관람가: "12+",
+                예고편: () => {
+                    // 1. 호출확인
+                    console.log("예고편");
+
+                    // 2. 영화박스 만들고 iframe 넣기
+                    // 대상: #mvbx
+                    const mvbx = document.querySelector("#mvbx");
+
+                    // 영화박스에 아이프레임용 박스넣기
+                    mvbx.innerHTML = `
+                        <div id="mv">
+                            <!--유튜브 아이프레임-->
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Mrj9XACVJ8U?autoplay=1" title="[탑건: 매버릭] 메인 예고편" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                            <!--닫기버튼-->
+                            <button class="cbtn">×</button>
+                            </div>
+                        `;
+
+                    // 삽입된 동영상박스(#mv) CSS설정하기
+                    const mv = document.querySelector("#mv");
+
+                    mv.style.position = "fixed";
+                    mv.style.top = "50%";
+                    mv.style.left = "50%";
+                    mv.style.transform = "translate(-50%,-50%)";
+                    mv.style.width = "700px";
+                    mv.style.height = "450px";
+                    mv.style.backgroundColor = "#000";
+
+                    // 닫기버튼 셋팅
+                    const cbtn = document.querySelector(".cbtn");
+
+                    cbtn.style.position = "absolute";
+                    cbtn.style.top = "0";
+                    cbtn.style.right = "-70px";
+                    cbtn.style.width = "50px";
+                    cbtn.style.height = "50px";
+                    cbtn.style.backgroundColor = "blue";
+                    cbtn.style.border = "none";
+                    cbtn.style.color = "#fff";
+                    cbtn.style.fontSize = "40px";
+                    cbtn.style.fontWeight = "bold";
+                    cbtn.style.borderRadius = "50%";
+                    cbtn.style.cursor = "pointer";
+
+                    // 닫기버튼 클릭시 #mv지우기
+                    cbtn.onclick = () => mv.remove();
+                    // ()=>{실행문}
+                    // 실행문이 하나일때 중괄호 생략가능
+                    // ()=>실행문;
+                    // remove() 메서드는 선택요소를 제거함!
+                },
+
+
+                msg: (txt) => {
+                    // txt 전달변수
+                    // 1. 메세지 띄우기
+                    alert("message:" + txt);
+                    
+                }
+
+            } ////////////// SUE 객체 ///////////////////
+
+            // 줄간격 조정
+            tg[5].style.lineHeight = "33px";
+
+            // 내용 출력
+            tg[5].innerHTML = `
+                    ㆍ이번에 개봉한 영화는 ${SUE.제목}입니다.ㆍ
+                    감독: ${SUE.감독} ㆍ<br>
+                    주연 배우: ${SUE.배우} ㆍ
+                    장르: ${SUE.장르}ㆍ
+                    관람가:${SUE.관람가}ㆍ
+            `;
+
+            // 툴팁 띄우기
+            // setAttribute(속성명,값)
+            tg[5].setAttribute("title", SUE.제목 + "예고편을 확인하세요! 바로클릭!");
+
+            // 손가락모양
+            tg[5].style.cursor = "pointer";
+
+            // 예고편 메서드 호출하기
+            tg[5].onclick =()=>{ 
+                SUE.예고편(); 
+                SUE.msg("\n탑건 너무 재밌당!");
+                // \n은 alert창에서 줄바꿈해줌!
+            }; 
+
 
         }; /////////////////////// loadFn 함수 //////////////////
         ////////////////////////////////////////////////////////
 
         // 로딩후 로드함수 호출하기!
         window.addEventListener("load", loadFn);
+
+        /********************************************************* 
+            ※ 정리:
+            ________________________________
+
+            배열값 설정
+            const 변수명 = [값1,값2,...];
+            ________________________________
+            
+            배열값 호출
+            벼눗명[순번] -> 순번은 0부터
+            ________________________________
+
+            객체값 설정
+            const 변수명 = {속성:값,속성:값,...}
+            ________________________________
+
+            객체값 호출
+
+            변수명[속성명]
+            -> 속성명을 따옴표로 싼 문자형임
+            ( **만약 변수형 속성명이어도 이렇게 부를땐 따옴표로 반드시 싸야한다!** ->> [''] )
+
+            또는
+
+            변수명.속성명
+            -> 속성명이 반드시 변수형 이어야함!
+        *********************************************************/
+
     </script>
 </head>
 
@@ -274,6 +491,9 @@
     <div class="cont"></div>
     <div class="cont"></div>
     <div class="cont"></div>
+
+    <!-- 예고편 동영상용 박스 -->
+    <aside id="mvbx"></aside>
 
 </body>
 
