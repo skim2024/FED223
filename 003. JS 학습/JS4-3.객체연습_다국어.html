@@ -108,7 +108,7 @@
     <script>
         ///// 전역변수 구역 ///////
         // 언어별 메뉴 글자 셋팅하기 ///
-        var lang = {
+        const lang = {
             //한국어
             "ko": {
                 "메뉴": ["홈", "남성용", "여성용", "게시판"],
@@ -160,6 +160,35 @@
             // 이벤트 종류: change
             // 변경대상: 메뉴, 메인이미지, 하단정보
             /////////////////////////////////////////////////
+            sel.addEventListener("change",()=>{
+
+                // 1. 이벤트 발생시 변경된 option값 읽기
+                // 화살표함수 this는 event.currentTarget
+                let opt = event.currentTarget.value;
+                console.log("선택값:", opt);
+
+                // 2. 다국어 언어 객체값 셋팅
+                // 다국어 셋팅 객체인 lang의 속성명이
+                // option 값과 같다!
+                let ov = lang[opt];
+                console.log("셋팅값:",ov);
+
+                // 3. 메뉴 변경하기
+                // 대상: menu 변수
+                // forEach((요소/배열값,순번,객체)=>{})
+                menu.forEach(
+                    (ele,idx)=>ele.innerText=ov["메뉴"][idx]);
+
+                // 4. 메인 이미지 변경하기
+                // 대상: mimg 변수
+                // setAttribute(속성명,값) -> 속성변경 JS내장함수
+                mimg.setAttribute("src",`images/${opt}.jpg`);
+
+                // 5. 하단주소 변경하기
+                // 대상: info 변수
+                info.innerText = ov["주소"]
+
+            }); ////////// change /////////////
             
 
 
