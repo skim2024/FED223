@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title> 태그 선택자 </title>
-  <!-- 제이쿼리 라이브러리를 불러온다! -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- 아래에서 제이쿼리 코딩함! - 순서중요! -->
+ <!-- 제이쿼리 라이브러리를 불러온다! -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <!-- 아래에서 제이쿼리 코딩함! - 순서중요! -->
   <script>
-    // 제이쿼리 로드구역 만들기
+     // 제이쿼리 로드구역 만들기
     // 오리지널 코드
     // jQuery(document).ready(function(){코드})
     // 축약코드
@@ -73,44 +73,43 @@
 
     $(()=>{ /////////// jQB /////////////////////
 
-      $('#container')
-      .click(()=>{
+$('#container')
+.click(()=>{
 
-        $('h2').css({
-          fontSize:"50px",
-          transition:"2s",
-          color:"red",
-          transform:"rotateY(720deg)"
-        });
+  $('h2').css({
+    fontSize:"50px",
+    transition:"2s",
+    color:"red",
+    transform:"rotateY(720deg)"
+  });
 
-      }); /////////// click //////////
-
-
-      // 오버해봐! li 마우스 오버시 전체배경색 변경하기!
-      $("#third").mouseover(()=>{
-        $("body").css({
-          backgroundColor:"pink",
-          transition:"5s"
-        });  ///////css////////////
-      })    //////mouseover//////////
-      // 이어서(세미콜론 없이) 클릭시
-      .click(function(){
-        // 글자 커지게
-      $(this).css({fontSize:"60px"});
-      
-      // 이벤트 버블링막기!
-      return false;
-        ///////// click /////////
+}); /////////// click //////////
 
 
-    }); 
+// 오버해봐! li 마우스 오버시 전체배경색 변경하기!
+$("#third").mouseover(()=>{
+  $("body").css({
+    backgroundColor:"pink",
+    transition:"5s"
+  });  ///////css////////////
+})    //////mouseover//////////
+// 이어서(세미콜론 없이) 클릭시
+.click(function(){
+  // 글자 커지게
+$(this).css({fontSize:"60px"});
+
+// 이벤트 버블링막기!
+return false;
+  ///////// click /////////
+
+
+}); 
 
 
 
-    }); /////////////// jQB ////////////////////
+}); /////////////// jQB ////////////////////
 
 
-    
   </script>
 
 
