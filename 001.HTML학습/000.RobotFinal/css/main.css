@@ -7,19 +7,62 @@
 @import url(core.css);
 @import url(common.css);
 
-.pic{
-    width: 50%;
-} 
 
 /* 컨텐츠 파트 최상위부모 */
 body{
     /* 한번에 배경주기
     background: 색이반고윙/크 */
-    background-image: linear-gradient(to bottom, #ffbb27, #ffcea7);
+    background-image: linear-gradient(to bottom, #ffad00, #ffcea7);
     /* background: 
     url(../imgs/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
     url(../imgs/bg_mainvisual.jpg) no-repeat fixed center/cover; */
     /* 로고이미지 가로위치 10%, 세로위치 30%, 가로크기 10% 세로크기 auto(생략) */
+}
+
+/****************************** 2. 메인영역 ******************************/
+/* 속박스 */
+.cont{
+    position: relative;
+    /* 부모자격 */
+    /* height: 788px; -> 비율유지는 높이값이 불필요! */
+    background: url(../images/bg.jpg) no-repeat top/100%;
+}
+/* 비율유지 가상요소 */
+.cont::before{
+    content: '';
+    display: block;
+    padding-top: 65.66%;
+    /* 블록자식요소의 패딩탑을 %로 주면 부모박스 가로크기에 대한 비가 성립한다!
+    100%는 1:1 비율!
+    
+    [비율계산하기!]
+    이미지 비율로 박스 비율을 적용함!
+    1200px : 788px = 100 : x
+    x = 788px * 100% / 1200px
+      = 65.66%
+
+    */
+}
+
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 17.3%;
+    left: 21.4%;
+    width: 58.4%;
+    height: 50.4%;
+    /* 부모에 대한 %, 부모는? .cont */
+    background-color: #000;
+}
+/* 2-2. 유튜브 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+video {
+    object-fit: contain;
 }
 
 /* body의 가상요소로 인트로 애니동안 화면가리기 */
