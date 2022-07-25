@@ -1,0 +1,464 @@
+@charset "utf-8";
+/* CGV PJ 메인 페이지 CSS - main.css */
+
+/* 외부CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+body {
+    background-color: #000;
+}
+
+/* 공사중표시 */
+body * {
+    /* outline: 1px dotted lime; */
+}
+
+/* 공통클래스 */
+.ibx {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/****************************** 1. 상단영역 ******************************/
+/* 속박스 */
+.top {
+    position: relative;
+    /* 부모자격 .gnb의 */
+    height: 80px;
+    background: url(../images/curtain.jpg) repeat-x;
+}
+
+/* 1-1. 로고 */
+.tit {
+    font-family: 'Jua', sans-serif;
+    color: aquamarine;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    /* 그림자를 이용한 글씨 glow효과! */
+    text-shadow: 0 0 4px aquamarine;
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni 0.5s ease-in infinite alternate;
+}
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni {
+    to {
+        text-shadow: 0 0 12px aquamarine;
+    }
+}
+
+/* 1-2. GNB메뉴 */
+.gnb {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    /* 부모는? .top (속한 박스) */
+    z-index: 1;
+    /* 메인영역보다 위에 자리함! 메뉴 보임 */
+}
+
+/* GNB ul */
+.glist{
+    position: relative;
+    z-index: 1;
+    /* 영사기보다 위!, 마우스 오버해도 사라지지 않음 */
+    display: flex;
+}
+/* GNB li 리스트 */
+.glist>li{
+    position: relative;
+    /* .smenu의 부모자격 */
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+    padding: 0 10px;
+    padding-bottom: 5px;
+    /* 서브메뉴와 이어지게 하단공간 확장하기 */
+}
+/* GNB smenu */
+.smenu{
+    position: absolute;
+    width: 140px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+    left: 50%;
+    /* 부모는? 싸고있는 li한테 주기 */
+    transform: translate(-50%,5px);
+    /* 가로방향 중앙으로 이동, 세로 5px이동 */
+
+    /* 처음에 안보이게 */
+    display: none;
+}
+
+/* smenu 오버시에 보이게 */
+.glist>li:hover .smenu{
+    display: block;
+}
+
+/* 가상요소로 서브메뉴 삼각형 만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 삼각형 만들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+/* 서브메뉴 a요소 */
+.smenu a{
+    display: block;
+    /* li요소 끝까지 차지함! */
+}
+/* 서브메뉴 li에 마우스 오버시 글자색 빨강 */
+.smenu a:hover{
+    color: red;
+}
+/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
+
+/* 이모지는 윈도우키+세미콜론(;) 단축키임 */
+
+/* "영화" 하위메뉴 이모지 */
+.glist>li:nth-child(1) .smenu li a:hover::after{
+    content: '😍';
+    float: right;
+}
+/* "예매" 하위메뉴 이모지 */
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '🎬';
+    float: right;
+}
+/* "극장" 하위메뉴 이모지 */
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '🎥';
+    float: right;
+}
+/* "이벤트" 하위메뉴 이모지 */
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '🔔';
+    float: right;
+}
+
+/* 서브메뉴 중 li 보더탑 구분선 class */
+.bdt{
+    border-top: 1px solid #ccc;
+}
+
+/* 영사기박스 */
+#cam{
+    position: absolute;
+    bottom: -9px;
+    right: -61px;
+}
+
+/* 영사기 이미지 줄이기 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 빔박스 보다 위!
+    포지션이 static이 아니여야 적용됨! */
+    width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 트랜지션: 속시이지, 돌아올때 0.3초 지연 */
+    transition: 0.5s ease-out 0.3s;
+}
+
+/* GNB에 마우스 오버시 영사기 회전하기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    /* 오버시엔 트랜지션 지연시간 없음! */
+    transition-delay: 0s;
+}
+
+/* 영사기 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 9px;
+    width: 0px;
+    /* 오버시 width: 200px; */
+    height: 70px;
+    /* outline: 1px dotted yellow; */
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    /* 트랜지션: 속시이지 */
+    transition: width 0.3s linear;
+    /* linear 등속도 */
+}
+
+/* GNB에 마우스 오버시 영사기 쏘기 */
+.gnb:hover .beam{
+    width: 200px;
+    /* 트랜지션 지연시간 셋팅 */
+    transition-delay: 0.5s;
+    /* 애니메이션: 이시이지반방마 */
+    animation: beamAni 0.04s linear infinite alternate;
+}
+
+/* 영사기 빔이 너울거리도록 애니메이션 키프레임 */
+@keyframes beamAni {
+    from{
+        opacity: 0.9;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+
+
+
+/****************************** 2. 메인영역 ******************************/
+/* 속박스 */
+.cont{
+    position: relative;
+    /* 부모자격 */
+    /* height: 788px; -> 비율유지는 높이값이 불필요! */
+    background: url(../images/bg.jpg) no-repeat top/100%;
+}
+/* 비율유지 가상요소 */
+.cont::before{
+    content: '';
+    display: block;
+    padding-top: 65.66%;
+    /* 블록자식요소의 패딩탑을 %로 주면 부모박스 가로크기에 대한 비가 성립한다!
+    100%는 1:1 비율!
+    
+    [비율계산하기!]
+    이미지 비율로 박스 비율을 적용함!
+    1200px : 788px = 100 : x
+    x = 788px * 100% / 1200px
+      = 65.66%
+
+    */
+}
+
+/* 2-1. 스크린박스 */
+#screen{
+    position: absolute;
+    top: 17.3%;
+    left: 21.4%;
+    width: 58.4%;
+    height: 50.4%;
+    /* 부모에 대한 %, 부모는? .cont */
+    background-color: #000;
+}
+/* 2-2. 유튜브 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* 2-3. 예고편 선택메뉴 */
+.mlist {
+    position: absolute;
+    width: 54%;
+    /* 비율유지박스 자식으로 %설정! */
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 가로 정중앙 이동 */
+}
+/* 예고편 ul */
+.mlist ul{
+    display: flex;
+    /* 원근설정 */
+    perspective: 480px;
+}
+/* 예고편 li */
+.mlist>ul>li{
+    position: relative;
+    /* 부모자격! */
+    overflow: hidden;
+    /* 부모자격이 있는 요소에서 숨기기가 적용됨.
+    중간에 자격이 없으면 숨기기줘도 소용없음! */
+    flex: 1;
+    /* flex박스 자식요소 플렉스 설정으로 자동 등분할됨! */
+
+    /* x축 회전 */
+    transform: rotateX(30deg);
+    /* 회전축변경 */
+    transform-origin: bottom;
+    /* 트랜지션:속시이지 */
+    transition: transform 0.4s ease-out;
+
+    flex-basis: 30.03%;
+}
+
+
+/* 오버시 아웃라인 보이기 */
+.mlist>ul>li:hover{
+    outline: 1px solid aqua;
+    /* 일어나게 */
+    transform: rotateX(0deg);
+    z-index: 1;
+}
+
+/* 두번째 li부터 끝까지만 왼쪽마진! */
+.mlist>ul>li+li{
+    margin-left: 10px;
+}
+
+/* 포스터 이미지 */
+.mlist img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 이미지를 비율유지하여 박스에 채움 */
+}
+
+/* 영화정보박스 */
+.movtxt{
+    /* 수직방향 플렉스박스로 중앙정렬! */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    top: 100%;
+    /* 높이값만큼 내려가있음! */
+    width: 100%;
+    height: 100%;
+    /* 부모는? 싸고있는 li */
+
+    /* 반투명배경색 */
+    background-color: rgba(0, 0, 0, 0.705);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: min(1.3vw,14px);
+    /* 글자최대크기 14px, 보이는 가로크기 1.3% */
+    line-height: 2;
+    text-align: center;
+    /* 줄바꿈방지 */
+    white-space: nowrap;
+
+    /* 트랜지션: 속시이지 */
+    transition: top .3s ease-out;
+}
+
+/* 오버시 영화정보 보이기 */
+.mlist ul>li:hover .movtxt{
+    top: 0;
+}
+
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: min(1.5vw,17px);
+    /* 최대 17px, 화면가로의 1.5% */
+    letter-spacing: -1px;
+}
+
+/* 영화보러 가는길 애니박스 */
+.goMV{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: 80px;
+    /* outline: 1px dashed yellow; */
+}
+
+/* 글자커버 */
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/curtain.jpg) no-repeat;
+    
+    /* 폰트설정 */
+    font-family: 'Cute Font', cursive;
+    color: #fff;
+    font-size: 20px;
+    line-height: 80px;
+    text-align: center;
+}
+
+
+
+/****************************** 3. 하단영역 ******************************/
+/* 속박스 */
+.info {
+    position: relative;
+    /* sns의 부모자격 */
+    height: 100px;
+}
+/* 회사정보 */
+.info address{
+    color: #c3c3c3;
+    font-style: normal;
+    /* address 기본 이탤릭해제 */
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+    /* 안쪽여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+/* 하단로고 이미지 */
+.info img{
+    float: left;
+    /* 이미지 자신은 왼쪽, 글자는 오른쪽 */
+    margin-right: 20px;
+}
+
+/* 3-2. SNS 박스 */
+.sns{
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    /* 플렉스박스 */
+    display: flex;
+}
+.sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat;
+    margin: 0 2px;
+    /* 필터:흑백적용 */
+    filter: grayscale(100%);
+    /* 손가락모양 cursor */
+    cursor: pointer;
+}
+/* 오버시칼라 */
+.sns li:hover{
+    filter: grayscale(0%);
+}
+/* 페이스북 */
+.sns li:first-child{
+    background-position: -509px -428px;
+}
+/* 트위터 */
+.sns li:nth-child(2){
+    background-position: -550px -428px;
+}
+/* 인스타그램 */
+.sns li:nth-child(3){
+    background-position: -592px -428px;
+}

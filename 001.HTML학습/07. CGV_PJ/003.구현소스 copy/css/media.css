@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CGV PJ 메인 페이지 CSS - media.css */
+
+
+@media screen and (max-width:1200px) {
+
+    /* 하단로고 이미지 */
+    .info img{
+        margin: 0;
+        margin-bottom: 15px;
+        float: none;
+    }
+    /* sns */
+    .sns{
+        position: static;
+        justify-content: center;
+    }
+    
+}
+
+/* 미디어쿼리 600px 이하 */
+@media screen and (max-width:600px) {
+    /* 메인영역 비율변경 */
+    .cont::before {
+        padding-top: 150%;
+    }
+    
+    /* 메인 배경이미지 크기 조정 */
+    .cont{
+        background-size: 130%;
+    }
+
+    /* 스크린 위치 크기조정 */
+    #screen{
+        top: 9.8%;
+        left: 12.8%;
+        width: 76.1%;
+        height: 28.8%;
+    }
+
+    /* 극장가는 길 없앰 */
+    .goMV{
+        display: none;
+
+    }
+}
