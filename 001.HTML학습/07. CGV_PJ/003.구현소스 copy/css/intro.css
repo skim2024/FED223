@@ -70,7 +70,7 @@ html,body{
 /* 마우스 오버시 글자박스 */
 #enter:hover span{
     transform: scale(2);
-    color: yellow;
+    color: #ffad00;
 }
 
 /* 엔터박스 로고 이미지 */
