@@ -303,6 +303,8 @@ body * {
     transform-origin: bottom;
     /* 트랜지션:속시이지 */
     transition: transform 0.4s ease-out;
+
+    flex-basis: 30.03%;
 }
 
 
