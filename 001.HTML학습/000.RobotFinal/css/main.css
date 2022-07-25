@@ -25,7 +25,7 @@ body{
     position: relative;
     /* 부모자격 */
     /* height: 788px; -> 비율유지는 높이값이 불필요! */
-    background: url(../images/bg.jpg) no-repeat top/100%;
+    /* background: url(../imgs/menurobot.jpg) no-repeat top/100%; */
 }
 /* 비율유지 가상요소 */
 .cont::before{
