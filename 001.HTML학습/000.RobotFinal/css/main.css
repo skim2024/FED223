@@ -12,7 +12,7 @@
 body{
     /* 한번에 배경주기
     background: 색이반고윙/크 */
-    background-image: linear-gradient(to bottom, #ffad00, #ffcea7);
+    background: #dbddec;
     /* background: 
     url(../imgs/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
     url(../imgs/bg_mainvisual.jpg) no-repeat fixed center/cover; */
