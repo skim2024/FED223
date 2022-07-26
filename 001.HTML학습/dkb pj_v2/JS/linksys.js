@@ -25,6 +25,7 @@ $(()=>{
         // 2. 이동버튼에 해당하는 페이지 주소 분기
         switch (txt){
             case "인물관계도": url="cat";break;
+            case "프로그램 소개": url="program";break;
             case "시청자 게시판": url="board";break;
             case "로그인": url="login";break;
             case "회원가입": url="member";break;

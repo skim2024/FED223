@@ -21,6 +21,8 @@
 /* 겉박스 */
 #top {
     position: relative;
+    z-index: 9999;
+    /* 하단박스 보다위(모바일 gnb메뉴 때문) */
     /* 하단구분선 */
     border-bottom: 1px solid #ccc;
     /* 배경흰색 */
