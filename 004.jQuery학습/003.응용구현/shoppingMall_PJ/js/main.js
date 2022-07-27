@@ -60,6 +60,9 @@ $(()=>{
 
             // console.log("통과:",prot);
 
+            // 자동넘김 지우기함수 호출!
+            clearAuto();
+
             // 1. 오른쪽여부
             // is(클래스/아이디명) -> 선택요소해당여부 리턴
             let isR = $(this).is(".ab2");
@@ -154,6 +157,64 @@ $(()=>{
             console.log(ele,idx);
 
         }); //////////////// each ///////////////
+
+        // 배너 자동호출 넘기기 셋팅 ///
+        // 인터발함수 : setInterval(함수,시간)
+        // 인터발 지우기 함수 : clearInterval(변수)
+        // 타임아웃함수: setTimeout(함수,시간)
+        // 타임아웃 지우기 함수: clearTimeout(변수)
+        // 타이밍함수는 변수에 할당해야 지울수있다!
+
+
+        // 인터발용 변수
+        let autoI;
+
+        // 타임아웃용 변수
+        let autoT;
+
+        // 인터발 최초호출
+        autoSlide();
+
+        // 인터발 호출함수
+        function autoSlide(){
+
+            autoI = setInterval(()=>{
+                slide.animate({left:"-100%"},aniT,aniE,function(){ 
+                    $(this).append($("li",this).first())
+                    .css({left:"0"});
+                }); /////// animate ///////////
+
+                // 블릿변경하기
+                let sseq = slide.find("li").eq(1).attr("data-seq");
+
+                indic.eq(sseq).addClass("on")
+                .siblings().removeClass("on");
+
+            },3000); ////// 인터발함수 ///////
+        } //////////////// autoSlide함수 //////////////
+
+
+        // 인터발 지우기 함수 ////////////
+        function clearAuto(){
+            // 인터발지우기
+            clearInterval(autoI);
+            // 타임아웃지우기(실행쓰나미 방지!)
+            clearTimeout(autoT);
+
+            // 일정시간후 다시 인터발 호출!
+            autoT = setTimeout(autoSlide,4000);
+
+        } ///////////////// clearAuto함수 //////////////
+
+
+
+
+        // 근본적 해결소스 아님!
+            // setInterval(()=>{
+            //     $(".ab2").trigger("click");
+            // },3000);
+            // 제이쿼리 trigger(이벤트명) 메서드
+            // -> 선택요소에 강제 이벤트발생 메서드
 
 
 }); ///////////////////////////// jQB //////////////////////////
