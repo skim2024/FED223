@@ -5,6 +5,8 @@
 .cont{
     min-height: 600px;
     padding: 15px;
+    padding-left: 40px;
+    padding-top: 50px;
 }
 
 /* 1. 타이틀 */
