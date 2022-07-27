@@ -25,9 +25,15 @@ h1{
     color: rgb(0, 86, 162);
 }
 
- h2{
+h2{
     font-size: 90px;
+    padding-left: 50px;
  }
+
+p{
+    padding-left: 70px;
+}
+
 
 
 /* 속박스 class */
