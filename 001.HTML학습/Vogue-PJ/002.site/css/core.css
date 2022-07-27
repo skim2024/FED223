@@ -127,9 +127,23 @@ body *{
 }
 
 /* 컨텐츠박스 가상요소로 보더애니 구현 */
+.cbx::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 0px solid red;
 
+  /* 트랜지션: 속시이지 */
+  transition: border 0.2s ease-in;
+}
 /* .cbx에 마우스 오버시 보더애니 */
-
+.cbx:hover::after{
+  border: min(1.6vw,20px) solid red;
+}
 
 /* 컨텐츠 타이틀박스 */
 .cbx h2{
@@ -140,14 +154,15 @@ body *{
 
   /* 글자설정 */
   font-family: pist,nbg;
-  font-size: 33px;
+  font-size: min(3vw,33px);
   font-weight: normal;
   text-align: center;
   color: #fff;
 
-  padding: 50px;
+  padding: min(50px,3.4vw);
   /* 박스크기유지 - 패딩,보더포함 */
   box-sizing: border-box;
+  /* 패딩도 이미지 사이즈와 같은 비율로 줄어야함-> 그래야 글자가 밖으로 안넘어감 */
 }
 
 
