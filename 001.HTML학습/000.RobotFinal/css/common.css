@@ -37,7 +37,7 @@
 }
 
 /* 메인로고 이미지 크기 조절 */
-절logo img {
+.logo img {
     width: 100px;
 }
 
