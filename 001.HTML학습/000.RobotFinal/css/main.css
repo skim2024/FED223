@@ -8,6 +8,7 @@
 @import url(common.css);
 
 
+
 /* 컨텐츠 파트 최상위부모 */
 body{
     /* 한번에 배경주기
@@ -54,7 +55,9 @@ body{
     right: 0;
     top: auto;
     width: 50%;
-    font-size: 2vw;
+    font-size: 1.5vw;
+    margin-right: -139px;
+    margin-bottom: 0;
 }
 
 /* 2-1. 스크린박스 */

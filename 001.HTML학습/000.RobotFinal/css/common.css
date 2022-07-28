@@ -12,7 +12,7 @@
     /* 하단구분선 */
     border-bottom: 1px solid #ccc;
     /* 배경흰색 */
-    background-color: #fff;
+    background: #dbddec;
 }
 /* 상단영역 키프레임 */
 @keyframes topAni {
@@ -96,7 +96,7 @@
 /* 상위메뉴 마우스 오버시 상위a에 하단보더 */
 .gnb>ul>li:hover>a{
     /* 오버시엔 보더 색만 변경함! */
-    border-bottom-color: red;
+    border-bottom-color: rgb(68, 68, 68);
 }
 
 
@@ -158,7 +158,7 @@
     그래야 화면이 부모가 된다! */
     height: 0;
     /* height 오버시 각 수치로 바꿔주기 px */
-    background-color: white;
+    background: #d7daed;
 
     /* #top박스 하단보더 보이게 하기위해 margin-top으로 1px이동(top을 쓰면 복잡해짐) */
     margin-top: 1px;
@@ -169,7 +169,7 @@
 
 /* 상위li에 오버시 가상요소 하단 보더 공통생성 */
 .gnb>ul>li:hover::after{
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid rgb(70, 70, 70);
 }
 
 
@@ -273,7 +273,7 @@ body.on .top .ham::before{
 
 /* 겉박스 */
 #info{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(7, 6, 6, 0.7);
 }
 
 /* 속박스 */
