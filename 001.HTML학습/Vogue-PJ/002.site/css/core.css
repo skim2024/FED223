@@ -33,9 +33,9 @@ font-family: 'Roboto Condensed', sans-serif;
 
 
 /* 공사중 표시 */
-body *{
+/* body *{
   outline: 1px dashed gray;
-}
+} */
 /************* 2. 공통 class *************/
 /* 중앙 속박스 */
 .ibx{
@@ -185,6 +185,18 @@ body *{
 }
 
 /* 공통 적용 배경색 클래스 */
-
+.bgc{
+  background-color: #fff;
+}
 
 /* 등장액션 클래스 */
+.scAct{
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+}
+/* 등장 클래스 */
+.scAct.on{
+  transform: translateY(0);
+  opacity: 1;
+}

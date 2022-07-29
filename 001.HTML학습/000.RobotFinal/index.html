@@ -12,13 +12,143 @@
     <title>Everyday Robots Website Renewal</title>
     <!-- 메인페이지 외부 css만 호출함(공통 css는 import됨) -->
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <!-- <link rel="stylesheet" href="./css/media.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
+
+    
+    <!-- 외부JS삽입 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery-touch-punch.min.js"></script>
+         <!-- 부드러운 스크롤 -->
+    <script src="js/smoothScroll20.js"></script>
+    <script src="js/common.js"></script>
 
 
-    <style> 
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            /* overflow: hidden; */
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        /* 드래그 선택 안되게 하는 CSS */
+        .dselect{
+            user-select: none;
+            /* 선택안되게함 */
+            -webkit-user-drag: none;
+            /* 드래그안되게함 */
+        }
 
 
+        /*움직일 갤러리 화면크기의 부모박스*/
+        #handle {
+            position: relative;
+            height: 70%;
+            width: 100%;
+            overflow: hidden;
+
+        }
+
+        /*갤러리 내용만큼 가로로큰 내부박스-움직일박스*/
+        #move {
+            position: absolute;
+            /*            width: 7200px;*/
+            height: 100%;
+        }
+
+        #move img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*플렉스박스!*/
+        #move>ul {
+            display: flex;
+        }
+
+        #move>ul li {
+            position: relative;
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+        }
     </style>
+
+<script>
+    $(()=>{
+        // 1. 드래그 대상: #move
+        let move = $("#move");
+
+        // 2. 아이스크림 박스 드래그설정
+        $("#move").draggable({
+            axis: "x" // x축고정
+            // 축고정 ("y"는 y축고정)
+        });
+
+        // 3. 드래그 애니메이션 설정
+        move.css({
+            transition: "all 0.8s ease-out"
+        }); //////// css ////////
+
+
+        // 화면 기준값 (1/3)
+            // 첫번째 한계값
+            let fpt = $(window).width() / 3;
+            console.log("첫번째 한계값:",fpt);
+
+        // 마지막 한계값
+        // -> (움직일 박스 전체 가로크기) - (화면의 2/3크기)
+        let lpt = move.width() - (fpt*2);
+        console.log("마지막 한계값:",lpt);
+
+        $("html,body")
+        .on("mousedown mouseup mousemove",()=>{
+            console.log("마우스냐 터치냐?");
+
+
+            // 1. 움직이는 박스의 left위치값
+            let mpos = move.offset().left;
+            console.log("현재left:",mpos);
+
+
+            // 2. 처음 한계값 체크후 위치고정
+            if(mpos > fpt){
+                // 첫번째 한계값에 고정
+                move.css({
+                    left: fpt+"px"
+                }); ////////// css //////////////////
+            } ///////////////// if /////////////////
+
+
+            // 3. 마지막 한계값 체크후 위치고정
+            if(mpos < -lpt){
+                // 마지막 한계값에 고정
+                move.css({
+                    left: -lpt+"px"
+                }); ////////// css //////////////////
+            } ///////////////// if /////////////////
+
+        }); ///////////////////// mousemove /////////////
+
+    }); //////////////jQB ///////////////
+    </script>
+
 
 </head>
 
@@ -77,61 +207,23 @@
                 <ul class="fbx jcc">
                     <li class="sm">
                         <a href="#">Home</a>
-                        <!-- 서브메뉴 -->
-                        <!-- <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">프로그램 소개</a>
-                                </li>
-                                <li>
-                                    <a href="#">인물소개</a>
-                                </li>
-                                <li>
-                                    <a href="#">인물관계도</a>
-                                </li>
-                            </ol>
-                        </div> -->
                     </li>
                     <li>
                         <a href="#">Technology</a>
                     </li>
                     <li class="sm">
                         <a href="#">Vision</a>
-                        <!-- <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">클립영상</a>
-                                </li>
-                                <li>
-                                    <a href="#">다시보기</a>
-                                </li>
-                                <li>
-                                    <a href="#">예고편</a>
-                                </li>
-                                <li>
-                                    <a href="#">스페셜</a>
-                                </li>
-                            </ol>
-                        </div> -->
                     </li>
                     <li class="sm">
                         <a href="#">Join Us</a>
-                        <!-- <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">현장 포토</a>
-                                </li>
-                                <li>
-                                    <a href="#">대표 포스터</a>
-                                </li>
-                            </ol>
-                        </div> -->
+                    </li>
+                    <li>
+                        <a href="#" class="fi fi-search">
+                            <span class="ir"></span>
+                        </a>
                     </li>
                 </ul>
                 <!-- </nav> -->
-
-                <!-- 햄버거버튼 -->
-                <button class="ham" onclick="document.body.classList.toggle('on')"></button>
         </header>
     </div>
     <!-- <h1>Everyday Robots</h1> -->
@@ -143,7 +235,7 @@
     <!-- 2. 메인영역 -->
     <div id="cont">
         <main class="cont">
-            <div class="rbxIn">
+            <div class="rbxIn scAct">
 
                 <div class="tinfo">
                     <!-- 2-2-1.제목 -->
@@ -170,19 +262,19 @@
                 </div>
 
                 <div class="tinfo">
-                <h2>
-                    A moonshot <br>
-                    for Robotics <br>
-                </h2>
+                    <h2>
+                        A moonshot <br>
+                        for Robotics <br>
+                    </h2>
 
-                <p>
-                    We believe helper robots have the <br>
-                    potential to ultimately help everyone, everywhere. <br>
-                    From offices, to institutions of care, <br>
-                    to eventually in our homes, they’ll make our lives <br>
-                    easier by lending us a helping hand.
-                </p>
-            </div>
+                    <p>
+                        We believe helper robots have the <br>
+                        potential to ultimately help everyone, everywhere. <br>
+                        From offices, to institutions of care, <br>
+                        to eventually in our homes, they’ll make our lives <br>
+                        easier by lending us a helping hand.
+                    </p>
+                </div>
 
                 <h2>
                     Applications
@@ -197,11 +289,24 @@
                 <h2>
                     Hot Topics
                 </h2>
-                    <!-- 캘린더처럼 날짜별로 everyday robots 이벤트 구성 -->
+                <!-- 캘린더처럼 날짜별로 everyday robots 이벤트 구성 -->
 
                 <!-- Topic 5 -->
                 <h2>
-                    Building with teams across Alphabet
+                    
+                    <h1 class="dselect">Building with teams across Alphabet</h1>
+                    <div id="handle">
+                        <div id="move">
+                            <ul class="dselect">
+                                <li><img src="imgs/960X800.jpg" alt="items"></li>
+                                <li><img src="imgs/Elfin-p-jingdu.jpg" alt="items"></li>
+                                <li><img src="imgs/ERlogo.png" alt="items"></li>
+                                <li><img src="imgs/icons.png" alt="items"></li>
+                                <li><img src="imgs/menurobot.jpg" alt="items"></li>
+                        
+                            </ul>
+                        </div>
+                    </div>
                 </h2>
             </div>
         </main>
@@ -252,10 +357,14 @@
             </div>
 
 
-            </div>
-        </footer>
+    </div>
+    </footer>
     </div>
 
+    <!-- 위로가기버튼 -->
+    <a href="#" class="tbtn fi fi-angle-up">
+        <span class="ir"></span>
+    </a>
 </body>
 
 </html>

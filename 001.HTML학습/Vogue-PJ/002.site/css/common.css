@@ -3,6 +3,10 @@
 /* 상단,하단영역 반복 레이아웃 */
 
 /* 1. 상단영역 */
+#top{
+    /* 박스 하단 경계선 그림자 */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
 .top{ 
     min-height: 206px;
 }
@@ -193,7 +197,126 @@
 .gnb a:hover{
     color: red;
 }
+
+
+/********** 슬림 상단 디자인 변경 **********/
+/* #top 최상위 박스에 클래스 "on"을 줘서 적용! */
+
+/* 1. 상단영역 최상위 고정 */
+#top.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #fff;
+}
+/* 2. 상단영역 속박스(.top) 최소높이 해제 */
+#top.on .top{
+    min-height: auto;
+}
+
+/* 3. 탑메뉴 없애기 */
+#top.on .tmenu{
+    display: none;
+}
+
+/* 4. 메인로고 이미지 크기변경 */
+#top.on .logo img{
+    width: 100px;
+}
+
+/* 5. 메인로고 박스 포지션 변경 */
+#top.on .logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 부모는 #top */
+    padding: 10px;
+}
+
+/* 6. GNB 변경 */
+#top.on .gnb{
+    font-size: 14px;
+    padding: 5px 120px 0;
+    /* 패딩 - 양쪽 120px 밀어줌! 로고때문 */
+}
+#top.on .gnb a{
+    /* 글자색은 a요소에서 변경! */
+    color: #333;
+}
+#top.on .gnb li{
+    /* 글자색은 a요소에서 변경! */
+    padding-right: 35px;
+}
+
 /******************* 2. 하단영역 *******************/
 .info{
     min-height: 286px;
+    background-color: #000;
+    padding: 70px;
+
+    /* 크기유지박스 */
+    box-sizing: border-box;
+    font-family: 'Roboto', nbg;
+}
+
+/****************** 3-1.하단로고 ******************/
+.blogo{
+    text-align: center;
+}
+/****************** 3-1.하단주소 ******************/
+.addr{
+    color: #747474;
+    text-align: center;
+    font-size: 11px;
+    font-style: normal;
+    margin: 20px 0 10px;
+}
+/****************** 3-1.하단링크 ******************/
+.blink{
+    /* 플렉스박스 */
+    display: flex;
+    /* 수평방향 중앙정렬 */
+    justify-content: center;
+    /* 랩핑박스- 세로 사이즈 줄어들면서 글씨 자연스럽게 다음줄로 넘어감 */
+    flex-wrap: wrap;
+}
+.blink a{
+    color: #747474;
+    font-size: 13px;
+    margin: 0 6px;
+}
+/* 링크 마지막 글자 두껍게 */
+.blink li:last-child a{
+    font-weight: bold;
+}
+
+/* 위로가기 버튼 */
+.tbtn {
+    position: fixed;
+    bottom: -35px;
+    right: 75px;
+    width: 48px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #333;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+    z-index: 9999;
+    font-size: 12px;
+    opacity: 0;
+    transition: background-color .3s, opacity .3s;
+}
+
+/* 위로가기 버튼 보이기상태 */
+.tbtn.on {
+    opacity: 1;
+    bottom: 0;
+}
+
+/* 마우스 오버시 빨간색으로 */
+.tbtn:hover{
+    background-color: #f00;
 }
