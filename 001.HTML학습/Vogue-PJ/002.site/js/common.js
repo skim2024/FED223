@@ -1,7 +1,7 @@
 // 보그 공통 기능 JS -common.js
 
 ///////////제이쿼리 블록 /////////////////
-$(()=>{
+$(() => {
     //호출확인
     console.log("로딩완료!");
 
@@ -14,6 +14,8 @@ $(()=>{
     let scTop; //스크롤위치변수
     // 변경대상: 상단영역(#top)
     let topA = $("#top");
+    // 변경대상: 위로가기버튼(.tbtn)
+    let tbtn = $(".tbtn");
 
     // 각 등장액션 위치변수
     const scpos = [];
@@ -26,7 +28,7 @@ $(()=>{
 
 
     // 스크롤 등장요소(.scAct)만 위치값을 배열에 저장
-    $(".scAct").each((idx,ele)=>{ //idx-순번, ele-요소
+    scAct.each((idx, ele) => { //idx-순번, ele-요소
         // console.log(idx,ele);
 
         // 위치값 변수에 넣기!
@@ -43,15 +45,15 @@ $(()=>{
                 함수명: scAction
                 기능: 스크롤 등장액션 주기
     **************************************************/
-    function scAction(n){ // n - 순번값
+    function scAction(n) { // n - 순번값
 
         // 해당영역일 경우 해당요소에 class on넣기
-        if(
+        if (
             // 등장요소 위치전보다 크고
-            scTop > scpos[n]- gap && 
+            scTop > scpos[n] - gap &&
             // 등장요소 위치보다 작음
             scTop < scpos[n]
-            ){
+        ) {
             // 변경대상: .scAct -> scAct 변수
             scAct.eq(n).addClass("on");
         } //////// if ////////////////////////
@@ -69,19 +71,15 @@ $(()=>{
     // resize()
 
     // 등장요소 위치 업데이트하기
-    $(window).resize(()=>{
+    $(window).resize(() => {
 
         // 스크롤 등장요소(.scAct)만 위치값을 배열에 저장
-        $(".scAct").each((idx,ele)=>{ //idx-순번, ele-요소
-        // console.log(idx,ele);
+        scAct.each((idx, ele) => 
+            scpos[idx] = $(ele).offset().top); 
 
-        // 위치값 변수에 넣기!
-        scpos[idx] = $(ele).offset().top;
-        // offset().top -> 맨위에서부터 top 위치값
-
-        }); /////////// each ////////////
-
-    });
+        // 위치배열값 확인!
+        console.log(scpos);
+    }); /////////// resize함수 ///////////////////
 
 
     // offset().top -> 위치값 구하는것
@@ -89,65 +87,77 @@ $(()=>{
 
     ////////////////////////////////////////
     // 윈도우에 스크롤 이벤트 설정하기 /////
-    ///////////////////////////////////////
-     $(window).scroll(function(){
+    //////////////////////////////////////
+    $(window).scroll(function () {
 
         scTop = $(this).scrollTop();
         // scrollTop() -> 세로스크롤바 위치값
         // 참고) 가로스크롤바 위치값은 scrollLeft()
 
         // 스크롤확인+위치값
-        console.log("스크롤중",scTop);
+        console.log(scTop);
 
         // 1. 상단영역 슬림변경 클래스 on주기!
         // 스크롤위치 기준은 100px이상일때
         // 스크롤을 한번 작게 작동할때 100px이동함!
-        if(scTop >= 100){
+        if (scTop >= 100) {
 
-                // 상단영역에 클래스 on주기
-                topA.addClass("on");
+            // 상단영역에 클래스 on주기
+            topA.addClass("on");
 
         } /////////// if ////////////////
-        else{ //100미만일때
+        else { //100미만일때
 
             topA.removeClass("on");
 
         } /////////// else /////////////////
 
         // 2. 스크롤 등장액션 주기
-
-        // 개수만큼 함수호출 시켜줘야함! *20은 안해줘도 됨.
-
-       
-        if(
-            // 등장요소 위치전보다 크고
-            scTop > scpos[1]-600 && 
-            // 등장요소 위치보다 작음
-            scTop < scpos[1]
-            ){
-            // 변경대상: .scAct -> scAct 변수
-            scAct.eq(1).addClass("on");
-        } //////// else ////////////////////////
-
-        // 2. 스크롤 등장액션 주기
         // 등장요소만큼 scAction함수 호출하기!
 
         // 요소로 호출하기
-        // scAct.each((idx)=>scAction(idx));
+        scAct.each((idx) => scAction(idx));
+        
 
         // each()메서드는 제이쿼리 전용임!
         // each((idx,ele){})-> 첫번째 순번만 이용하므로
         // each((idx){}) 전달변수를 하나만 사용했음!
 
         // 또는 배열로 호출하기
-        scpos.forEach((val,idx)=>scAction(idx));
+        // scpos.forEach((val, idx) => scAction(idx));
+
         // forEach()는 배열/요소용 for문
         // forEach((val,idx)=>{}) 두번째 전달값 순번을
         // 사용하므로 전달변수를 2개 모두 써야함!
 
-        
 
 
-}); ////////////////// jQB ////////////////////////
+        // 3. 위로가기 버튼 보이기/숨기기
+        if(scTop >= 300){ //300이상일때
+            // 변경대상: .tbtn -> tbtn변수
+            tbtn.addClass("on");
+        }  //////////// if ///////////
+        else { //300미만일때
+            tbtn.removeClass("on");
+        } ///////////// else ///////////
 
-});
+
+
+
+    }); ////////////////// scroll ////////////////////////
+
+
+        // 위로가기버튼 클릭시 
+        // 맨위로 스크롤 애니메이션하기!
+        // 대상: .tbtn -> tbtn변수
+        tbtn.click(()=>{
+            // 변경대상: html,body
+            // 사용메서드: animate()
+            // 스크롤 위치이동 속성은 scrollTop
+            $("html,body").animate({
+                scrollTop:"0"
+            },800,"easeOutQuart");
+        });
+
+}); /////////////// jQB ///////////////////////
+
