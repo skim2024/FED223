@@ -32,13 +32,15 @@
 
 /* 1-1. 메인로고 */
 .logo {
-    padding: 20px;
+    position: absolute;
+    padding: 6px;
     text-align: center;
 }
 
 /* 메인로고 이미지 크기 조절 */
 .logo img {
-    width: 100px;
+    width: 67px;
+    padding-top: 2px;
 }
 
 /* 1-2. 탑메뉴 (우측상단) */
@@ -74,6 +76,7 @@
     /* width: 576px; */
     /* 마영오! - 특정 가로크기가 있어야 적용됨! */
     /* margin: 0 auto; */
+    padding: 10px;
 }
 
 /* GNB 상위li */
