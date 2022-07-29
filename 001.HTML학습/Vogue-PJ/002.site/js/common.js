@@ -89,13 +89,6 @@ $(() => {
     // console.log($(".cont section").eq(1).offset().top);
 
 
-    $(window).on("mousewheel wheel",()=>{
-        console.log("ㅎㅎㅎ");
-        
-        // 부드러운 스크롤 위치변수pos 업데이트
-        // pos = scTop;
-    })
-
 
     ////////////////////////////////////////
     // 윈도우에 스크롤 이벤트 설정하기 /////
@@ -107,8 +100,7 @@ $(() => {
         // 참고) 가로스크롤바 위치값은 scrollLeft()
 
         // 스크롤확인+위치값
-        // console.log(scTop);
-
+        console.log(scTop);
 
 
         // 1. 상단영역 슬림변경 클래스 on주기!
