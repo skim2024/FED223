@@ -18,6 +18,7 @@
     position: absolute;
     padding: 6px;
     text-align: center;
+    z-index: 1;
 }
 
 /* 메인로고 이미지 크기 조절 */
@@ -28,7 +29,7 @@
 
 /* 1-2. 탑메뉴 (우측상단) */
 .tmenu {
-    position: relative;
+    /* position: relative; */
     /* 부모자격!
     상태는 로고박스와 GNB박스 사이에 있고 자식ul이 앱솔루트라서 높이값이 0임!
     가로는 자동으로 .inbox의 크기인 1200px을 채움! */
@@ -37,8 +38,8 @@
 /* 탑메뉴 ul */
 .tmenu>ul {
     position: absolute;
-    top: -50px;
-    right: 0;
+    top: 20px;
+    right: 112px;
     /* 부모는? .tmenu */
 
 }
