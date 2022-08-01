@@ -31,11 +31,6 @@
             padding: 0;
             margin: 0;
             width: 100%;
-            height: 100%;
-        }
-
-        body {
-            overflow: hidden;
         }
 
         ul {
@@ -82,11 +77,34 @@
 
         #move>ul li {
             position: relative;
-            width: 300px;
+            width: 480px;
         }
 
-        h1 {
+        /* h1 {
             text-align: center;
+        } */
+
+        .appvid {
+            position: relative;
+            /*            width: 7200px;*/
+            /* height: 100%; */
+        }
+
+        #app img {
+            /* position: relative; */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*플렉스박스!*/
+        .appvid>ul {
+            display: flex;
+        }
+
+        #app>ul li {
+            /* position: relative; */
+            width: 90px;
         }
     </style>
 
@@ -287,23 +305,18 @@
                 <video id="app" src="imgs/application1(building-inspection).mp4" autoplay muted loop playsinline></video>
                 <div id="videxp">
                 <p>
-                    We believe helper robots have the <br>
-                    potential to ultimately help everyone, everywhere. <br>
-                    From offices, to institutions of care, <br>
-                    to eventually in our homes, they’ll make our lives <br>
-                    easier by lending us a helping hand.
-                </p>
+                    Building inspection and air <br>
+                    quality monitoring <br>
             </div>
             </li>
             <li>
                 <video id="app" src="imgs/application2(surface-inspection).mp4" autoplay muted loop playsinline></video>
                 <div id="videxp">
                 <p>
-                    We believe helper robots have the <br>
-                    potential to ultimately help everyone, everywhere. <br>
-                    From offices, to institutions of care, <br>
-                    to eventually in our homes, they’ll make our lives <br>
-                    easier by lending us a helping hand.
+                    Surface inspection of <br>
+                    hazards, spills, waste, <br>
+                    dust, debris and dirt <br>
+                </p>
                 </p>
             </div>
             </li>
@@ -311,11 +324,8 @@
                 <video id="app" src="imgs/application3(surface-wiping).mp4" autoplay muted loop playsinline></video>
                 <div id="videxp">
                 <p>
-                    We believe helper robots have the <br>
-                    potential to ultimately help everyone, everywhere. <br>
-                    From offices, to institutions of care, <br>
-                    to eventually in our homes, they’ll make our lives <br>
-                    easier by lending us a helping hand.
+                    Surface wiping and <br>
+                    disinfection <br>
                 </p>
                 </div>
             </li>
