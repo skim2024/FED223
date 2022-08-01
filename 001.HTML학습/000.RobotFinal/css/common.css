@@ -145,7 +145,7 @@
     그래야 화면이 부모가 된다! */
     height: 0;
     /* height 오버시 각 수치로 바꿔주기 px */
-    background: #d7daed;
+    background: transparent;
 
     /* #top박스 하단보더 보이게 하기위해 margin-top으로 1px이동(top을 쓰면 복잡해짐) */
     margin-top: 1px;
@@ -270,7 +270,7 @@ body.on .top .ham::before{
     position: relative;
     
     /* 최소높이 - 내용이 늘면 auto로 전환! */
-    min-height: 240px;
+    min-height: 185px;
     /* outline: 2px dashed red; */
     margin-top: 268px
 }
@@ -291,8 +291,7 @@ body.on .top .ham::before{
 }
 .blink a{
     /* 글자셋팅 */
-    color: #222;
-    font-weight: bold;
+    color: #ccc;
     font-size: 1.4rem;
     line-height: 2.8;
 }
@@ -316,7 +315,7 @@ body.on .top .ham::before{
 
     max-width: 804px;
     margin: 0 auto;
-    border: 4px double #222;
+    /* border: 4px double #222; */
     padding: 1rem;
 
     /* 보더,패딩 포함 크기유지! bxb */
@@ -370,7 +369,7 @@ body.on .top .ham::before{
 
 /* 마우스 오버시 빨간색으로 */
 .tbtn:hover{
-    background-color: #f00;
+    background-color: #ddd;
 }
 
 #videxp p{

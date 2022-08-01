@@ -17,6 +17,7 @@ font-family: 'IBM Plex Sans', sans-serif;
  /* 전체 웹폰트 일반적용! */
  body{
     font-family: 'IBM Plex Sans', sans-serif;
+    color: whitesmoke;
  }
 
 /* h1{

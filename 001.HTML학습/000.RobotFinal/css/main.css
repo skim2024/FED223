@@ -11,7 +11,8 @@
 
 /* 컨텐츠 파트 최상위부모 */
 body{
-    background: #dbddec;
+    /* background: #4556d1; */
+    background-image: linear-gradient(to bottom, #000000, #7dbfdb, #36525d, #124453);
 }
 
 
