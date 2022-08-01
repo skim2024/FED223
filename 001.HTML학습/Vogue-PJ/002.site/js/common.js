@@ -169,5 +169,15 @@ $(() => {
             pos = 0; //숫자값으로 넣음!
         });
 
+
+    // 로딩중 테스트용 동영상 넣기
+    $("body").prepend('<iframe width="978" height="550" src="https://www.youtube.com/embed/GduEtmvwcI0" title="[한산: 용의 출현] 메인 예고편" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+
 }); /////////////// jQB ///////////////////////
 
+
+
+// 윈도우 객체 컨텐츠가 모두 로딩된 후 로딩박스 없애기
+$(window).on("load",function(){
+    $(".LDbx").hide();
+}); /////////////// load /////////////////////
