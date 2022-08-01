@@ -272,6 +272,7 @@ body.on .top .ham::before{
     /* 최소높이 - 내용이 늘면 auto로 전환! */
     min-height: 240px;
     /* outline: 2px dashed red; */
+    margin-top: 268px
 }
  
 /**************** 3-1. 하단링크 ****************/
@@ -375,4 +376,8 @@ body.on .top .ham::before{
 #videxp p{
     font-size: 20px;
     font-weight: bold;
+}
+
+.info .blogo img{
+    width: 50px;
 }

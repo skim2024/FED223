@@ -40,16 +40,24 @@ h2{
     text-align: center;
  }
 
- .videxp{
-
- }
 
 
 h5{
     font-size: 50px;
     text-align: center;
+    padding: 66px;
 }
 
+h6{
+    font-size: 23px;
+    text-align: center;
+    padding: 15px;
+}
+
+#exp p{
+    text-align: center;
+
+}
 
 
 
