@@ -8,27 +8,11 @@
 /************************* 1. 상단영역 *************************/
 /* 겉박스 */
 #top {
-    position: relative;
-    /* 하단구분선 */
-    border-bottom: 1px solid #ccc;
-    /* 배경흰색 */
-    background: #dbddec;
-}
-/* 상단영역 키프레임 */
-@keyframes topAni {
-    to{
-        transform: translateY(0%);
-    }
+    /* position: relative; */
+    /* border-bottom: 1px solid #ccc; */
+    /* background: #dbddec; */
 }
 
-/* 속박스 */
-/* .top { */
-    /* 부모자격! 그 자리에서 위치이동 도와주고 등*/
-    /* position: relative; */
-    /* 위에서 부모자격 없앴음 -> 이유는 서브메뉴배경 li 가상요소가 끝까지 가야해서 */
-    /* 주석 단 이유는 내용만큼 늘어나기때문 */
-    /* height: 128px; */
-/* } */
 
 /* 1-1. 메인로고 */
 .logo {
@@ -122,7 +106,7 @@
 
 /* 상위메뉴 li마우스 오버시 서브메뉴 보이기
 + 서브메뉴 가상요소 배경 보이기 */
-.gnb>ul>li:nth-child(1):hover .smenu,
+/* .gnb>ul>li:nth-child(1):hover .smenu,
 .gnb>ul>li:nth-child(1):hover::after{
     height: 120px;
 }
@@ -135,7 +119,7 @@
 .gnb>ul>li:nth-child(4):hover .smenu,
 .gnb>ul>li:nth-child(4):hover::after{
     height: 90px;
-}
+} */
 
 /* 서브메뉴 a */
 .smenu a {
@@ -172,15 +156,16 @@
 
 /* 상위li에 오버시 가상요소 하단 보더 공통생성 */
 .gnb>ul>li:hover::after{
-    border-bottom: 2px solid rgb(70, 70, 70);
+    border-bottom: 1px solid rgba(70, 70, 70, 0.663);
+    padding-bottom: 10px;
 }
-
 
 
 
 /************************** sns 메뉴 **************************/
 .sns {
     /* 마진탑으로 옆 메뉴글자와 줄맞춤 */
+    position: absolute;
     margin-top: -5px;
 }
 
@@ -346,6 +331,7 @@ body.on .top .ham::before{
     top: 10px;
     right: 0px;
     /* 부모는? .info */
+
 }
 .brand select{
     /* 글자셋팅 */

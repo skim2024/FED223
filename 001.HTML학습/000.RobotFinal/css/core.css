@@ -19,21 +19,36 @@ font-family: 'IBM Plex Sans', sans-serif;
     font-family: 'IBM Plex Sans', sans-serif;
  }
 
-h1{
+/* h1{
     text-align: left;
     font-size: 50px;
     color: rgb(0, 86, 162);
-}
+} */
 
 h2{
-    font-size: 90px;
-    padding-left: 50px;
-    padding-top: 50px;
+    font-size: 140px;
+    /* padding-left: 50px; */
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: 20px;
  }
 
-p{
 
+ h3{
+    font-size: 50px;
+    text-align: center;
+ }
+
+ .videxp{
+
+ }
+
+
+h5{
+    font-size: 50px;
+    text-align: center;
 }
+
 
 
 
@@ -88,7 +103,7 @@ ir{
 .scbar::-webkit-scrollbar-thumb{
     /* 스크롤바 */
     background-color: #666;
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 .scbar::-webkit-scrollbar-track{
     /* 스크롤바 트랙*/

@@ -11,13 +11,7 @@
 
 /* 컨텐츠 파트 최상위부모 */
 body{
-    /* 한번에 배경주기
-    background: 색이반고윙/크 */
     background: #dbddec;
-    /* background: 
-    url(../imgs/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
-    url(../imgs/bg_mainvisual.jpg) no-repeat fixed center/cover; */
-    /* 로고이미지 가로위치 10%, 세로위치 30%, 가로크기 10% 세로크기 auto(생략) */
 }
 
 
@@ -30,34 +24,19 @@ body{
     /* background: url(../imgs/menurobot.jpg) no-repeat top/100%; */
 }
 /* 비율유지 가상요소 */
-.cont::before{
+/* .cont::before{
     content: '';
     display: block;
     padding-top: 65.66%;
-    /* 블록자식요소의 패딩탑을 %로 주면 부모박스 가로크기에 대한 비가 성립한다!
-    100%는 1:1 비율!
-    
-    [비율계산하기!]
-    이미지 비율로 박스 비율을 적용함!
-    1200px : 788px = 100 : x
-    x = 788px * 100% / 1200px
-      = 65.66%
-
-    */
-}
+} */
 
 .tinfo{
     position: relative;
 }
 .tinfo p{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    top: auto;
-    width: 50%;
+    /* position: absolute; */
     font-size: 1.5vw;
-    margin-right: -139px;
-    margin-bottom: 0;
+    text-align: center;
 }
 
 /* 2-1. 스크린박스 */
@@ -76,37 +55,25 @@ video {
     object-fit: contain;
 }
 
-/* body의 가상요소로 인트로 애니동안 화면가리기 */
-body::after{
-    content: '';
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999999;
-    /* 애니메이션 */
-    animation: delCover 0.1s 4.5s forwards;
+/* application 비디오박스  공통*/
+.appvid{
+    text-align: center;
 }
 
-/* 가림막 사라지기 애니 키프레임 */
-@keyframes delCover {
-    to{
-        height: 0;
-    }
-    
+/* application 비디오박스 */
+#app{
+    width: 25%;
+    object-fit: contain;
+    /* padding-left: 40px; */
+    text-align: center;
+    padding: 10px;
 }
+
+
 
 /* 메인 영역 */
 .cont{
-    padding-top: 500px;
-    /* 상단패딩: 첫번째 요소 위치밀기의 기본!
-    첫번째요소에 마진탑으로 위치를 이동할 경우
-    부모요소 바깥으로 마진이 나감 (원래 디자인 속성임!)
-    마진을 포함하려면 부모요소에 overflow:hidden 을 주면
-    포함되지만 첫번째 요소의 위치는 부모의
-    패딩으로 밀어주는 것이 정석이다! */
+    /* padding-top: 500px; */
 
     border-style: border-box;
     /* 일반적인 박스는 content-box이며 가로, 세로크기를
@@ -118,72 +85,25 @@ body::after{
 }
 
 
-
-
-
-
-/****************************
-    [트랜지션(Transition) 애니메이션 효과주기]
-    -> 속성값의 변화과정을 보여주면서 애니메이션하는 속성
-    (기본설정)
-    transition: 속성 시간 이징 지연 -> 속시이지!
-
-    1. 속성 (transition-property)
-     - 변경 애니메이션 대상 속성
-    (안쓰거나 all을 쓰면 모든 속성이 애니메이션 적용됨!)
-    -> 속성을 따로 쓰는 이유는 개별적으로 속성별로 애니메이션을 따로 설정할 수 있기 때문!
-    ex) transition: all .4s; -> 모두 적용!
-        transition: .4s; -> 모두 적용!
-        transition:
-        margin-top .3s ease-in, height 2s linear 1s;
-        -> 속시이지 순으로 콤마를 사용하면 다양하게 설정가능!
-
-    2. 시간 (transition-duration)
-     - 애니메이션 시간 : 초단위(s)
-
-    3. 이징(easing -> transition-timing-function) 
-    - 가속도
-        1) ease : 앞뒤로 약간씩 느림 (기본값)
-        2) ease-in: 처음에 천천히 나중에 빨라짐
-        3) ease-out: 나중에 천천히 처음에 빠름
-        4) ease-in-out: 처음과 끝에 천천히
-        5) linear: 등속도
-        -> 베지어곡선으로 매우 다채로운 가속도 생성가능!
-
-        참고)
-        https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_speed
-
-    4. 지연 (transition-delay)
-    - 지연시간 즉, 처음에 대기시간 (초단위:s)
-
-    5. 적용법: 오버시 또는 클래스로 중간에 값을 변경하는 경우
-               시작과 다시 복귀할때 애니메이션이 같다면 오버시가 아닌 원본에 트랜지션을 주면됨!
-               만약에 다르다면 오버시(또는 클래스)에 따로 트랜지션을 설정하면 다르게 애니메이션 된다!
-
-*****************************/
-
-
-/* 캐릭터 설명 타이틀 */
-.cd h3{
-    font-family: 'East Sea Dokdo', cursive;
-    /* 최대글자크기 30px, 이하는 유동적 */
-    font-size: min(2.1vw,30px);
-    font-weight: normal;
-    padding: 15px 10px 5px ;
-    /* 줄바꿈방지(문장이 다음줄로 넘어가진 않음) */
-    white-space: nowrap;
-    letter-spacing: -1px;
+.logo1{
+    width: 100%;
 }
 
 
+.exp{
+    position: absolute;
+    /* 높이값 설정: 
+    0px-> 250px 오버시 변경 */
+    height: 0px;
+    left: 0;
+    overflow: auto;
 
-/* 캐릭터 설명 문단 */
-.cd p{
-    font-family: 'Hahmlet', serif, 'Ma Shan Zheng', cursive;
-    /* 최대글자크기 16px, 이하는 유동적 */
-    font-size: min(0.5vw,12px);
-    line-height: 1.7;
-    padding: 10px;
-    text-align: justify;
+    /* 트랜지션: 속성 시간 이징 지연 */
+    transition: height 0.4s ease-out;
+    border-radius: 20px 5px 5px 20px;
+    /* flex-wrap: wrap; */
+    /* border-style: border-box; */
 }
+
+
 
