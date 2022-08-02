@@ -355,11 +355,11 @@ $(() => {
                 .fadeIn(300)
                 .animate({
                     right: bd.eq(1).width()+"px"
-                },1500,"easeInExpo");
+                },3000,"easeInExpo");
 
                 // 헬기등장하기
                 $(".heli").animate({
-                    left:"25%"
+                    left:"20%"
                 },4000,"easeOutBack",
                 function(){ 
                     //헬기 도착후 탑승이미지 변경
@@ -378,7 +378,7 @@ $(() => {
                 .delay(300)
                 .animate({ //아주 천천히 나가기!
                     left: "100%"
-                },1000,"Linear",()=>{
+                },1000,"linear",()=>{
                     // 최종 마무리 구역 //
 
                     // 간판 떨어뜨리기
@@ -419,7 +419,6 @@ $(() => {
             $(this).css({
                 backgroundColor:"blue",
                 color:"cyan",
-                transition:"none"
             });
             },
             function(){ //out
