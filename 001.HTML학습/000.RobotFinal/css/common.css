@@ -365,6 +365,7 @@ body.on .top .ham::before{
 .tbtn.on {
     opacity: 1;
     bottom: 0;
+    line-height: 3.5;
 }
 
 /* 마우스 오버시 빨간색으로 */
