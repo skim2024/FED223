@@ -12,7 +12,7 @@
 /* 컨텐츠 파트 최상위부모 */
 body{
     /* background: #4556d1; */
-    background-image: linear-gradient(to bottom, rgb(97, 97, 97),#000000, #7dbfdb, #36525d, #124453);
+    background-image: linear-gradient(to bottom, rgb(97, 97, 97) 0%, rgb(97, 97, 97) 0.5%,#000000, #7dbfdb, #36525d, #124453);
 }
 
 
@@ -36,7 +36,14 @@ body{
 }
 .tinfo p{
     /* position: absolute; */
+    padding-bottom: 50px;
     font-size: 1.5vw;
+    text-align: center;
+}
+
+.tinfo1 p{
+    padding-left: 50px;
+    padding-right: 50px;
     text-align: center;
 }
 
