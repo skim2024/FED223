@@ -81,7 +81,7 @@ $(() => {
             scpos[idx] = $(ele).offset().top); 
 
         // 위치배열값 확인!
-        console.log(scpos);
+        // console.log(scpos);
     }); /////////// resize함수 ///////////////////
 
 
@@ -171,7 +171,7 @@ $(() => {
 
 
     // 로딩중 테스트용 동영상 넣기
-    $("body").prepend('<iframe width="978" height="550" src="https://www.youtube.com/embed/GduEtmvwcI0" title="[한산: 용의 출현] 메인 예고편" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+    // $("body").prepend('<iframe width="978" height="550" src="https://www.youtube.com/embed/GduEtmvwcI0" title="[한산: 용의 출현] 메인 예고편" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 
 }); /////////////// jQB ///////////////////////
 
@@ -181,3 +181,79 @@ $(() => {
 $(window).on("load",function(){
     $(".LDbx").hide();
 }); /////////////// load /////////////////////
+
+
+/************************************************ 
+    제이쿼리 스크롤 멈춤 체크 플러그인 메서드
+************************************************/
+$.fn.scrollStopped = function(callback){
+
+    // 스크롤 이벤트 설정하기
+    $(this).scroll(function(){
+
+        // 1. 먼저 타임아웃 지우기(아래서 설정된 타임아웃)
+        clearTimeout($(this).data('scTime'));
+        // 2. 타임아웃설정을 한다!
+        $(this).data('scTime', setTimeout(callback,80));
+        // 제이쿼리 data() 메서드
+        // -> data(키,값)  특정이름에 값을 셋팅하여 저장!
+
+    });
+
+
+}; //스크롤멈춤 플러그인 /////////////////
+
+// 윈도우객체를 제이쿼리로 플러그인 호출!
+// 이때 실행될 함수를 전달함!
+$(window).scStop(function(){
+    // 마지막 스크롤 위치값
+    let scTop = $(this).scrollTop();
+    // 콘솔에 확인!
+    // console.log("스크롤멈춤!",scTop);
+    // 부드러운 스크롤 위치값에 업데이트!
+    pos = scTop;
+}); ////////// window //////////
+
+
+$(()=>{
+
+    // 제이쿼리 data(키,값) 연습
+    let mykey = $("#top");
+    mykey.data('헐','고양이');
+    mykey.data('힘','강아지');
+
+    console.log(
+        'data()키값:',mykey.data('헐'),'/',mykey.data('힘'));
+
+    // data() 삭제는 removeData(키)
+    mykey.removeData('헐');
+
+    console.log(
+        'data()키값:',mykey.data('헐'),'/',mykey.data('힘'));
+}); /////////////// jQB ///////////////
+
+
+/////////////////// 비교 JS Map() 메서드 //////////////////
+// -> 키, 값으로 저장하는 메모리공간 생성 메서드
+// 1. 메모리 공간 생성: Map() -> new 키워드로!
+const keyval = new Map();
+
+// 2. 값세팅: set(키,값)
+keyval.set('한국배우','조승우');
+keyval.set('미국배우','톰크루즈');
+keyval.set('중국배우','성룡');
+
+// 3. 값호출: get(키)
+// console.log('Map()값:',
+// keyval.get('한국배우'),'/',
+// keyval.get('미국배우'),'/',
+// keyval.get('중국배우')
+// )
+
+// 4. 키존재여부: has(키)
+// console.log('성룡있나? 지금?',keyval.has('중국배우'));
+
+
+// 5. 값 삭제: delete(키)
+// keyval.delete('중국배우');
+// console.log('성룡있나? 지금?',keyval.has('중국배우'));
