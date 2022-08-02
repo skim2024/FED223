@@ -115,7 +115,8 @@ $(() => {
                 // 부모박스 sbx 의 가로크기 마이너스는 -100%와 동일
                 // 보정값으로 드래그 이동시 위치맞추기
                 .css({
-                    left: -($(this).parent().find(".viewer").width() + tval) + "px"
+                    left: 
+                    -($(this).parent().find(".viewer").width() + tval) + "px"
                 })
                 // 그후 left값 0으로 애니메이션
                 .animate({
@@ -124,7 +125,8 @@ $(() => {
                     aniT, //시간
                     aniE // 이징
                 ); ////// animate //////
-                    
+
+                console.log("난뉴규?",this);
         } /////////// else ///////////
 
         // 3. 등장슬라이드와 같은 순번의 블릿변경하기
@@ -461,7 +463,8 @@ $(() => {
     $(".viewer>ul").on("dragstop", function () {
 
         // 광드래그막기 작동!
-        $(this).parent().find(".cover").show();
+        $(this).parents(".slider")
+        .find(".cover").show();
 
         // console.log("난누규?",this);
 
@@ -476,18 +479,22 @@ $(() => {
         if (spos > 50) {
             // 드래그한 만큼 위치값 보정하기(tval에 보정!)
             tval = -spos;
-            $(this).parents(".slider").find(".lb").trigger("click");
+            $(this).parents(".slider")
+            .find(".lb").trigger("click");
             setTimeout(() => {
-                $(this).parents(".slider").find(".cover")
+                $(this).parents(".slider")
+                .find(".cover")
                 .hide(); // 커버해제
             }, aniT);
         }
         // 2-2. -50px보다 작을때 오른쪽에서 들어옴!
         else if (spos < -50) {
-            $(this).parents(".slider").find(".rb").trigger("click");
+            $(this).parents(".slider")
+            .find(".rb").trigger("click");
 
             setTimeout(() => {
-                $(this).parents(".slider").find(".cover")
+                $(this).parents(".slider")
+                .find(".cover")
                 .hide(); // 커버해제
             }, aniT);
         }
@@ -497,7 +504,8 @@ $(() => {
                     left: 0
                 }, 300, "easeOutQuint",
                 () => 
-                $(this).parents(".slider").find(".cover").hide());
+                $(this).parents(".slider")
+                .find(".cover").hide());
 
 
 
