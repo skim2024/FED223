@@ -7,7 +7,7 @@
     /* 1. 없앨 요소들: .tmenu,.gnb */
     .tmenu,.gnb{
         display: none;
-    }
+    } 
     /* 2. 로고, 로고이미지 */
     .logo{
         margin-bottom: 0;
@@ -80,7 +80,30 @@
         border: 2.5vw solid red;
     }
 
+    /* 11. 하단박스*/
+    .info{
+        min-height: auto;
+        padding: 40px;
+    }
 
+    /* 12. 하단로고 */
+    .blogo img{
+        width: 200px;
+    }
+
+    /* 13. 카테고리 페이지 서브 타이틀 */
+    .stit{
+        font-size: 30px;
+        padding: 25px 0 5px;
+    }
+
+    /* 14. 카테고리 페이지 lnb 메뉴 */
+    .lnb{
+        padding: 0 0 30px;
+    }
+    .lnb a{
+        font-size: 14px;
+    }
 }
 
 /******* 500px 이하 미디어쿼리 끝 *******/
