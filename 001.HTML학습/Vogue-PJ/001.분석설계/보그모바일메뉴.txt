@@ -3,7 +3,7 @@
 <!-- header.top 안에 넣기 -->
 
 
-<!-- 모바일용 햄버거버튼 -->
+<!-- 모바일용 햄버거버튼 --> 
 <a href="#" class="mobtn hbtn fi fi-nav-icon">
     <span class="ir">GNB button</span>
 </a>
