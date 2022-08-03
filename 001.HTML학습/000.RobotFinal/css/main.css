@@ -70,7 +70,7 @@ video {
 
 /* application 비디오박스 */
 #app{
-    width: 60%;
+    width: 80%;
     object-fit: contain;
     /* padding-left: 40px; */
     text-align: center;

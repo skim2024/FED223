@@ -81,7 +81,7 @@ html,body{
 /* 마우스 오버시 글자박스 */
 #enter:hover span{
     transform: scale(2);
-    color: #ffad00;
+    color: #4b9cffbc;
 }
 
 /* 엔터박스 로고 이미지 */
