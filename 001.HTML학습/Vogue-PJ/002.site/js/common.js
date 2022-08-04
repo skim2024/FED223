@@ -10,6 +10,13 @@ $(() => {
     /// 부드러운 스크롤 호출!(제이쿼리 아님!)
     startSS();
 
+
+
+    
+// 선택메서드 비교
+// find(요소) - 자손선택
+// children(요소) -직계자식선택
+
     /************************************** 
         모바일 버튼 클릭시 검색 / GNB 보이기
     **************************************/
@@ -18,7 +25,7 @@ $(() => {
         // GNB 박스 슬라이딩 보임/숨김
         // slideToggle() -> slideUp/slideDown
         // 대상: 모바일 GNB
-        $('#mobx').slideToggle(400,resetH);
+        $('#mobx').slideToggle(400, resetH);
         // 애니후 높이값 재설정 호출!
     }); ////////// click /////////
 
@@ -27,7 +34,7 @@ $(() => {
         // GNB 박스 슬라이딩 보임/숨김
         // slideToggle() -> slideUp/slideDown
         // 대상: 모바일 GNB
-        $('.mos').slideToggle(200,resetH);
+        $('.mos').slideToggle(200, resetH);
         // 애니후 높이값 재설정 호출!
     }); ////////// click /////////
 
@@ -42,24 +49,24 @@ $(() => {
         );
 
         // 검색박스 높이는 block일때 넣어줌!
-        let temp = $('.mos').css('display')==='none'?
-        0:$('.mos').innerHeight();
+        let temp = $('.mos').css('display') === 'none' ?
+            0 : $('.mos').innerHeight();
 
         // 변경할 높이
-        let Hval = 
-        $('.top').innerHeight() + temp;
+        let Hval =
+            $('.top').innerHeight() + temp;
         // innerHeight()는 패딩포함높이
         // height()는 순수높이(컨텐츠만)
         // 017문서참조
 
         console.log('.top높이:',
-        $('.top').innerHeight());
+            $('.top').innerHeight());
 
         console.log('.mos높이:',
-        $('.mos').css('display')==='none'?
-        0:$('.mos').innerHeight());
+            $('.mos').css('display') === 'none' ?
+            0 : $('.mos').innerHeight());
 
-        console.log('보정높이:',Hval);
+        console.log('보정높이:', Hval);
 
         // 동적으로 변경하기
         $("#mobx").css({
