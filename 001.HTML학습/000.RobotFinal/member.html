@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
- 
+
 <head>
     <meta charset="UTF-8">
-    <!-- 모바일은 아래 뷰포트 필수! -->
+    <meta name="description" content="컬렉션부터 스타일, 쇼핑, 뷰티, 라이프스타일, 셀러브리티까지 지금 가장 핫한 트렌드 소개">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- meta:description -->
-    <meta name="description"
-        content="불멸의 삶을 끝내기 위해 인간 신부가 필요한 도깨비, 그와 기묘한 동거를 시작한 기억상실증 저승사자. 그런 그들 앞에 &#39;도깨비 신부&#39;라 주장하는 &#39;죽었어야 할 운명&#39;의 소녀가 나타나며 벌어지는 神비로운 낭만 설화." />
-    <meta name="keywords" content="도깨비, 도깨비,공유,김은숙,김고은,이동욱,유인나,육성재,금토드라마" />
-    <!-- meta:keywords 사이트 키워드
-    일반 검색엔진에서 키워드 수집에 사용 -->
-    <title>도깨비 - 회원가입</title>
-    <!-- 메인페이지 외부 css만 호출함(공통 css는 import됨) -->
-    <link rel="stylesheet" href="./css/sub.css">
-    <link rel="stylesheet" href="./css/member.css">
-    <link rel="stylesheet" href="./css/media.css">
-    <style>
+    <title>Member | Everyday Robots</title>
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon" />
+    <!-- 폰티스토 문자아이콘 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
+    <link rel="stylesheet" href="css/member.css">
+    <!-- 미디어쿼리는 아래쪽에 덮어쓰도록! -->
+    <link rel="stylesheet" href="css/media.css">
 
-    </style>
+    <!-- 외부JS삽입 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- 링스시스템 JS -->
+    <script src="js/linksys.js"></script>
+
+    <!-- 부드러운 스크롤 JS -->
+    <script src="js/smoothScroll20.js"></script>
+
+    <script src="js/common.js"></script>
 </head>
 
-<body class="scbar">
-    <!--1. 상단영역-->
+<body>
+    <!-- 1. 상단영역 -->
     <div id="top">
         <header class="ibx top">
             <!-- 1-1. 메인로고 -->
             <h1 class="logo">
                 <a href="index.html">
-                    <img src="./imgs/tvnlogo2.png" alt="tvn로고">
+                    <img src="./imgs/ERlogo.png" alt="ER로고">
                 </a>
             </h1>
             <!-- 1-2. 탑메뉴 -->
             <aside class="tmenu">
+
                 <!-- 플렉스박스 -->
                 <ul class="fbx">
                     <li>
-                        <a href="#">로그인</a>
+                        <a href="#">Email</a>
                     </li>
-                    <li>
-                        <a href="#">회원가입</a>
-                    </li>
+                    <!-- <li>
+                        <a href="#">Search</a>
+                    </li> -->
                     <li>
                         <!-- sns 메뉴 -->
                         <!-- 플렉스박스 -->
@@ -50,7 +56,7 @@
                                     <span class="ir">
                                     </span>
                                 </a>
-                            </li> 
+                            </li>
                             <li>
                                 <a href="#">
                                     <span class="ir" title="인스타그램 바로가기">
@@ -74,149 +80,150 @@
                 <!-- 플렉스박스+가로중앙 -->
                 <ul class="fbx jcc">
                     <li class="sm">
-                        <a href="#">프로그램 소개</a>
-                        <!-- 서브메뉴 -->
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">프로그램 소개</a>
-                                </li>
-                                <li>
-                                    <a href="#">인물소개</a>
-                                </li>
-                                <li>
-                                    <a href="#">인물관계도</a>
-                                </li>
-                            </ol>
-                        </div>
+                        <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">미리보기</a>
+                        <a href="#">Technology</a>
                     </li>
                     <li class="sm">
-                        <a href="#">동영상</a>
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">클립영상</a>
-                                </li>
-                                <li>
-                                    <a href="#">다시보기</a>
-                                </li>
-                                <li>
-                                    <a href="#">예고편</a>
-                                </li>
-                                <li>
-                                    <a href="#">스페셜</a>
-                                </li>
-                            </ol>
-                        </div>
+                        <a href="#">Vision</a>
                     </li>
                     <li class="sm">
-                        <a href="#">사진첩</a>
-                        <div class="smenu">
-                            <ol>
-                                <li>
-                                    <a href="#">현장 포토</a>
-                                </li>
-                                <li>
-                                    <a href="#">대표 포스터</a>
-                                </li>
-                            </ol>
-                        </div>
+                        <a href="#">Join Us</a>
                     </li>
                     <li>
-                        <a href="#">OST</a>
-                    </li>
-                    <li>
-                        <a href="#">시청자 게시판</a>
+                        <a href="#" class="fi fi-search">
+                            <span class="ir"></span>
+                        </a>
                     </li>
                 </ul>
-            </nav>
-
-            <!-- 햄버거버튼 -->
-            <button class="ham" onclick="document.body.classList.toggle('on')"></button>
+                <!-- </nav> -->
         </header>
     </div>
 
 
-    <!-- 2. 메인영역 -->
-    <div id="cont">
-        <main class="cont ibx">
-            <!-- 2-1. 타이틀 -->
-            <h2 class="stit">Member</h2>
-            
-            <!-- 2-2. 컨텐츠박스 -->
-            <section class="scont">
 
+   
+    <!-- 2. 메인영역 -->
+    <div class="bgc">
+        <main class="ibx cont">
+            <section class="scont">
+                <form action="process.php" method="post" class="logF">
+                    <ul>
+
+                        <!-- 이메일 -->
+                        <li>
+                            <label for="email1" class="itit">이메일</label>
+                            <input type="text" id="email1" name="email1" placeholder="email">
+                            <span class="gol">@</span>
+                            <select name="seleml" id="seleml">
+                                <option value="init">
+                                    select
+                                </option>
+                                <option value="gmail.com">
+                                    gmail.com
+                                </option>
+                                <option value="hotmail.com">
+                                    hotmail.com
+                                </option>
+                                <option value="hanmail.net">
+                                    hanmail.net
+                                </option>
+                                <option value="free">
+                                    fill in
+                                </option>
+                            </select>
+                            <span class="msg"></span>
+                        </li>
+                        <!-- 이메일 뒷주소 직접입력 -->
+                        <li>
+                            <label for="email2"></label>
+                            <input type="text" name="email2" id="email2" placeholder="이메일뒷주소">
+                        </li>
+
+
+                        <!-- 아이디 -->
+                        <li>
+                            <label for="mid" class="itit">First Name</label>
+                            <input type="text" name="mid" id="mid" maxlength="20" placeholder="Type in your first name">
+                            <span class="msg"></span>
+                        </li>
+                        <!-- 비밀번호 -->
+                        <li>
+                            <label for="mpw" class="itit">Last Name</label>
+                            <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="Type in your last name">
+                            <span class="msg"></span>
+                        </li>
+                        <!-- 비밀번호확인 -->
+                        <li>
+                            <label for="mpw2" class="itit">Request</label>
+                            <input type="password" name="mpw2" id="mpw2" maxlength="20" placeholder="비밀번호확인을 입력해 주세요!">
+                            <span class="msg"></span>
+                        </li>
+                        <!-- 성별 -->
+                        <li>
+                            <span class="itit">성별</span>
+                            <label for="gen1">남성</label>
+                            <input type="radio" name="gen" id="gen1">
+                            <label for="gen2">여성</label>
+                            <input type="radio" name="gen" id="gen2" checked>
+                            <!-- 라디오버튼의 name 속성을
+                        같은 이름으로 쓰면 그룹핑되어
+                        하나만 선택된다! 
+
+                        checked 속성 - 기본체크설정 -->
+                        </li>
+                        
+                        <!-- 서브밋버튼 -->
+                        <li>
+                            <input type="submit" value="가입하기" id="btnj">
+                        </li>
+                    </ul>
+                </form>
             </section>
 
         </main>
     </div>
-
-
-
     <!-- 3. 하단영역 -->
-    <div id="info">
+    <div class="bgc">
         <footer class="ibx info">
-            <!-- 3-1. 하단링크 -->
-            <div class="blink">
-                <!-- 플렉스박스+가로중앙 -->
-                <ul class="fbx jcc">
-                    <li>
-                        <a href="#">법적고지</a>
-                    </li>
-                    <li>
-                        <a href="#">영상정보처리기기운영/관리방침</a>
-                    </li>
-                    <li>
-                        <a href="#">이메일무단수집거부</a>
-                    </li>
-                    <li>
-                        <a href="#">사이버감사실</a>
-                    </li>
-                    <li>
-                        <a href="#">찾아오시는길</a>
-                    </li>
-                    <li>
-                        <a href="#">개인정보처리방침</a>
-                    </li>
-                </ul>
-            </div>
-
-
-            <!-- 3-2. 회사정보 -->
-            <div class="addr">
-                <address>
-                    (주)씨제이이엔엠 CJ ENM 대표이사 강호성, 허민호 <br>
-                    주소 (03926) 서울시 마포구 상암산로 66 사업자 등록번호 106-81-51510 개인정보보호책임자 김재환 <br>
-                    © CJ ENM. All Rights Reserved.
-                </address>
-            </div>
-
-
-            <!-- 3-3. 하단로고 -->
+            <!-- 3-1.하단로고 -->
             <div class="blogo">
-                <img src="./imgs/blogo.png" alt="하단로고">
+                <img src="images/footer_logo.png" alt="하단로고">
             </div>
-            <!-- 3-4. 바로가기 -->
-            <div class="brand">
-                <select name="sel" id="sel">
-                    <option value="init">브랜드바로가기</option>
-                    <option value="tvn">tvN</option>
-                    <option value="ocn">OCN</option>
-                    <option value="mnet">MNET</option>
-                </select>
-                <!-- 
-                    [select 요소]
-                    - 지정된 값을 선택하는 입력요소
-                    - 하위필수요소 : option - 각 선택항목
-                    - 유의사항: 값을 선택할 경우 선택값은 option 요소의 속성인 value값을 읽어감
-                      단, value를 안쓸 수 있는데 안쓰면 내부데이터를 읽어감!
-                 -->
-            </div>
+            <!-- 3-2.회사주소 -->
+            <address class="addr">
+                WWW.VOGUE.COM Ⓒ CONDÉNAST ASIA PACIFIC. INC. ALL RIGHTS RESERVED. VOGUE.COM KOREA IS OPERATED BY DOOSAN
+                MAGAZINE.
+            </address>
+            <!-- 3-3.하단링크 -->
+            <ul class="blink">
+                <li>
+                    <a href="#">정기구독</a>
+                </li>
+                <li>
+                    <a href="#">회사소개</a>
+                </li>
+                <li>
+                    <a href="#">광고 및 제휴</a>
+                </li>
+                <li>
+                    <a href="#">개인정보 처리방침</a>
+                </li>
+            </ul>
         </footer>
     </div>
+
+    <!-- 위로가기버튼 -->
+    <a href="#" class="tbtn fi fi-angle-up">
+        <span class="ir">위로가기버튼</span>
+    </a>
+
+    <!-- 로딩박스 -->
+    <div class="LDbx">
+        <img src="images/Loading_icon.gif" alt="loading">
+    </div>
+
 
 </body>
 
