@@ -37,7 +37,7 @@ let pm = location.href;
 
 // 만약 물음표가 없으면 메뉴를 클릭한것이 아니므로
 // 첫페이지로 돌아가게 한다!
-if(pm.indexOf('?')===-1) location.href = 'index.html';
+if (pm.indexOf('?') === -1) location.href = 'index.html';
 
 // 현재 파라미터값만 필요하므로
 // 물음표(?)로 잘라서 뒤엣것 -> [1]
@@ -54,7 +54,7 @@ $(() => {
 
     // 1. 해당 카테고리의 데이터 셋업
     const data = sinfo[pm];
-    console.log('선택데이터:',data);
+    console.log('선택데이터:', data);
 
     // 2. 데이터 페이지 바인딩하기 ////
     // (1) 타이틀 넣기
@@ -68,23 +68,23 @@ $(() => {
     // "메뉴" 데이터 값으로 "없음"이 아닐 경우
     // 메뉴수만큼 ul>li>a 의 구조로 메뉴를 구성함!
     let menu = data['메뉴'];
-    console.log('메뉴:',menu);
+    console.log('메뉴:', menu);
 
     // 대상: .lnb
     let lnb = $(".lnb");
 
     // 임시코드변수
     let hcode = "";
-    
+
     // 분기: 조건 - 데이터가 "없음"인가?
-    if(menu==="없음") lnb.remove(); // lnb삭제
+    if (menu === "없음") lnb.remove(); // lnb삭제
     else { // 메뉴만들기
         hcode += "<ul>";
 
         // 메뉴배열만큼 코드만들기
         // 배열 forEach() 문에서 함수전달값이
         // 하나이면 그것이 바로 배열값!
-        menu.forEach(val=>{
+        menu.forEach(val => {
             hcode += `
                 <li>
                     <a href="#">${val}</a>
@@ -103,7 +103,7 @@ $(() => {
     // 대상: .cbx h2
     // 데이터: "타이틀"의 배열값
     // each((순번,요소자신)=>{코드})
-    $('.cbx h2').each((idx,ele)=>{
+    $('.cbx h2').each((idx, ele) => {
         $(ele).html(data['타이틀'][idx]);
     }); //////////////// each /////////////////
     // data['타이틀'][배열순번]
@@ -118,3 +118,54 @@ $(() => {
 
 }); ////////////// jQB ////////////////////////
 ///////////////////////////////////////////////
+
+
+
+
+$(() => { ////////////////// jQB //////////////////////
+
+    /********************************************************* 
+             카테고리 페이지 타이틀 한글자씩 등장애니
+    *********************************************************/
+    // 대상: .stit 
+    // 방법: 서브타이틀을 가져와서 각각 span태그로 싸준다!
+    const stit = $('.stit');
+
+    // 1. 서브타이틀 글자 읽어오기
+    let stxt = stit.text();
+
+    // 2. span태그 한글자씩 싸기
+    let newtxt = "";
+    // for of로 한글자씩 돌아줌!
+    for (let x of stxt) {
+        newtxt += `<span>${x}</span>`;
+    } ///////// for of //////////
+
+    console.log('이거야!', newtxt);
+
+    // 3. 원래 박스에 다시넣기!
+    stit.html(newtxt);
+
+    // 4. span태그 css설정하기
+    stit.find('span').css({
+        position: "relative",
+        top: "-40px",
+        opacity: 0
+    }); //////////// css /////////////
+
+    // 5. 순차적으로 하나씩 글자 등장하기 애니!
+    stit.find('span').each((idx, ele) => {
+        $(ele).delay(100 * idx)
+            .animate({
+                top: "0",
+                opacity: 1
+            },200,"easeInOutQuart");
+    }); //////////// each ////////////
+
+    // 6. LNB메뉴가 있으면 조금있다가 나와라!
+    $(".lnb").fadeTo(1,0).delay(1000).fadeTo(800,1);
+    // fadeTo(시간,오파,이징,함수)
+    // -> fadeIn/fadeOut과 달리 display를 none하지 않음! (기존 자리 차지함!)
+
+
+}); ////////////////// jQB //////////////////////
