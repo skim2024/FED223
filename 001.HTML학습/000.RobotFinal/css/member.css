@@ -6,6 +6,11 @@
 @import url(core.css);
 @import url(common.css);
 
+body{
+    /* background: #4556d1; */
+    background: #000;
+}
+
 /* 컨텐츠 영역 속박스 */
 .cont{
   min-height: 600px;
@@ -32,6 +37,7 @@
   box-sizing: border-box;
   padding: 30px 50px;
   background-color: #fff;
+  margin-top: 137px;
 }
 
 
@@ -104,6 +110,14 @@ select:focus {
     border: 1px solid #777;
     border-radius: 5px;
     padding-left: 5px;
+}
+
+.scont li>input#mpw2{
+    padding-top: 15px;
+}
+
+input#mpw2{
+    height: 200px;
 }
 
 /* 라디오버튼 */
