@@ -19,12 +19,13 @@
     padding: 6px;
     text-align: center;
     z-index: 1;
+    left: 30px;
 }
 
 /* 메인로고 이미지 크기 조절 */
 .logo img {
     width: 67px;
-    padding-top: 2px;
+    padding-top: 30px;
 }
 
 /* 1-2. 탑메뉴 (우측상단) */
@@ -38,7 +39,7 @@
 /* 탑메뉴 ul */
 .tmenu>ul {
     position: absolute;
-    top: 20px;
+    top: 52px;
     right: 112px;
     /* 부모는? .tmenu */
 
@@ -60,7 +61,7 @@
     /* width: 576px; */
     /* 마영오! - 특정 가로크기가 있어야 적용됨! */
     /* margin: 0 auto; */
-    padding: 10px;
+    padding: 40px;
 }
 
 /* GNB 상위li */

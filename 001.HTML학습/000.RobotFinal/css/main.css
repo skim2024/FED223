@@ -12,8 +12,9 @@
 /* 컨텐츠 파트 최상위부모 */
 body{
     /* background: #4556d1; */
-    background-image: linear-gradient(to bottom, rgb(97, 97, 97) 0%, rgb(97, 97, 97) 0.5%,#000000, #7dbfdb, #36525d, #124453);
+    background-image: linear-gradient(to bottom, rgb(97, 97, 97) 0%, rgb(97, 97, 97) 0.5%,#000000, #36525d, #cacaca);
 }
+/* #7dbfdb, */
 
 
 /****************************** 2. 메인영역 ******************************/
