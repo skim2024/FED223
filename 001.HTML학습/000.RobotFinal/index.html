@@ -18,8 +18,10 @@
     
     <!-- 외부JS삽입 -->
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-3.5.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery-touch-punch.min.js"></script>
+    <script src="js/jquery.mousefollower.js"></script>
          <!-- 부드러운 스크롤 -->
     <script src="js/smoothScroll20.js"></script>
     <script src="js/common.js"></script>
@@ -108,10 +110,24 @@
             /* position: relative; */
             width: 90px;
         }
+
+
+        /* 마우스 모양 */
+        .btna {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            background-color: #e936368f;
+        }
     </style>
 
 <script>
     $(()=>{
+
+        // 마우스 팔로워
+        $(".btna").mousefollower();
+
+
         // 1. 드래그 대상: #move
         let move = $("#move");
 
