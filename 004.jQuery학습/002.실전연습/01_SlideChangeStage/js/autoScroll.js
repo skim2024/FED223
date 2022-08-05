@@ -19,7 +19,7 @@ $(() => { //////////////// jQB /////////////////////////
 
     console.log("로딩완료!");
 
-    
+
 
     /************************************************** 
         [ 자동스크롤 구현! ]
@@ -79,18 +79,18 @@ $(() => { //////////////// jQB /////////////////////////
     **************************************************/
 
     /////////// 자동스크롤 구현 ////////////////////
-    $(document).on('mousewheel wheel',e=>{
+    $(document).on('mousewheel wheel', e => {
 
         // e.preventDefault();  //에러발생함
 
         // 1. 광스크롤 막기 /////
-        if(prot_sc) return;
+        if (prot_sc) return;
         prot_sc = 1;
-        setTimeout(()=>prot_sc = 0, dur_sc);
+        setTimeout(() => prot_sc = 0, dur_sc);
         ///////////////////////////////////////
-        
+
         console.log('휠중');
-        
+
         // e로 전달되는 이벤트 변수 처리하기
         e = window.event || e;
         // window.event (오리지널 이벤트)가 유효할 경우 할당!
@@ -104,29 +104,62 @@ $(() => { //////////////// jQB /////////////////////////
         // 변수 = 속성값1 || 속성값2;
         // 둘중 유효한 값이 변수에 할당됨!
 
-        console.log('방향:',delta);
+        console.log('방향:', delta);
 
         // 음수면 아랫방향 : 다음페이지
-        if(delta < 0){
+        if (delta < 0) {
             pno++;
             // 한계수에서 끝번호 고정
-            if(pno===totnum) pno = totnum - 1;
+            if (pno === totnum) pno = totnum - 1;
         }
 
         // 양수면 윗방향 : 이전페이지
-        else{
+        else {
             pno--;
             // 한계수에서 끝번호 고정
-            if(pno===-1) pno = 0;
+            if (pno === -1) pno = 0;
         }
 
 
-        // 스크롤 애니메이션 : 페이지 번호만큼 배수로 이동함!
+        // 3. 스크롤 애니메이션 : 페이지 번호만큼 배수로 이동함!
         $('html,body').animate({
-            scrollTop:$(window).height()*pno+"px"
-        },800)
+            scrollTop: $(window).height() * pno + "px"
+        }, dur_sc, easing_sc);
+
+        // 4. GNB 메뉴 + 사이드 표시자 위치 업데이트하기
+        $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+        $(".indic li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
     }); ////////// mousewheel /////////////////////
     //////////////////////////////////////////////
+
+
+    // GNB 클릭시 위치이동 하기 ////////
+    $(".gnb a, .indic a").click(function (e) {
+        e.preventDefault();
+
+        // 1. 부모 li순번
+        let idx = $(this).parent().index();
+        console.log(idx);
+
+        // 2. 순번을 pno에 일치
+        pno = idx;
+
+        // 3. 페이지 이동하기
+        $('html,body').animate({
+            scrollTop: $(window).height() * pno + "px"
+        }, dur_sc, easing_sc);
+
+        // 4. GNB 메뉴 + 사이드 표시자 위치 업데이트하기
+        $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+        $(".indic li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+
+    }); ///////////// click ////////////////
 
 
 
