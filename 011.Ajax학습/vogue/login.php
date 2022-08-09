@@ -27,7 +27,7 @@
     <!-- 로그인페이지 JS -->
     <script src="js/login.js"></script>
 </head>
-
+ 
 <body>
     <!-- 1. 상단영역 -->
     <?php include "inc/top.inc" ?>
