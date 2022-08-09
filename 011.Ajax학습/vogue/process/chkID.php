@@ -14,7 +14,7 @@ $sql = "SELECT COUNT(*) FROM `member` WHERE `mid` = '$mid'";
 //echo $sql;
 
 ##### DB연결 문자열 #######
-include "dbcon.inc";
+include "dbcon.inc"; 
 
 // 쿼리를 DB에 실행 ///
 $res = $conn->query($sql);
