@@ -113,6 +113,34 @@ $(()=>{
         // toLowerCase()는 소문자변환
         console.log(txt);
 
+        // 2. 파라미터 변수값 업데이트
+        pm = txt;
+        console.log('체험존pm업뎃:',pm);
+
+        // 3. 뷰 인스턴스의 data를 변경하여
+        // 자동으로 페이지 갱신하기!
+        db.$data.catName = pm.replace(' & ','-');
+        db.$data.catName2 = pm;
+        // db변수에 뷰JS 인스턴스가 담겨있고
+        // $data는 내부의 data속성임!
+        // methods는 db.$methods라고 쓰지않고
+        // 바로 db.메서드이름()으로 실행가능!
+
+
+        /* 
+            [ 뷰JS 양방향 바인딩의 특징! ]
+            뷰JS의 속성값을 업데이트 하면
+            실시간으로 뷰페이지(html 실제DOM)를
+            관리하는 가상돔(Virtual DOM)에 변화가
+            생길경우 바로 실제 DOM에 뷰JS 인스턴스가
+            이를 반영하여 페이지를 변경한다! 
+            *새로고침 없이!*
+        */
+
+
+        // 4. 타이틀 등장애니 호출
+        // db.$methods.callAni();
+
 
     }); /////////// click ////////////////////
 
