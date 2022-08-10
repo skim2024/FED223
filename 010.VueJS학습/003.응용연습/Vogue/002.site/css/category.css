@@ -6,6 +6,10 @@
 @import url(core.css);
 @import url(common.css);
 
+.cont{
+    min-height: 50vh;
+}
+
 /* 등장액션 해제 */
 .scAct{
     transform: translateY(0);
@@ -20,6 +24,13 @@
     font-size: 50px;
     text-align: center;
     padding: 40px 0 20px;
+}
+
+/* 타이틀 잘라 넣을 span */
+.stit span{
+    opacity: 0; 
+    /* 처음부터 안보임! */
+
 }
 
 /* 2-1-2. 서브메뉴(LNB) */
